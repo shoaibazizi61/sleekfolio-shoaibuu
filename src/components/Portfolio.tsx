@@ -18,7 +18,7 @@ const projects: Project[] = [
     id: 1,
     title: "The Dopple Registry Desktop",
     category: "ui",
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop",
+    image: "http://res.cloudinary.com/diedxghax/image/upload/v1742333643/The%20Dopple%20Dashboard/The%20Dopple%20registry%20desktop%20and%20phone/Dopple%20registry/qz9vq7xhsel5e193fvp6.png",
     description: "Desktop UI design for The Dopple registry platform with intuitive navigation and modern aesthetics.",
     link: "https://thedopple.com"
   },
@@ -26,7 +26,7 @@ const projects: Project[] = [
     id: 2,
     title: "The Dopple Style Guide",
     category: "ui",
-    image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?q=80&w=2072&auto=format&fit=crop",
+    image: "http://res.cloudinary.com/diedxghax/image/upload/v1742333490/The%20Dopple%20Dashboard/The%20Dopple%20registry%20desktop%20and%20phone/sbc6t0lfnnar1xqjw2hg.png",
     description: "Comprehensive style guide defining visual elements and interaction patterns for The Dopple brand.",
     link: "https://thedopple.com"
   },
@@ -34,7 +34,7 @@ const projects: Project[] = [
     id: 3,
     title: "The Dopple Dashboard",
     category: "ui",
-    image: "https://images.unsplash.com/photo-1555529669-e69e7aa0ba9a?q=80&w=2070&auto=format&fit=crop",
+    image: "https://res.cloudinary.com/diedxghax/image/upload/v1742333076/The%20Dopple%20Dashboard/cvz49dssanewj8inxf6m.png",
     description: "User-friendly dashboard design for The Dopple platform with data visualization and management tools.",
     link: "https://thedopple.com"
   },
@@ -44,7 +44,7 @@ const projects: Project[] = [
     id: 4,
     title: "Mamas Uncut UI",
     category: "ui",
-    image: "https://images.unsplash.com/photo-1561069934-eee225952461?q=80&w=2070&auto=format&fit=crop",
+    image: "http://res.cloudinary.com/diedxghax/image/upload/v1742333349/The%20Dopple%20Dashboard/Desktop/a7wl8ptvccapex1qb77o.png",
     description: "Core UI design and improvements for the Mamas Uncut platform focusing on user experience.",
     link: "https://mamasuncut.com"
   },
@@ -52,7 +52,7 @@ const projects: Project[] = [
     id: 5,
     title: "Baby Name Generator",
     category: "ui",
-    image: "https://images.unsplash.com/photo-1617096199297-08adbec8ed23?q=80&w=2063&auto=format&fit=crop",
+    image: "http://res.cloudinary.com/diedxghax/image/upload/v1742333349/The%20Dopple%20Dashboard/Desktop/bznmgqikslcnkiz7ydbq.png",
     description: "Interactive baby name generator tool designed for the Mamas Uncut platform.",
     link: "https://mamasuncut.com"
   },
@@ -62,14 +62,14 @@ const projects: Project[] = [
     id: 6,
     title: "ESN CZU Prague Instagram",
     category: "social",
-    image: "https://images.unsplash.com/photo-1518640467707-6811f4a6ab73?q=80&w=2080&auto=format&fit=crop",
+    image: "http://res.cloudinary.com/diedxghax/image/upload/v1742334036/Social%20Media/oeg6wu4zea4as6ye78in.png",
     description: "Instagram post designs for ESN CZU Prague, featuring engaging visuals and event promotions.",
   },
   {
     id: 7,
     title: "Mamas Uncut Pinterest Pins",
     category: "social",
-    image: "https://images.unsplash.com/photo-1627398242454-45a1465c2479?q=80&w=2074&auto=format&fit=crop",
+    image: "http://res.cloudinary.com/diedxghax/image/upload/v1742334035/Social%20Media/fuxdmmxxmfg4qnxixclc.png",
     description: "Pinterest pin designs for Mamas Uncut spanning a 2-year period, optimized for engagement and clicks.",
     link: "https://pinterest.com/mamasuncut"
   },
@@ -77,7 +77,7 @@ const projects: Project[] = [
     id: 8,
     title: "Freelance Pinterest Designs",
     category: "social",
-    image: "https://images.unsplash.com/photo-1523206489230-c012c64b2b48?q=80&w=1974&auto=format&fit=crop",
+    image: "http://res.cloudinary.com/diedxghax/image/upload/v1742334035/Social%20Media/obq8rxevxejvbolvysmh.png",
     description: "Collection of over 500 Pinterest pin designs created for various freelance clients.",
   },
   
@@ -86,7 +86,7 @@ const projects: Project[] = [
     id: 9,
     title: "GBOrganics Shilajit Resin",
     category: "product",
-    image: "https://images.unsplash.com/photo-1567721913486-6585f069b332?q=80&w=2088&auto=format&fit=crop",
+    image: "http://res.cloudinary.com/diedxghax/image/upload/v1742334035/Social%20Media/wbt4jdli30ujoeblzebk.png",
     description: "Product design and packaging for GBOrganics.pk Shilajit resin product line.",
     link: "https://gborganics.pk"
   },
@@ -94,7 +94,7 @@ const projects: Project[] = [
     id: 10,
     title: "Buckwheat Product Design",
     category: "product",
-    image: "https://images.unsplash.com/photo-1599643477877-530eb83abc8e?q=80&w=2069&auto=format&fit=crop",
+    image: "http://res.cloudinary.com/diedxghax/image/upload/v1742334035/Social%20Media/vrvvxa8jcdqnw1bgmpbx.png",
     description: "Packaging and brand identity design for Buckwheat.pk products.",
     link: "https://buckwheat.pk"
   },
@@ -102,51 +102,89 @@ const projects: Project[] = [
     id: 11,
     title: "Hofo.pk Product Line",
     category: "product",
-    image: "https://images.unsplash.com/photo-1481671703460-040cb8a2d909?q=80&w=2070&auto=format&fit=crop",
+    image: "http://res.cloudinary.com/diedxghax/image/upload/v1742334035/Social%20Media/guibzgbzz7e08jjecyzo.png",
     description: "Design for Hofo.pk product line including Shilajit, buckwheat, and other health products.",
     link: "https://hofo.pk"
   },
   
-  // WordPress
+  // Logos
   {
     id: 12,
+    title: "Logo Design Collection 1",
+    category: "logo",
+    image: "http://res.cloudinary.com/diedxghax/image/upload/v1742334037/Social%20Media/ivcaj8zhwsezdwxutyia.jpg",
+    description: "Custom logo design focusing on brand identity and visual communication.",
+  },
+  {
+    id: 13,
+    title: "Logo Design Collection 2",
+    category: "logo",
+    image: "http://res.cloudinary.com/diedxghax/image/upload/v1742334037/Social%20Media/at4a8ev6g7ht6ycmy4i4.jpg",
+    description: "Minimalist logo design with modern typography and symbolic elements.",
+  },
+  {
+    id: 14,
+    title: "Logo Design Collection 3",
+    category: "logo",
+    image: "http://res.cloudinary.com/diedxghax/image/upload/v1742334037/Social%20Media/ueukaeollcstood5efbu.jpg",
+    description: "Brand identity and logo design for corporate clients with emphasis on scalability.",
+  },
+  {
+    id: 15,
+    title: "Logo Design Collection 4",
+    category: "logo",
+    image: "http://res.cloudinary.com/diedxghax/image/upload/v1742334037/Social%20Media/uatrnfsvu9rebtqkwsky.jpg",
+    description: "Creative logo concepts focusing on versatility and brand recognition.",
+  },
+  
+  // WordPress
+  {
+    id: 16,
     title: "Cnolesbags.com",
     category: "wordpress",
-    image: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=2070&auto=format&fit=crop",
+    image: "http://res.cloudinary.com/diedxghax/image/upload/v1742333643/The%20Dopple%20Dashboard/The%20Dopple%20registry%20desktop%20and%20phone/Dopple%20registry/x77girnhgkjvcsorzvmt.png",
     description: "WordPress e-commerce website design and development for Cnoles Bags.",
     link: "https://cnolesbags.com"
   },
   {
-    id: 13,
+    id: 17,
     title: "Clotharlo.com",
     category: "wordpress",
-    image: "https://images.unsplash.com/photo-1593030761757-71fae45fa0e7?q=80&w=2080&auto=format&fit=crop",
+    image: "http://res.cloudinary.com/diedxghax/image/upload/v1742333643/The%20Dopple%20Dashboard/The%20Dopple%20registry%20desktop%20and%20phone/Dopple%20registry/omfzyybjxoxt3sdvsiyh.png",
     description: "Custom WordPress theme and site design for Clotharlo fashion brand.",
     link: "https://clotharlo.com"
   },
   {
-    id: 14,
+    id: 18,
     title: "La-festin.com",
     category: "wordpress",
-    image: "https://images.unsplash.com/photo-1555529669-e69e7aa0ba9a?q=80&w=2070&auto=format&fit=crop",
+    image: "http://res.cloudinary.com/diedxghax/image/upload/v1742333642/The%20Dopple%20Dashboard/The%20Dopple%20registry%20desktop%20and%20phone/Dopple%20registry/qwisrugqbycu6xxfsyqy.png",
     description: "WordPress development for La Festin with custom e-commerce functionality.",
     link: "https://la-festin.com"
   },
   {
-    id: 15,
+    id: 19,
     title: "Buckwheat.pk",
     category: "wordpress",
-    image: "https://images.unsplash.com/photo-1612387290123-34af734b5f81?q=80&w=2071&auto=format&fit=crop",
+    image: "http://res.cloudinary.com/diedxghax/image/upload/v1742333642/The%20Dopple%20Dashboard/The%20Dopple%20registry%20desktop%20and%20phone/Dopple%20registry/ciqxfxemrxzzjgcc4wbe.png",
     description: "WordPress website design and development for Buckwheat.pk.",
     link: "https://buckwheat.pk"
   },
   {
-    id: 16,
+    id: 20,
     title: "GBOrganics.pk",
     category: "wordpress",
-    image: "https://images.unsplash.com/photo-1501389040983-5c22cb186487?q=80&w=2070&auto=format&fit=crop",
+    image: "http://res.cloudinary.com/diedxghax/image/upload/v1742333349/The%20Dopple%20Dashboard/Desktop/gctr5r8km9iwnox7vwhg.png",
     description: "Custom WordPress site with e-commerce functionality for GBOrganics.pk.",
     link: "https://gborganics.pk"
+  },
+  {
+    id: 21,
+    title: "Giantteddy.com",
+    category: "wordpress",
+    image: "http://res.cloudinary.com/diedxghax/image/upload/v1742333349/The%20Dopple%20Dashboard/Desktop/ckgszoszpfkfk6xmzse3.png",
+    description: "E-commerce WordPress site for Giantteddy.com with custom product showcases.",
+    link: "https://giantteddy.com"
   },
 ];
 
@@ -163,9 +201,10 @@ const Portfolio = () => {
             <TabsList className="grid grid-cols-2 md:grid-cols-6 w-full mb-8">
               <TabsTrigger value="all">All Work</TabsTrigger>
               <TabsTrigger value="ui">UI Design</TabsTrigger>
-              <TabsTrigger value="product">Product</TabsTrigger>
               <TabsTrigger value="social">Social Media</TabsTrigger>
+              <TabsTrigger value="logo">Logo</TabsTrigger>
               <TabsTrigger value="wordpress">WordPress</TabsTrigger>
+              <TabsTrigger value="product">Product</TabsTrigger>
             </TabsList>
             
             <TabsContent value="all" className="mt-0">
@@ -192,18 +231,6 @@ const Portfolio = () => {
               </div>
             </TabsContent>
             
-            <TabsContent value="product" className="mt-0">
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {projects.filter(p => p.category === 'product').map((project) => (
-                  <ProjectCard 
-                    key={project.id} 
-                    project={project} 
-                    setActiveProject={setActiveProject} 
-                  />
-                ))}
-              </div>
-            </TabsContent>
-            
             <TabsContent value="social" className="mt-0">
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {projects.filter(p => p.category === 'social').map((project) => (
@@ -216,9 +243,33 @@ const Portfolio = () => {
               </div>
             </TabsContent>
             
+            <TabsContent value="logo" className="mt-0">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {projects.filter(p => p.category === 'logo').map((project) => (
+                  <ProjectCard 
+                    key={project.id} 
+                    project={project} 
+                    setActiveProject={setActiveProject} 
+                  />
+                ))}
+              </div>
+            </TabsContent>
+            
             <TabsContent value="wordpress" className="mt-0">
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {projects.filter(p => p.category === 'wordpress').map((project) => (
+                  <ProjectCard 
+                    key={project.id} 
+                    project={project} 
+                    setActiveProject={setActiveProject} 
+                  />
+                ))}
+              </div>
+            </TabsContent>
+            
+            <TabsContent value="product" className="mt-0">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {projects.filter(p => p.category === 'product').map((project) => (
                   <ProjectCard 
                     key={project.id} 
                     project={project} 
@@ -273,6 +324,7 @@ const Portfolio = () => {
                     {activeProject.category === 'ui' ? 'UI Design' : 
                      activeProject.category === 'social' ? 'Social Media' : 
                      activeProject.category === 'product' ? 'Product Design' :
+                     activeProject.category === 'logo' ? 'Logo Design' : 
                      activeProject.category === 'wordpress' ? 'WordPress' : 'Logo Design'}
                   </span>
                   <div className="flex gap-2">
@@ -347,6 +399,7 @@ const ProjectCard = ({
           {project.category === 'ui' ? 'UI Design' : 
            project.category === 'social' ? 'Social Media' : 
            project.category === 'product' ? 'Product Design' :
+           project.category === 'logo' ? 'Logo Design' : 
            project.category === 'wordpress' ? 'WordPress' : 'Logo Design'}
         </span>
         <h3 className="text-xl font-bold mt-1 font-montserrat">{project.title}</h3>
