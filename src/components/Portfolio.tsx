@@ -2,6 +2,8 @@
 import { useState } from 'react';
 import { ExternalLink, Eye, Paintbrush, Monitor, Image as ImageIcon, Globe } from 'lucide-react';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { AspectRatio } from "@/components/ui/aspect-ratio";
+import { Card, CardContent } from "@/components/ui/card";
 
 type Project = {
   id: number;
@@ -44,7 +46,7 @@ const projects: Project[] = [
     id: 4,
     title: "Mamas Uncut UI",
     category: "ui",
-    image: "http://res.cloudinary.com/diedxghax/image/upload/v1742333349/The%20Dopple%20Dashboard/Desktop/a7wl8ptvccapex1qb77o.png",
+    image: "https://raisingchildren.net.au/__data/assets/image/0024/47742/baby-behaviour-and-awareness.jpg",
     description: "Core UI design and improvements for the Mamas Uncut platform focusing on user experience.",
     link: "https://mamasuncut.com"
   },
@@ -52,7 +54,7 @@ const projects: Project[] = [
     id: 5,
     title: "Baby Name Generator",
     category: "ui",
-    image: "http://res.cloudinary.com/diedxghax/image/upload/v1742333349/The%20Dopple%20Dashboard/Desktop/bznmgqikslcnkiz7ydbq.png",
+    image: "https://raisingchildren.net.au/__data/assets/image/0024/47742/baby-behaviour-and-awareness.jpg",
     description: "Interactive baby name generator tool designed for the Mamas Uncut platform.",
     link: "https://mamasuncut.com"
   },
@@ -62,14 +64,15 @@ const projects: Project[] = [
     id: 6,
     title: "ESN CZU Prague Instagram",
     category: "social",
-    image: "http://res.cloudinary.com/diedxghax/image/upload/v1742334036/Social%20Media/oeg6wu4zea4as6ye78in.png",
+    image: "http://res.cloudinary.com/diedxghax/image/upload/v1742334616/Social%20Media/i0bbtwprdr16haewhnri.png",
     description: "Instagram post designs for ESN CZU Prague, featuring engaging visuals and event promotions.",
+    link: "https://www.instagram.com/esnczu/"
   },
   {
     id: 7,
     title: "Mamas Uncut Pinterest Pins",
     category: "social",
-    image: "http://res.cloudinary.com/diedxghax/image/upload/v1742334035/Social%20Media/fuxdmmxxmfg4qnxixclc.png",
+    image: "http://res.cloudinary.com/diedxghax/image/upload/v1742334036/Social%20Media/anhnaoo1gh94eqtpzdgj.png",
     description: "Pinterest pin designs for Mamas Uncut spanning a 2-year period, optimized for engagement and clicks.",
     link: "https://pinterest.com/mamasuncut"
   },
@@ -86,7 +89,7 @@ const projects: Project[] = [
     id: 9,
     title: "GBOrganics Shilajit Resin",
     category: "product",
-    image: "http://res.cloudinary.com/diedxghax/image/upload/v1742334035/Social%20Media/wbt4jdli30ujoeblzebk.png",
+    image: "https://cdn.britannica.com/74/114874-050-6E04C88C/North-Face-Mount-Everest-Tibet-Autonomous-Region.jpg",
     description: "Product design and packaging for GBOrganics.pk Shilajit resin product line.",
     link: "https://gborganics.pk"
   },
@@ -94,7 +97,7 @@ const projects: Project[] = [
     id: 10,
     title: "Buckwheat Product Design",
     category: "product",
-    image: "http://res.cloudinary.com/diedxghax/image/upload/v1742334035/Social%20Media/vrvvxa8jcdqnw1bgmpbx.png",
+    image: "https://drhyman.com/cdn/shop/articles/AdobeStock_299261032-scaled.jpg?v=1714795523&width=1500",
     description: "Packaging and brand identity design for Buckwheat.pk products.",
     link: "https://buckwheat.pk"
   },
@@ -102,7 +105,7 @@ const projects: Project[] = [
     id: 11,
     title: "Hofo.pk Product Line",
     category: "product",
-    image: "http://res.cloudinary.com/diedxghax/image/upload/v1742334035/Social%20Media/guibzgbzz7e08jjecyzo.png",
+    image: "https://cdn.britannica.com/10/94510-050-D0B814DA/Machhapuchhare-Great-Himalaya-Range-Nepal.jpg",
     description: "Design for Hofo.pk product line including Shilajit, buckwheat, and other health products.",
     link: "https://hofo.pk"
   },
@@ -142,7 +145,7 @@ const projects: Project[] = [
     id: 16,
     title: "Cnolesbags.com",
     category: "wordpress",
-    image: "http://res.cloudinary.com/diedxghax/image/upload/v1742333643/The%20Dopple%20Dashboard/The%20Dopple%20registry%20desktop%20and%20phone/Dopple%20registry/x77girnhgkjvcsorzvmt.png",
+    image: "https://www.graffiti9.com/wp-content/uploads/2019/10/Website-Banner.jpg",
     description: "WordPress e-commerce website design and development for Cnoles Bags.",
     link: "https://cnolesbags.com"
   },
@@ -150,7 +153,7 @@ const projects: Project[] = [
     id: 17,
     title: "Clotharlo.com",
     category: "wordpress",
-    image: "http://res.cloudinary.com/diedxghax/image/upload/v1742333643/The%20Dopple%20Dashboard/The%20Dopple%20registry%20desktop%20and%20phone/Dopple%20registry/omfzyybjxoxt3sdvsiyh.png",
+    image: "https://www.graffiti9.com/wp-content/uploads/2019/10/Website-Banner.jpg",
     description: "Custom WordPress theme and site design for Clotharlo fashion brand.",
     link: "https://clotharlo.com"
   },
@@ -158,7 +161,7 @@ const projects: Project[] = [
     id: 18,
     title: "La-festin.com",
     category: "wordpress",
-    image: "http://res.cloudinary.com/diedxghax/image/upload/v1742333642/The%20Dopple%20Dashboard/The%20Dopple%20registry%20desktop%20and%20phone/Dopple%20registry/qwisrugqbycu6xxfsyqy.png",
+    image: "https://www.graffiti9.com/wp-content/uploads/2019/10/Website-Banner.jpg",
     description: "WordPress development for La Festin with custom e-commerce functionality.",
     link: "https://la-festin.com"
   },
@@ -166,7 +169,7 @@ const projects: Project[] = [
     id: 19,
     title: "Buckwheat.pk",
     category: "wordpress",
-    image: "http://res.cloudinary.com/diedxghax/image/upload/v1742333642/The%20Dopple%20Dashboard/The%20Dopple%20registry%20desktop%20and%20phone/Dopple%20registry/ciqxfxemrxzzjgcc4wbe.png",
+    image: "https://www.graffiti9.com/wp-content/uploads/2019/10/Website-Banner.jpg",
     description: "WordPress website design and development for Buckwheat.pk.",
     link: "https://buckwheat.pk"
   },
@@ -174,7 +177,7 @@ const projects: Project[] = [
     id: 20,
     title: "GBOrganics.pk",
     category: "wordpress",
-    image: "http://res.cloudinary.com/diedxghax/image/upload/v1742333349/The%20Dopple%20Dashboard/Desktop/gctr5r8km9iwnox7vwhg.png",
+    image: "https://www.graffiti9.com/wp-content/uploads/2019/10/Website-Banner.jpg",
     description: "Custom WordPress site with e-commerce functionality for GBOrganics.pk.",
     link: "https://gborganics.pk"
   },
@@ -182,7 +185,7 @@ const projects: Project[] = [
     id: 21,
     title: "Giantteddy.com",
     category: "wordpress",
-    image: "http://res.cloudinary.com/diedxghax/image/upload/v1742333349/The%20Dopple%20Dashboard/Desktop/ckgszoszpfkfk6xmzse3.png",
+    image: "https://www.graffiti9.com/wp-content/uploads/2019/10/Website-Banner.jpg",
     description: "E-commerce WordPress site for Giantteddy.com with custom product showcases.",
     link: "https://giantteddy.com"
   },
@@ -192,19 +195,19 @@ const Portfolio = () => {
   const [activeProject, setActiveProject] = useState<Project | null>(null);
 
   return (
-    <section id="portfolio" className="section-padding bg-secondary/50 py-20">
+    <section id="portfolio" className="section-padding bg-gradient-to-b from-secondary/30 to-background py-20">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="font-montserrat text-3xl md:text-4xl font-bold mb-6">My Portfolio</h2>
+          <h2 className="font-montserrat text-3xl md:text-4xl font-bold mb-6 text-gradient">My Portfolio</h2>
           
-          <Tabs defaultValue="all" className="w-full max-w-3xl mx-auto">
-            <TabsList className="grid grid-cols-2 md:grid-cols-6 w-full mb-8">
-              <TabsTrigger value="all">All Work</TabsTrigger>
-              <TabsTrigger value="ui">UI Design</TabsTrigger>
-              <TabsTrigger value="social">Social Media</TabsTrigger>
-              <TabsTrigger value="logo">Logo</TabsTrigger>
-              <TabsTrigger value="wordpress">WordPress</TabsTrigger>
-              <TabsTrigger value="product">Product</TabsTrigger>
+          <Tabs defaultValue="all" className="w-full max-w-4xl mx-auto">
+            <TabsList className="grid grid-cols-3 md:grid-cols-6 w-full mb-8 bg-background/50 backdrop-blur-sm p-1 rounded-xl">
+              <TabsTrigger value="all" className="rounded-lg">All Work</TabsTrigger>
+              <TabsTrigger value="ui" className="rounded-lg">UI Design</TabsTrigger>
+              <TabsTrigger value="social" className="rounded-lg">Social Media</TabsTrigger>
+              <TabsTrigger value="logo" className="rounded-lg">Logo</TabsTrigger>
+              <TabsTrigger value="wordpress" className="rounded-lg">WordPress</TabsTrigger>
+              <TabsTrigger value="product" className="rounded-lg">Product</TabsTrigger>
             </TabsList>
             
             <TabsContent value="all" className="mt-0">
@@ -280,22 +283,22 @@ const Portfolio = () => {
             </TabsContent>
           </Tabs>
           
-          <div className="mt-12 text-center">
-            <h3 className="text-xl font-bold mb-3">Tools I Use</h3>
+          <div className="mt-16 p-6 rounded-xl bg-background/50 backdrop-blur-sm shadow-lg max-w-3xl mx-auto">
+            <h3 className="text-xl font-bold mb-6 text-gradient">Tools I Use</h3>
             <div className="flex flex-wrap justify-center gap-4">
-              <span className="bg-primary/10 text-primary px-4 py-2 rounded-full inline-flex items-center">
+              <span className="bg-primary/10 text-primary px-4 py-2 rounded-full inline-flex items-center hover:bg-primary/20 transition-colors">
                 <Paintbrush className="w-4 h-4 mr-2" /> Canva
               </span>
-              <span className="bg-primary/10 text-primary px-4 py-2 rounded-full inline-flex items-center">
+              <span className="bg-primary/10 text-primary px-4 py-2 rounded-full inline-flex items-center hover:bg-primary/20 transition-colors">
                 <ImageIcon className="w-4 h-4 mr-2" /> Photoshop
               </span>
-              <span className="bg-primary/10 text-primary px-4 py-2 rounded-full inline-flex items-center">
+              <span className="bg-primary/10 text-primary px-4 py-2 rounded-full inline-flex items-center hover:bg-primary/20 transition-colors">
                 <Paintbrush className="w-4 h-4 mr-2" /> Illustrator
               </span>
-              <span className="bg-primary/10 text-primary px-4 py-2 rounded-full inline-flex items-center">
+              <span className="bg-primary/10 text-primary px-4 py-2 rounded-full inline-flex items-center hover:bg-primary/20 transition-colors">
                 <Monitor className="w-4 h-4 mr-2" /> Figma
               </span>
-              <span className="bg-primary/10 text-primary px-4 py-2 rounded-full inline-flex items-center">
+              <span className="bg-primary/10 text-primary px-4 py-2 rounded-full inline-flex items-center hover:bg-primary/20 transition-colors">
                 <ImageIcon className="w-4 h-4 mr-2" /> InDesign
               </span>
             </div>
@@ -303,18 +306,19 @@ const Portfolio = () => {
         </div>
         
         {activeProject && (
-          <div className="fixed inset-0 bg-black/70 z-50 flex items-center justify-center p-4" onClick={() => setActiveProject(null)}>
+          <div className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4" onClick={() => setActiveProject(null)}>
             <div 
-              className="bg-background rounded-xl overflow-hidden max-w-3xl w-full max-h-[90vh] shadow-2xl animate-fade-in"
+              className="bg-background rounded-xl overflow-hidden max-w-4xl w-full max-h-[90vh] shadow-2xl animate-fade-in"
               onClick={(e) => e.stopPropagation()}
             >
-              <div className="relative aspect-video">
-                <img 
-                  src={activeProject.image} 
-                  alt={activeProject.title} 
-                  className="w-full h-full object-cover"
-                  style={{objectPosition: 'center'}}
-                />
+              <div className="relative">
+                <AspectRatio ratio={16/9}>
+                  <img 
+                    src={activeProject.image} 
+                    alt={activeProject.title} 
+                    className="w-full h-full object-cover"
+                  />
+                </AspectRatio>
               </div>
               <div className="p-6">
                 <h3 className="text-2xl font-bold mb-2 font-montserrat">{activeProject.title}</h3>
@@ -364,47 +368,53 @@ const ProjectCard = ({
   setActiveProject: React.Dispatch<React.SetStateAction<Project | null>> 
 }) => {
   return (
-    <div 
-      className="group relative bg-background rounded-xl overflow-hidden shadow-md card-hover"
+    <Card 
+      className="group overflow-hidden hover:shadow-lg transition-all duration-300 hover:-translate-y-1 border-none bg-background/80 backdrop-blur-sm"
     >
       <div className="relative aspect-[4/3] overflow-hidden">
-        <div 
-          className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
-          style={{ backgroundImage: `url(${project.image})` }}
+        <img 
+          src={project.image} 
+          alt={project.title}
+          className="object-cover w-full h-full transition-transform duration-700 group-hover:scale-110"
         />
-        <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-          <button
-            onClick={() => setActiveProject(project)}
-            className="bg-white text-black p-3 rounded-full transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300"
-            aria-label="View project"
-          >
-            <Eye className="w-5 h-5" />
-          </button>
-          {project.link && (
-            <a
-              href={project.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-white text-black p-3 rounded-full ml-2 transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300"
-              style={{ transitionDelay: '0.1s' }}
-              aria-label="Open link"
+        <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+          <div className="absolute bottom-0 left-0 right-0 p-4 transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
+            <h3 className="text-xl font-bold text-white font-montserrat line-clamp-1">{project.title}</h3>
+            <p className="text-white/80 text-sm line-clamp-2">{project.description}</p>
+          </div>
+          <div className="flex gap-2">
+            <button
+              onClick={() => setActiveProject(project)}
+              className="bg-white text-black p-3 rounded-full transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300 hover:bg-primary hover:text-white"
+              aria-label="View project"
             >
-              <ExternalLink className="w-5 h-5" />
-            </a>
-          )}
+              <Eye className="w-5 h-5" />
+            </button>
+            {project.link && (
+              <a
+                href={project.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-white text-black p-3 rounded-full ml-2 transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300 hover:bg-primary hover:text-white"
+                style={{ transitionDelay: '0.1s' }}
+                aria-label="Open link"
+              >
+                <ExternalLink className="w-5 h-5" />
+              </a>
+            )}
+          </div>
         </div>
       </div>
-      <div className="p-5">
-        <span className="text-xs font-medium text-primary uppercase">
+      <CardContent className="p-4">
+        <span className="text-xs font-medium text-primary uppercase tracking-wider">
           {project.category === 'ui' ? 'UI Design' : 
            project.category === 'social' ? 'Social Media' : 
            project.category === 'product' ? 'Product Design' :
            project.category === 'logo' ? 'Logo Design' : 
            project.category === 'wordpress' ? 'WordPress' : 'Logo Design'}
         </span>
-        <h3 className="text-xl font-bold mt-1 font-montserrat">{project.title}</h3>
-      </div>
-    </div>
+      </CardContent>
+    </Card>
   );
 };
 
