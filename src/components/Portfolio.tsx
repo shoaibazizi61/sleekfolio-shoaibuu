@@ -116,15 +116,15 @@ const ProjectCard = ({ project }: { project: Project }) => {
           alt={project.title}
           className="object-cover w-full h-full transition-transform duration-700 group-hover:scale-110"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+        <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
           <div className="absolute bottom-0 left-0 right-0 p-4 transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
             <h3 className="text-xl font-bold text-white font-montserrat line-clamp-1">{project.title}</h3>
-            <p className="text-white/80 text-sm line-clamp-2">{project.description}</p>
+            <p className="text-white/90 text-sm line-clamp-2 mt-1">{project.description}</p>
           </div>
-          <div className="flex gap-2">
+          <div className="flex gap-3">
             <Link
               to={`/project/${project.id}`}
-              className="bg-white text-black p-3 rounded-full transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300 hover:bg-primary hover:text-white"
+              className="bg-white/90 text-primary hover:text-white hover:bg-primary p-3 rounded-full transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300 shadow-md hover:shadow-lg"
               aria-label="View project details"
             >
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-eye"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
@@ -134,7 +134,7 @@ const ProjectCard = ({ project }: { project: Project }) => {
                 href={project.link}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-white text-black p-3 rounded-full ml-2 transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300 hover:bg-primary hover:text-white"
+                className="bg-white/90 text-primary hover:text-white hover:bg-primary p-3 rounded-full transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300 shadow-md hover:shadow-lg"
                 style={{ transitionDelay: '0.1s' }}
                 aria-label="Open link"
               >
@@ -145,13 +145,20 @@ const ProjectCard = ({ project }: { project: Project }) => {
         </div>
       </div>
       <CardContent className="p-4">
-        <span className="text-xs font-medium text-primary uppercase tracking-wider">
-          {project.category === 'ui' ? 'UI Design' : 
-           project.category === 'social' ? 'Social Media' : 
-           project.category === 'product' ? 'Product Design' :
-           project.category === 'logo' ? 'Logo Design' : 
-           project.category === 'wordpress' ? 'WordPress' : 'Logo Design'}
-        </span>
+        <div className="flex justify-between items-center">
+          <span className="text-xs font-semibold px-3 py-1 bg-primary/10 text-primary rounded-full uppercase tracking-wider">
+            {project.category === 'ui' ? 'UI Design' : 
+             project.category === 'social' ? 'Social Media' : 
+             project.category === 'product' ? 'Product Design' :
+             project.category === 'logo' ? 'Logo Design' : 
+             project.category === 'wordpress' ? 'WordPress' : 'Design'}
+          </span>
+          {project.duration && (
+            <span className="text-xs text-foreground/60 font-medium">
+              {project.duration}
+            </span>
+          )}
+        </div>
       </CardContent>
     </Card>
   );

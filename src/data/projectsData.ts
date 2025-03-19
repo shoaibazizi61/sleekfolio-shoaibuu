@@ -1,3 +1,4 @@
+
 export type Project = {
   id: number;
   title: string;
@@ -358,7 +359,5 @@ export const projectsData: Project[] = [
     tools: ["WordPress", "WooCommerce", "Astra"],
     duration: "2.5 months",
     client: "GBOrganics.pk"
-  },
-  {
-    id: 21,
-    title:
+  }
+];
