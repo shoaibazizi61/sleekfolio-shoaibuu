@@ -1,6 +1,7 @@
 
 import { useState } from 'react';
 import { Send, Linkedin, Instagram, Dribbble, Github } from 'lucide-react';
+import { Button } from './ui/button';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -111,10 +112,10 @@ const Contact = () => {
               </div>
               
               <div>
-                <button
+                <Button
                   type="submit"
                   disabled={isSubmitting || isSubmitted}
-                  className={`w-full py-3 px-4 rounded-lg flex items-center justify-center gap-2 transition-all ${
+                  className={`w-full py-3 px-4 rounded-lg flex items-center justify-center gap-2 transition-all transform hover:-translate-y-1 ${
                     isSubmitted 
                       ? 'bg-green-600 text-white' 
                       : 'bg-primary text-white hover:shadow-lg hover:shadow-primary/20'
@@ -128,7 +129,7 @@ const Contact = () => {
                       <Send className="w-4 h-4" />
                     </>
                   )}
-                </button>
+                </Button>
               </div>
             </form>
           </div>
@@ -167,7 +168,7 @@ const Contact = () => {
                       href="https://www.linkedin.com/in/shoaibuu/" 
                       target="_blank" 
                       rel="noopener noreferrer"
-                      className="w-10 h-10 rounded-full flex items-center justify-center bg-background hover:bg-primary hover:text-white transition-all"
+                      className="w-10 h-10 rounded-full flex items-center justify-center bg-background hover:bg-primary hover:text-white transition-all duration-300 transform hover:-translate-y-1"
                       aria-label="LinkedIn"
                     >
                       <Linkedin className="w-5 h-5" />
@@ -176,7 +177,7 @@ const Contact = () => {
                       href="https://www.instagram.com/ishoaibuu" 
                       target="_blank" 
                       rel="noopener noreferrer"
-                      className="w-10 h-10 rounded-full flex items-center justify-center bg-background hover:bg-primary hover:text-white transition-all"
+                      className="w-10 h-10 rounded-full flex items-center justify-center bg-background hover:bg-primary hover:text-white transition-all duration-300 transform hover:-translate-y-1"
                       aria-label="Instagram"
                     >
                       <Instagram className="w-5 h-5" />
@@ -185,7 +186,7 @@ const Contact = () => {
                       href="https://dribbble.com/shoaibuu" 
                       target="_blank" 
                       rel="noopener noreferrer"
-                      className="w-10 h-10 rounded-full flex items-center justify-center bg-background hover:bg-primary hover:text-white transition-all"
+                      className="w-10 h-10 rounded-full flex items-center justify-center bg-background hover:bg-primary hover:text-white transition-all duration-300 transform hover:-translate-y-1"
                       aria-label="Dribbble"
                     >
                       <Dribbble className="w-5 h-5" />
@@ -194,7 +195,7 @@ const Contact = () => {
                       href="https://github.com/shoaibazizi61" 
                       target="_blank" 
                       rel="noopener noreferrer"
-                      className="w-10 h-10 rounded-full flex items-center justify-center bg-background hover:bg-primary hover:text-white transition-all"
+                      className="w-10 h-10 rounded-full flex items-center justify-center bg-background hover:bg-primary hover:text-white transition-all duration-300 transform hover:-translate-y-1"
                       aria-label="GitHub"
                     >
                       <Github className="w-5 h-5" />

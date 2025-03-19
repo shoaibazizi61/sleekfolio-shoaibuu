@@ -1,6 +1,7 @@
 
 import { useEffect, useRef } from 'react';
-import { ChevronDown } from 'lucide-react';
+import { ChevronDown, ExternalLink } from 'lucide-react';
+import { Button } from './ui/button';
 
 const Hero = () => {
   const heroRef = useRef<HTMLDivElement>(null);
@@ -62,12 +63,20 @@ const Hero = () => {
           I create beautiful, functional designs that help businesses connect with their audience and achieve their goals.
         </p>
         <div className="flex flex-wrap justify-center gap-4 animate-fade-in opacity-0" style={{animationDelay: "0.9s"}}>
-          <a href="#portfolio" className="px-6 py-3 bg-primary text-white rounded-lg shadow-lg hover:shadow-primary/20 transition-all">
+          <Button 
+            onClick={scrollToPortfolio}
+            className="px-6 py-7 bg-primary text-white rounded-lg shadow-lg hover:shadow-primary/30 hover:bg-primary/90 transition-all duration-300 transform hover:-translate-y-1 flex items-center gap-2"
+          >
             View My Work
-          </a>
-          <a href="#contact" className="px-6 py-3 bg-secondary text-foreground rounded-lg shadow-sm hover:shadow-lg transition-all">
-            Get In Touch
-          </a>
+            <ExternalLink className="w-4 h-4" />
+          </Button>
+          <Button 
+            variant="secondary"
+            asChild
+            className="px-6 py-7 bg-secondary text-foreground rounded-lg shadow-sm hover:shadow-lg border border-primary/10 hover:border-primary/30 transition-all duration-300 transform hover:-translate-y-1"
+          >
+            <a href="#contact">Get In Touch</a>
+          </Button>
         </div>
       </div>
       

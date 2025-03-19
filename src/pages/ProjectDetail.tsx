@@ -1,7 +1,7 @@
 
 import { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { ArrowLeft, ExternalLink, Calendar, User, Tool } from 'lucide-react';
+import { ArrowLeft, ExternalLink, Calendar, User, Wrench } from 'lucide-react';
 import { projectsData, Project } from '../data/projectsData';
 
 const ProjectDetail = () => {
@@ -37,7 +37,7 @@ const ProjectDetail = () => {
         <p className="mb-6 text-foreground/70">The project you're looking for doesn't exist or has been removed.</p>
         <Link 
           to="/" 
-          className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-white rounded-lg shadow-lg hover:shadow-primary/20 transition-all"
+          className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-primary text-white rounded-lg shadow-lg hover:shadow-primary/30 hover:bg-primary/90 transition-all duration-300 transform hover:-translate-y-1"
         >
           <ArrowLeft className="w-4 h-4" />
           Back to Home
@@ -57,7 +57,7 @@ const ProjectDetail = () => {
         <div className="container mx-auto px-4 h-full flex flex-col items-start justify-end pb-10 relative z-10">
           <Link 
             to="/#portfolio" 
-            className="mb-8 inline-flex items-center gap-2 px-4 py-2 bg-background/20 backdrop-blur-md text-white rounded-lg hover:bg-background/30 transition-all"
+            className="mb-8 inline-flex items-center gap-2 px-4 py-2 bg-background/20 backdrop-blur-md text-white rounded-lg hover:bg-background/30 transition-all duration-300 shadow-md hover:shadow-lg"
           >
             <ArrowLeft className="w-4 h-4" />
             Back to Portfolio
@@ -89,7 +89,7 @@ const ProjectDetail = () => {
                     href={project.link} 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-white rounded-lg shadow-lg hover:shadow-primary/20 transition-all"
+                    className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-primary text-white rounded-lg shadow-lg hover:shadow-primary/30 hover:bg-primary/90 transition-all duration-300 transform hover:-translate-y-1"
                   >
                     Visit Project <ExternalLink className="w-4 h-4" />
                   </a>
@@ -104,7 +104,7 @@ const ProjectDetail = () => {
                     {project.gallery.map((image, index) => (
                       <div 
                         key={index} 
-                        className="overflow-hidden rounded-xl shadow-md hover:shadow-lg transition-all duration-300 group"
+                        className="overflow-hidden rounded-xl shadow-md hover:shadow-xl transition-all duration-500 group"
                       >
                         <img 
                           src={image} 
@@ -147,7 +147,7 @@ const ProjectDetail = () => {
                 
                 {project.tools && project.tools.length > 0 && (
                   <div className="flex gap-3">
-                    <Tool className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                    <Wrench className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
                     <div>
                       <h4 className="font-medium text-foreground mb-1">Tools Used</h4>
                       <div className="flex flex-wrap gap-2">
