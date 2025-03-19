@@ -1,25 +1,26 @@
 
 import { useState } from 'react';
-import { ExternalLink, Paintbrush, Monitor, Image as ImageIcon, Globe } from 'lucide-react';
+import { ExternalLink, Paintbrush, Monitor, Image as ImageIcon, Globe, Code, FileCode, Palette, Laptop, Smartphone, PenTool, Layers } from 'lucide-react';
 import { Link } from "react-router-dom";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
 import { projectsData, Project } from '../data/projectsData';
 
 const Portfolio = () => {
   return (
-    <section id="portfolio" className="section-padding bg-gradient-to-b from-secondary/30 to-background py-20">
+    <section id="portfolio" className="section-padding bg-gradient-to-b from-secondary/30 via-background to-background py-20">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="font-montserrat text-3xl md:text-4xl font-bold mb-6 text-gradient">My Portfolio</h2>
           
           <Tabs defaultValue="ui" className="w-full max-w-4xl mx-auto">
-            <TabsList className="grid grid-cols-2 md:grid-cols-5 w-full mb-8 bg-background/50 backdrop-blur-sm p-1 rounded-xl">
-              <TabsTrigger value="ui" className="rounded-lg">UI Design</TabsTrigger>
-              <TabsTrigger value="social" className="rounded-lg">Social Media</TabsTrigger>
-              <TabsTrigger value="logo" className="rounded-lg">Logo</TabsTrigger>
-              <TabsTrigger value="wordpress" className="rounded-lg">WordPress</TabsTrigger>
-              <TabsTrigger value="product" className="rounded-lg">Product</TabsTrigger>
+            <TabsList className="grid grid-cols-2 md:grid-cols-5 w-full mb-8 bg-background/50 backdrop-blur-sm p-1 rounded-xl border border-primary/10 shadow-md">
+              <TabsTrigger value="ui" className="rounded-lg data-[state=active]:bg-primary data-[state=active]:text-white">UI Design</TabsTrigger>
+              <TabsTrigger value="social" className="rounded-lg data-[state=active]:bg-primary data-[state=active]:text-white">Social Media</TabsTrigger>
+              <TabsTrigger value="logo" className="rounded-lg data-[state=active]:bg-primary data-[state=active]:text-white">Logo</TabsTrigger>
+              <TabsTrigger value="wordpress" className="rounded-lg data-[state=active]:bg-primary data-[state=active]:text-white">WordPress</TabsTrigger>
+              <TabsTrigger value="product" className="rounded-lg data-[state=active]:bg-primary data-[state=active]:text-white">Product</TabsTrigger>
             </TabsList>
             
             <TabsContent value="ui" className="mt-0">
@@ -78,24 +79,20 @@ const Portfolio = () => {
             </TabsContent>
           </Tabs>
           
-          <div className="mt-16 p-6 rounded-xl bg-background/50 backdrop-blur-sm shadow-lg max-w-3xl mx-auto">
-            <h3 className="text-xl font-bold mb-6 text-gradient">Tools I Use</h3>
+          <div className="mt-16 p-8 rounded-xl bg-gradient-to-br from-background via-primary/5 to-background border border-primary/10 shadow-lg max-w-3xl mx-auto">
+            <h3 className="text-2xl font-bold mb-8 text-gradient">Tools I Use</h3>
             <div className="flex flex-wrap justify-center gap-4">
-              <span className="bg-primary/10 text-primary px-4 py-2 rounded-full inline-flex items-center hover:bg-primary/20 transition-colors">
-                <Paintbrush className="w-4 h-4 mr-2" /> Canva
-              </span>
-              <span className="bg-primary/10 text-primary px-4 py-2 rounded-full inline-flex items-center hover:bg-primary/20 transition-colors">
-                <ImageIcon className="w-4 h-4 mr-2" /> Photoshop
-              </span>
-              <span className="bg-primary/10 text-primary px-4 py-2 rounded-full inline-flex items-center hover:bg-primary/20 transition-colors">
-                <Paintbrush className="w-4 h-4 mr-2" /> Illustrator
-              </span>
-              <span className="bg-primary/10 text-primary px-4 py-2 rounded-full inline-flex items-center hover:bg-primary/20 transition-colors">
-                <Monitor className="w-4 h-4 mr-2" /> Figma
-              </span>
-              <span className="bg-primary/10 text-primary px-4 py-2 rounded-full inline-flex items-center hover:bg-primary/20 transition-colors">
-                <ImageIcon className="w-4 h-4 mr-2" /> InDesign
-              </span>
+              <ToolButton icon={<Paintbrush className="w-4 h-4 mr-2" />} label="Canva" />
+              <ToolButton icon={<ImageIcon className="w-4 h-4 mr-2" />} label="Photoshop" />
+              <ToolButton icon={<PenTool className="w-4 h-4 mr-2" />} label="Illustrator" />
+              <ToolButton icon={<Monitor className="w-4 h-4 mr-2" />} label="Figma" />
+              <ToolButton icon={<Layers className="w-4 h-4 mr-2" />} label="InDesign" />
+              <ToolButton icon={<Code className="w-4 h-4 mr-2" />} label="HTML/CSS" />
+              <ToolButton icon={<Palette className="w-4 h-4 mr-2" />} label="Procreate" />
+              <ToolButton icon={<FileCode className="w-4 h-4 mr-2" />} label="VSCode" />
+              <ToolButton icon={<Globe className="w-4 h-4 mr-2" />} label="WordPress" />
+              <ToolButton icon={<Smartphone className="w-4 h-4 mr-2" />} label="Sketch" />
+              <ToolButton icon={<Laptop className="w-4 h-4 mr-2" />} label="Framer" />
             </div>
           </div>
         </div>
@@ -104,11 +101,20 @@ const Portfolio = () => {
   );
 };
 
-// ProjectCard component extracted for cleaner code
+// ToolButton component for cleaner code
+const ToolButton = ({ icon, label }: { icon: React.ReactNode, label: string }) => {
+  return (
+    <span className="bg-gradient-to-r from-primary/10 to-primary/20 text-primary px-4 py-2 rounded-full inline-flex items-center hover:from-primary hover:to-primary/80 hover:text-white transition-all duration-300 shadow-sm hover:shadow-md">
+      {icon} {label}
+    </span>
+  );
+};
+
+// ProjectCard component with improved UI
 const ProjectCard = ({ project }: { project: Project }) => {
   return (
     <Card 
-      className="group overflow-hidden hover:shadow-lg transition-all duration-300 hover:-translate-y-1 border-none bg-background/80 backdrop-blur-sm"
+      className="group overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border border-primary/10 bg-gradient-to-b from-background/90 to-background/70 backdrop-blur-sm"
     >
       <div className="relative aspect-[4/3] overflow-hidden">
         <img 
@@ -146,7 +152,7 @@ const ProjectCard = ({ project }: { project: Project }) => {
       </div>
       <CardContent className="p-4">
         <div className="flex justify-between items-center">
-          <span className="text-xs font-semibold px-3 py-1 bg-primary/10 text-primary rounded-full uppercase tracking-wider">
+          <span className="text-xs font-semibold px-3 py-1 bg-gradient-to-r from-primary/20 to-primary/10 text-primary rounded-full uppercase tracking-wider">
             {project.category === 'ui' ? 'UI Design' : 
              project.category === 'social' ? 'Social Media' : 
              project.category === 'product' ? 'Product Design' :
