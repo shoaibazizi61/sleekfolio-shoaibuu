@@ -1,11 +1,12 @@
 
-import { Figma, Code, PenTool, ShoppingCart, CheckCircle } from 'lucide-react';
+import { Figma, Code, PenTool, ShoppingCart, CheckCircle, Robot } from 'lucide-react';
 
 const skills = [
   { name: "Figma", icon: <Figma className="w-5 h-5" /> },
   { name: "Adobe Suite", icon: <PenTool className="w-5 h-5" /> },
   { name: "Webflow & WordPress", icon: <Code className="w-5 h-5" /> },
-  { name: "Shopify", icon: <ShoppingCart className="w-5 h-5" /> }
+  { name: "Shopify", icon: <ShoppingCart className="w-5 h-5" /> },
+  { name: "AI Tools", icon: <Robot className="w-5 h-5" /> }
 ];
 
 const About = () => {
@@ -51,7 +52,7 @@ const About = () => {
             <div className="relative">
               <div className="w-[280px] md:w-[350px] aspect-[3/4] overflow-hidden rounded-xl">
                 <img
-                  src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1974&auto=format&fit=crop"
+                  src="http://res.cloudinary.com/doabonfpj/image/upload/v1742379151/opdzjmapwr45h9jrjmkm.jpg"
                   alt="Shoaibuu - UI/UX Designer"
                   className="w-full h-full object-cover object-center"
                 />

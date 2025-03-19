@@ -143,21 +143,28 @@ const Contact = () => {
               <div className="space-y-4">
                 <div>
                   <h4 className="font-semibold mb-1">Email</h4>
-                  <a href="mailto:contact@shoaibuu.com" className="text-primary hover:text-primary/80 transition-colors">
-                    contact@shoaibuu.com
+                  <a href="mailto:shoaibuudesign@gmail.com" className="text-primary hover:text-primary/80 transition-colors">
+                    shoaibuudesign@gmail.com
+                  </a>
+                </div>
+                
+                <div>
+                  <h4 className="font-semibold mb-1">Phone</h4>
+                  <a href="tel:+420792883261" className="text-primary hover:text-primary/80 transition-colors">
+                    +420 792 883 261
                   </a>
                 </div>
                 
                 <div>
                   <h4 className="font-semibold mb-1">Based in</h4>
-                  <p className="text-foreground/80">New York, United States</p>
+                  <p className="text-foreground/80">Prague, Czechia</p>
                 </div>
                 
                 <div>
                   <h4 className="font-semibold mb-3">Social Profiles</h4>
                   <div className="flex gap-4">
                     <a 
-                      href="#" 
+                      href="https://www.linkedin.com/in/shoaibuu/" 
                       target="_blank" 
                       rel="noopener noreferrer"
                       className="w-10 h-10 rounded-full flex items-center justify-center bg-background hover:bg-primary hover:text-white transition-all"
@@ -166,7 +173,7 @@ const Contact = () => {
                       <Linkedin className="w-5 h-5" />
                     </a>
                     <a 
-                      href="#" 
+                      href="https://www.instagram.com/ishoaibuu" 
                       target="_blank" 
                       rel="noopener noreferrer"
                       className="w-10 h-10 rounded-full flex items-center justify-center bg-background hover:bg-primary hover:text-white transition-all"
@@ -175,7 +182,7 @@ const Contact = () => {
                       <Instagram className="w-5 h-5" />
                     </a>
                     <a 
-                      href="#" 
+                      href="https://dribbble.com/shoaibuu" 
                       target="_blank" 
                       rel="noopener noreferrer"
                       className="w-10 h-10 rounded-full flex items-center justify-center bg-background hover:bg-primary hover:text-white transition-all"
@@ -184,7 +191,7 @@ const Contact = () => {
                       <Dribbble className="w-5 h-5" />
                     </a>
                     <a 
-                      href="#" 
+                      href="https://github.com/shoaibazizi61" 
                       target="_blank" 
                       rel="noopener noreferrer"
                       className="w-10 h-10 rounded-full flex items-center justify-center bg-background hover:bg-primary hover:text-white transition-all"
