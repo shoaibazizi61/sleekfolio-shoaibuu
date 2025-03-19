@@ -3,11 +3,13 @@ import { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { ArrowLeft, ExternalLink, Calendar, User, Wrench } from 'lucide-react';
 import { projectsData, Project } from '../data/projectsData';
+import { Dialog, DialogContent, DialogClose } from "@/components/ui/dialog";
 
 const ProjectDetail = () => {
   const { id } = useParams<{ id: string }>();
   const [project, setProject] = useState<Project | null>(null);
   const [loading, setLoading] = useState(true);
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
   useEffect(() => {
     if (id) {
@@ -46,6 +48,10 @@ const ProjectDetail = () => {
     );
   }
 
+  const openImageModal = (imageUrl: string) => {
+    setSelectedImage(imageUrl);
+  };
+
   return (
     <div className="min-h-screen bg-background">
       {/* Hero Section */}
@@ -57,9 +63,9 @@ const ProjectDetail = () => {
         <div className="container mx-auto px-4 h-full flex flex-col items-start justify-end pb-10 relative z-10">
           <Link 
             to="/#portfolio" 
-            className="mb-8 inline-flex items-center gap-2 px-4 py-2 bg-background/20 backdrop-blur-md text-white rounded-lg hover:bg-background/30 transition-all duration-300 shadow-md hover:shadow-lg"
+            className="mb-8 inline-flex items-center gap-2 px-4 py-3 bg-primary/80 backdrop-blur-md text-white rounded-lg hover:bg-primary transition-all duration-300 shadow-md hover:shadow-lg"
           >
-            <ArrowLeft className="w-4 h-4" />
+            <ArrowLeft className="w-5 h-5" />
             Back to Portfolio
           </Link>
           <span className="inline-block mb-3 py-1 px-3 rounded-full text-xs font-medium bg-primary/80 text-white">
@@ -104,7 +110,8 @@ const ProjectDetail = () => {
                     {project.gallery.map((image, index) => (
                       <div 
                         key={index} 
-                        className="overflow-hidden rounded-xl shadow-md hover:shadow-xl transition-all duration-500 group"
+                        className="overflow-hidden rounded-xl shadow-md hover:shadow-xl transition-all duration-500 group cursor-pointer"
+                        onClick={() => openImageModal(image)}
                       >
                         <img 
                           src={image} 
@@ -168,6 +175,23 @@ const ProjectDetail = () => {
           </div>
         </div>
       </div>
+
+      {/* Image Modal */}
+      <Dialog open={!!selectedImage} onOpenChange={(open) => !open && setSelectedImage(null)}>
+        <DialogContent className="max-w-5xl bg-background/95 backdrop-blur-sm p-1 border-none">
+          <DialogClose className="absolute right-4 top-4 rounded-sm opacity-70 ring-offset-background transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:pointer-events-none data-[state=open]:bg-accent data-[state=open]:text-muted-foreground">
+            <button className="h-8 w-8 rounded-full bg-primary/20 text-white flex items-center justify-center hover:bg-primary/40 transition-colors">✕</button>
+            <span className="sr-only">Close</span>
+          </DialogClose>
+          {selectedImage && (
+            <img
+              src={selectedImage}
+              alt="Enlarged project image"
+              className="w-full h-auto max-h-[80vh] object-contain rounded-lg"
+            />
+          )}
+        </DialogContent>
+      </Dialog>
     </div>
   );
 };

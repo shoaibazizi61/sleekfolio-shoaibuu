@@ -4,7 +4,7 @@ import { ExternalLink, Paintbrush, Monitor, Image as ImageIcon, Globe } from 'lu
 import { Link } from "react-router-dom";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Card, CardContent } from "@/components/ui/card";
-import { projectsData } from '../data/projectsData';
+import { projectsData, Project } from '../data/projectsData';
 
 const Portfolio = () => {
   return (
