@@ -1,3 +1,4 @@
+
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
@@ -120,6 +121,27 @@
   .nav-link.active {
     @apply text-foreground after:w-full;
   }
+
+  .btn-primary {
+    @apply px-6 py-7 bg-primary text-white rounded-lg shadow-lg hover:shadow-primary/30 hover:bg-primary/90 transition-all duration-300 transform hover:-translate-y-1 flex items-center gap-2;
+  }
+  
+  .btn-secondary {
+    @apply px-6 py-7 bg-secondary text-foreground rounded-lg shadow-sm hover:shadow-lg border border-primary/10 hover:border-primary/30 transition-all duration-300 transform hover:-translate-y-1;
+  }
+  
+  .glow-effect {
+    @apply relative;
+  }
+  
+  .glow-effect::after {
+    content: '';
+    @apply absolute inset-0 rounded-lg bg-primary/40 blur-xl opacity-0 transition-opacity duration-500 -z-10;
+  }
+  
+  .glow-effect:hover::after {
+    @apply opacity-70;
+  }
   
   .animate-pulse-slow {
     animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
@@ -132,5 +154,24 @@
     50% {
       opacity: 0.5;
     }
+  }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-15px);
+    }
+  }
+
+  .blob {
+    border-radius: 50%;
+    filter: blur(40px);
+    @apply absolute opacity-70 transition-all duration-700 ease-in-out;
   }
 }

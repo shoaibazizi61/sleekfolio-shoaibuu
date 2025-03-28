@@ -51,10 +51,14 @@ const Navbar = () => {
   };
 
   return (
-    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'py-3 bg-background/80 backdrop-blur-lg border-b border-border/50 shadow-sm' : 'py-5'}`}>
+    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${isScrolled ? 'py-3 backdrop-blur-xl bg-background/80 border-b border-border/50 shadow-sm' : 'py-5'}`}>
       <div className="container mx-auto px-4 flex items-center justify-between">
         <a href="#home" className="flex items-center">
-          <span className="font-montserrat font-bold text-xl">Shoaibuu.</span>
+          <span className="font-montserrat font-bold text-xl relative z-10 group">
+            Shoaibuu
+            <span className="text-primary">.</span>
+            <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary group-hover:w-full transition-all duration-300"></span>
+          </span>
         </a>
 
         {/* Desktop Navigation */}
@@ -80,7 +84,7 @@ const Navbar = () => {
           <ThemeToggle />
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="ml-2 text-foreground p-2"
+            className="ml-2 text-foreground p-2 rounded-full hover:bg-primary/10 transition-colors"
             aria-label="Toggle menu"
           >
             {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -90,21 +94,22 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       <div 
-        className={`fixed inset-0 bg-background z-40 transform transition-transform duration-300 ease-in-out ${isMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}
+        className={`fixed inset-0 bg-background/95 backdrop-blur-lg z-40 transform transition-transform duration-500 ease-in-out ${isMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}
         style={{ top: '60px' }}
       >
-        <nav className="flex flex-col items-center justify-center h-full">
+        <nav className="flex flex-col items-center justify-center h-full space-y-8 p-4">
           {navLinks.map((link) => (
             <a
               key={link.name}
               href={link.href}
-              className="py-4 text-xl font-medium"
+              className="py-3 px-8 text-xl font-medium text-center w-full max-w-xs rounded-lg hover:bg-primary/10 transition-colors relative group"
               onClick={(e) => {
                 e.preventDefault();
                 scrollToSection(link.href.substring(1));
               }}
             >
               {link.name}
+              <span className={`absolute bottom-0 left-1/2 -translate-x-1/2 w-8 h-0.5 bg-primary transform transition-all duration-300 ${activeSection === link.href.substring(1) ? 'opacity-100' : 'opacity-0 group-hover:opacity-70'}`}></span>
             </a>
           ))}
         </nav>
