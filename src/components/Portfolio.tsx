@@ -18,16 +18,26 @@ const Portfolio = () => {
           <h2 className="font-montserrat text-3xl md:text-4xl font-bold mb-6 text-gradient">My Portfolio</h2>
           
           <Tabs defaultValue="ui" className="w-full max-w-4xl mx-auto">
-            <div className="overflow-x-auto pb-3 mb-3 -mx-4 px-4">
-              <TabsList className={`grid ${isMobile ? 'grid-cols-3' : 'grid-cols-2 md:grid-cols-6'} w-full mb-5 bg-background/50 backdrop-blur-sm p-1 rounded-xl border border-primary/10 shadow-md ${isMobile ? 'min-w-[600px]' : ''}`}>
-                <TabsTrigger value="ui" className="rounded-lg data-[state=active]:bg-primary data-[state=active]:text-white">UI Design</TabsTrigger>
-                <TabsTrigger value="social" className="rounded-lg data-[state=active]:bg-primary data-[state=active]:text-white">Social Media</TabsTrigger>
-                <TabsTrigger value="logo" className="rounded-lg data-[state=active]:bg-primary data-[state=active]:text-white">Logo</TabsTrigger>
-                <TabsTrigger value="wordpress" className="rounded-lg data-[state=active]:bg-primary data-[state=active]:text-white">WordPress</TabsTrigger>
-                <TabsTrigger value="product" className="rounded-lg data-[state=active]:bg-primary data-[state=active]:text-white">Product</TabsTrigger>
-                <TabsTrigger value="video" className="rounded-lg data-[state=active]:bg-primary data-[state=active]:text-white">Video</TabsTrigger>
-              </TabsList>
-            </div>
+            <TabsList className={`flex flex-wrap justify-center gap-2 w-full mb-5 bg-background/50 backdrop-blur-sm p-2 rounded-xl border border-primary/10 shadow-md`}>
+              <TabsTrigger value="ui" className="flex-grow basis-[45%] sm:basis-auto rounded-lg data-[state=active]:bg-primary data-[state=active]:text-white">
+                UI Design
+              </TabsTrigger>
+              <TabsTrigger value="social" className="flex-grow basis-[45%] sm:basis-auto rounded-lg data-[state=active]:bg-primary data-[state=active]:text-white">
+                Social Media
+              </TabsTrigger>
+              <TabsTrigger value="logo" className="flex-grow basis-[45%] sm:basis-auto rounded-lg data-[state=active]:bg-primary data-[state=active]:text-white">
+                Logo
+              </TabsTrigger>
+              <TabsTrigger value="wordpress" className="flex-grow basis-[45%] sm:basis-auto rounded-lg data-[state=active]:bg-primary data-[state=active]:text-white">
+                WordPress
+              </TabsTrigger>
+              <TabsTrigger value="product" className="flex-grow basis-[45%] sm:basis-auto rounded-lg data-[state=active]:bg-primary data-[state=active]:text-white">
+                Product
+              </TabsTrigger>
+              <TabsTrigger value="video" className="flex-grow basis-[45%] sm:basis-auto rounded-lg data-[state=active]:bg-primary data-[state=active]:text-white">
+                Video
+              </TabsTrigger>
+            </TabsList>
             
             <TabsContent value="ui" className="mt-0">
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
@@ -96,71 +106,78 @@ const Portfolio = () => {
           
           <div className="mt-12 md:mt-16 p-6 md:p-8 rounded-xl bg-gradient-to-br from-background via-primary/5 to-background border border-primary/10 shadow-lg max-w-3xl mx-auto">
             <h3 className="text-2xl font-bold mb-6 md:mb-8 text-gradient">Tools I Use</h3>
+            
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 md:gap-4 mb-6">
               <h4 className="col-span-full text-left text-lg font-semibold mb-2 text-foreground/80">Design Tools</h4>
-              {isMobile ? (
-                <>
-                  <ToolButton icon={<Paintbrush className="w-4 h-4 mr-1" />} label="Canva" compact />
-                  <ToolButton icon={<ImageIcon className="w-4 h-4 mr-1" />} label="Photoshop" compact />
-                  <ToolButton icon={<PenTool className="w-4 h-4 mr-1" />} label="Illustrator" compact />
-                  <ToolButton icon={<Monitor className="w-4 h-4 mr-1" />} label="Figma" compact />
-                  <ToolButton icon={<Layers className="w-4 h-4 mr-1" />} label="InDesign" compact />
-                  <ToolButton icon={<Palette className="w-4 h-4 mr-1" />} label="Procreate" compact />
-                </>
-              ) : (
-                <>
-                  <ToolButton icon={<Paintbrush className="w-4 h-4 mr-2" />} label="Canva" />
-                  <ToolButton icon={<ImageIcon className="w-4 h-4 mr-2" />} label="Photoshop" />
-                  <ToolButton icon={<PenTool className="w-4 h-4 mr-2" />} label="Illustrator" />
-                  <ToolButton icon={<Monitor className="w-4 h-4 mr-2" />} label="Figma" />
-                  <ToolButton icon={<Layers className="w-4 h-4 mr-2" />} label="InDesign" />
-                  <ToolButton icon={<Palette className="w-4 h-4 mr-2" />} label="Procreate" />
-                </>
-              )}
+              <div className="col-span-full grid grid-cols-2 sm:grid-cols-3 gap-3">
+                {isMobile ? (
+                  <>
+                    <ToolButton icon={<Paintbrush className="w-4 h-4 mr-1" />} label="Canva" compact />
+                    <ToolButton icon={<ImageIcon className="w-4 h-4 mr-1" />} label="Photoshop" compact />
+                    <ToolButton icon={<PenTool className="w-4 h-4 mr-1" />} label="Illustrator" compact />
+                    <ToolButton icon={<Monitor className="w-4 h-4 mr-1" />} label="Figma" compact />
+                    <ToolButton icon={<Layers className="w-4 h-4 mr-1" />} label="InDesign" compact />
+                    <ToolButton icon={<Palette className="w-4 h-4 mr-1" />} label="Procreate" compact />
+                  </>
+                ) : (
+                  <>
+                    <ToolButton icon={<Paintbrush className="w-4 h-4 mr-2" />} label="Canva" />
+                    <ToolButton icon={<ImageIcon className="w-4 h-4 mr-2" />} label="Photoshop" />
+                    <ToolButton icon={<PenTool className="w-4 h-4 mr-2" />} label="Illustrator" />
+                    <ToolButton icon={<Monitor className="w-4 h-4 mr-2" />} label="Figma" />
+                    <ToolButton icon={<Layers className="w-4 h-4 mr-2" />} label="InDesign" />
+                    <ToolButton icon={<Palette className="w-4 h-4 mr-2" />} label="Procreate" />
+                  </>
+                )}
+              </div>
             </div>
             
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 md:gap-4 mb-6">
               <h4 className="col-span-full text-left text-lg font-semibold mb-2 text-foreground/80">Video Tools</h4>
-              {isMobile ? (
-                <>
-                  <ToolButton icon={<PlaySquare className="w-4 h-4 mr-1" />} label="CapCut" isNew={true} compact />
-                  <ToolButton icon={<Film className="w-4 h-4 mr-1" />} label="Premiere Pro" isNew={true} compact />
-                  <ToolButton icon={<Video className="w-4 h-4 mr-1" />} label="DaVinci" isNew={true} compact />
-                  <ToolButton icon={<Youtube className="w-4 h-4 mr-1" />} label="After Effects" isNew={true} compact />
-                  <ToolButton icon={<Film className="w-4 h-4 mr-1" />} label="Midjourney" isNew={true} compact />
-                  <ToolButton icon={<Video className="w-4 h-4 mr-1" />} label="RunwayML" isNew={true} compact />
-                </>
-              ) : (
-                <>
-                  <ToolButton icon={<PlaySquare className="w-4 h-4 mr-2" />} label="CapCut" isNew={true} />
-                  <ToolButton icon={<Film className="w-4 h-4 mr-2" />} label="Premiere Pro" isNew={true} />
-                  <ToolButton icon={<Video className="w-4 h-4 mr-2" />} label="DaVinci Resolve" isNew={true} />
-                  <ToolButton icon={<Youtube className="w-4 h-4 mr-2" />} label="After Effects" isNew={true} />
-                  <ToolButton icon={<Film className="w-4 h-4 mr-2" />} label="Midjourney" isNew={true} />
-                  <ToolButton icon={<Video className="w-4 h-4 mr-2" />} label="RunwayML" isNew={true} />
-                </>
-              )}
+              <div className="col-span-full grid grid-cols-2 sm:grid-cols-3 gap-3">
+                {isMobile ? (
+                  <>
+                    <ToolButton icon={<PlaySquare className="w-4 h-4 mr-1" />} label="CapCut" isNew={true} compact />
+                    <ToolButton icon={<Film className="w-4 h-4 mr-1" />} label="Premiere Pro" isNew={true} compact />
+                    <ToolButton icon={<Video className="w-4 h-4 mr-1" />} label="DaVinci" isNew={true} compact />
+                    <ToolButton icon={<Youtube className="w-4 h-4 mr-1" />} label="After Effects" isNew={true} compact />
+                    <ToolButton icon={<Film className="w-4 h-4 mr-1" />} label="Midjourney" isNew={true} compact />
+                    <ToolButton icon={<Video className="w-4 h-4 mr-1" />} label="RunwayML" isNew={true} compact />
+                  </>
+                ) : (
+                  <>
+                    <ToolButton icon={<PlaySquare className="w-4 h-4 mr-2" />} label="CapCut" isNew={true} />
+                    <ToolButton icon={<Film className="w-4 h-4 mr-2" />} label="Premiere Pro" isNew={true} />
+                    <ToolButton icon={<Video className="w-4 h-4 mr-2" />} label="DaVinci Resolve" isNew={true} />
+                    <ToolButton icon={<Youtube className="w-4 h-4 mr-2" />} label="After Effects" isNew={true} />
+                    <ToolButton icon={<Film className="w-4 h-4 mr-2" />} label="Midjourney" isNew={true} />
+                    <ToolButton icon={<Video className="w-4 h-4 mr-2" />} label="RunwayML" isNew={true} />
+                  </>
+                )}
+              </div>
             </div>
             
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 md:gap-4">
               <h4 className="col-span-full text-left text-lg font-semibold mb-2 text-foreground/80">Development Tools</h4>
-              {isMobile ? (
-                <>
-                  <ToolButton icon={<Code className="w-4 h-4 mr-1" />} label="HTML/CSS" compact />
-                  <ToolButton icon={<FileCode className="w-4 h-4 mr-1" />} label="VSCode" compact />
-                  <ToolButton icon={<Globe className="w-4 h-4 mr-1" />} label="WordPress" compact />
-                  <ToolButton icon={<Smartphone className="w-4 h-4 mr-1" />} label="Sketch" compact />
-                  <ToolButton icon={<Laptop className="w-4 h-4 mr-1" />} label="Framer" compact />
-                </>
-              ) : (
-                <>
-                  <ToolButton icon={<Code className="w-4 h-4 mr-2" />} label="HTML/CSS" />
-                  <ToolButton icon={<FileCode className="w-4 h-4 mr-2" />} label="VSCode" />
-                  <ToolButton icon={<Globe className="w-4 h-4 mr-2" />} label="WordPress" />
-                  <ToolButton icon={<Smartphone className="w-4 h-4 mr-2" />} label="Sketch" />
-                  <ToolButton icon={<Laptop className="w-4 h-4 mr-2" />} label="Framer" />
-                </>
-              )}
+              <div className="col-span-full grid grid-cols-2 sm:grid-cols-3 gap-3">
+                {isMobile ? (
+                  <>
+                    <ToolButton icon={<Code className="w-4 h-4 mr-1" />} label="HTML/CSS" compact />
+                    <ToolButton icon={<FileCode className="w-4 h-4 mr-1" />} label="VSCode" compact />
+                    <ToolButton icon={<Globe className="w-4 h-4 mr-1" />} label="WordPress" compact />
+                    <ToolButton icon={<Smartphone className="w-4 h-4 mr-1" />} label="Sketch" compact />
+                    <ToolButton icon={<Laptop className="w-4 h-4 mr-1" />} label="Framer" compact />
+                  </>
+                ) : (
+                  <>
+                    <ToolButton icon={<Code className="w-4 h-4 mr-2" />} label="HTML/CSS" />
+                    <ToolButton icon={<FileCode className="w-4 h-4 mr-2" />} label="VSCode" />
+                    <ToolButton icon={<Globe className="w-4 h-4 mr-2" />} label="WordPress" />
+                    <ToolButton icon={<Smartphone className="w-4 h-4 mr-2" />} label="Sketch" />
+                    <ToolButton icon={<Laptop className="w-4 h-4 mr-2" />} label="Framer" />
+                  </>
+                )}
+              </div>
             </div>
           </div>
         </div>
@@ -260,4 +277,3 @@ const ProjectCard = ({ project }: { project: Project }) => {
 };
 
 export default Portfolio;
-
