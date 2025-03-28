@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { ExternalLink, Paintbrush, Monitor, Image as ImageIcon, Globe, Code, FileCode, Palette, Laptop, Smartphone, PenTool, Layers, PlaySquare, Film, Video, Youtube } from 'lucide-react';
 import { Link } from "react-router-dom";
@@ -10,6 +9,7 @@ import { useIsMobile } from '@/hooks/use-mobile';
 
 const Portfolio = () => {
   const isMobile = useIsMobile();
+  const [activeTab, setActiveTab] = useState("ui");
   
   return (
     <section id="portfolio" className="section-padding bg-gradient-to-b from-secondary/30 via-background to-background py-16 md:py-20">
@@ -17,92 +17,175 @@ const Portfolio = () => {
         <div className="text-center mb-12">
           <h2 className="font-montserrat text-3xl md:text-4xl font-bold mb-6 text-gradient">My Portfolio</h2>
           
-          <Tabs defaultValue="ui" className="w-full max-w-4xl mx-auto">
-            <TabsList className={`flex flex-wrap justify-center gap-2 w-full mb-5 bg-background/50 backdrop-blur-sm p-2 rounded-xl border border-primary/10 shadow-md`}>
-              <TabsTrigger value="ui" className="flex-grow basis-[45%] sm:basis-auto rounded-lg data-[state=active]:bg-primary data-[state=active]:text-white">
-                UI Design
-              </TabsTrigger>
-              <TabsTrigger value="social" className="flex-grow basis-[45%] sm:basis-auto rounded-lg data-[state=active]:bg-primary data-[state=active]:text-white">
-                Social Media
-              </TabsTrigger>
-              <TabsTrigger value="logo" className="flex-grow basis-[45%] sm:basis-auto rounded-lg data-[state=active]:bg-primary data-[state=active]:text-white">
-                Logo
-              </TabsTrigger>
-              <TabsTrigger value="wordpress" className="flex-grow basis-[45%] sm:basis-auto rounded-lg data-[state=active]:bg-primary data-[state=active]:text-white">
-                WordPress
-              </TabsTrigger>
-              <TabsTrigger value="product" className="flex-grow basis-[45%] sm:basis-auto rounded-lg data-[state=active]:bg-primary data-[state=active]:text-white">
-                Product
-              </TabsTrigger>
-              <TabsTrigger value="video" className="flex-grow basis-[45%] sm:basis-auto rounded-lg data-[state=active]:bg-primary data-[state=active]:text-white">
-                Video
-              </TabsTrigger>
-            </TabsList>
-            
-            <TabsContent value="ui" className="mt-0">
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
-                {projectsData.filter(p => p.category === 'ui').map((project) => (
-                  <ProjectCard 
-                    key={project.id} 
-                    project={project}
-                  />
-                ))}
+          {isMobile ? (
+            <div className="w-full max-w-4xl mx-auto">
+              <select 
+                value={activeTab}
+                onChange={(e) => setActiveTab(e.target.value)}
+                className="w-full p-3 mb-5 bg-background/50 backdrop-blur-sm rounded-xl border border-primary/10 shadow-md text-foreground"
+              >
+                <option value="ui">UI Design</option>
+                <option value="social">Social Media</option>
+                <option value="logo">Logo</option>
+                <option value="wordpress">WordPress</option>
+                <option value="product">Product</option>
+                <option value="video">Video</option>
+              </select>
+
+              <div className="mt-4">
+                {activeTab === "ui" && (
+                  <div className="grid grid-cols-1 gap-4">
+                    {projectsData.filter(p => p.category === 'ui').map((project) => (
+                      <ProjectCard 
+                        key={project.id} 
+                        project={project}
+                      />
+                    ))}
+                  </div>
+                )}
+                
+                {activeTab === "social" && (
+                  <div className="grid grid-cols-1 gap-4">
+                    {projectsData.filter(p => p.category === 'social').map((project) => (
+                      <ProjectCard 
+                        key={project.id} 
+                        project={project}
+                      />
+                    ))}
+                  </div>
+                )}
+                
+                {activeTab === "logo" && (
+                  <div className="grid grid-cols-1 gap-4">
+                    {projectsData.filter(p => p.category === 'logo').map((project) => (
+                      <ProjectCard 
+                        key={project.id} 
+                        project={project}
+                      />
+                    ))}
+                  </div>
+                )}
+                
+                {activeTab === "wordpress" && (
+                  <div className="grid grid-cols-1 gap-4">
+                    {projectsData.filter(p => p.category === 'wordpress').map((project) => (
+                      <ProjectCard 
+                        key={project.id} 
+                        project={project}
+                      />
+                    ))}
+                  </div>
+                )}
+                
+                {activeTab === "product" && (
+                  <div className="grid grid-cols-1 gap-4">
+                    {projectsData.filter(p => p.category === 'product').map((project) => (
+                      <ProjectCard 
+                        key={project.id} 
+                        project={project}
+                      />
+                    ))}
+                  </div>
+                )}
+                
+                {activeTab === "video" && (
+                  <div className="grid grid-cols-1 gap-4">
+                    <div className="col-span-full text-center p-6 bg-gradient-to-r from-primary/5 to-primary/10 rounded-xl border border-primary/10 shadow-lg">
+                      <h3 className="text-xl font-bold mb-3 text-gradient">Video Projects Coming Soon!</h3>
+                      <p className="text-muted-foreground mb-4">I'm currently working on adding my video portfolio. Check back soon for AI-generated videos and edited content!</p>
+                    </div>
+                  </div>
+                )}
               </div>
-            </TabsContent>
-            
-            <TabsContent value="social" className="mt-0">
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
-                {projectsData.filter(p => p.category === 'social').map((project) => (
-                  <ProjectCard 
-                    key={project.id} 
-                    project={project}
-                  />
-                ))}
-              </div>
-            </TabsContent>
-            
-            <TabsContent value="logo" className="mt-0">
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
-                {projectsData.filter(p => p.category === 'logo').map((project) => (
-                  <ProjectCard 
-                    key={project.id} 
-                    project={project}
-                  />
-                ))}
-              </div>
-            </TabsContent>
-            
-            <TabsContent value="wordpress" className="mt-0">
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
-                {projectsData.filter(p => p.category === 'wordpress').map((project) => (
-                  <ProjectCard 
-                    key={project.id} 
-                    project={project}
-                  />
-                ))}
-              </div>
-            </TabsContent>
-            
-            <TabsContent value="product" className="mt-0">
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
-                {projectsData.filter(p => p.category === 'product').map((project) => (
-                  <ProjectCard 
-                    key={project.id} 
-                    project={project}
-                  />
-                ))}
-              </div>
-            </TabsContent>
-            
-            <TabsContent value="video" className="mt-0">
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
-                <div className="col-span-full text-center p-6 md:p-8 bg-gradient-to-r from-primary/5 to-primary/10 rounded-xl border border-primary/10 shadow-lg">
-                  <h3 className="text-xl font-bold mb-3 text-gradient">Video Projects Coming Soon!</h3>
-                  <p className="text-muted-foreground mb-4">I'm currently working on adding my video portfolio. Check back soon for AI-generated videos and edited content!</p>
+            </div>
+          ) : (
+            <Tabs defaultValue="ui" className="w-full max-w-4xl mx-auto">
+              <TabsList className="flex flex-wrap justify-center gap-2 w-full mb-5 bg-background/50 backdrop-blur-sm p-2 rounded-xl border border-primary/10 shadow-md">
+                <TabsTrigger value="ui" className="flex-grow basis-[45%] sm:basis-auto rounded-lg data-[state=active]:bg-primary data-[state=active]:text-white">
+                  UI Design
+                </TabsTrigger>
+                <TabsTrigger value="social" className="flex-grow basis-[45%] sm:basis-auto rounded-lg data-[state=active]:bg-primary data-[state=active]:text-white">
+                  Social Media
+                </TabsTrigger>
+                <TabsTrigger value="logo" className="flex-grow basis-[45%] sm:basis-auto rounded-lg data-[state=active]:bg-primary data-[state=active]:text-white">
+                  Logo
+                </TabsTrigger>
+                <TabsTrigger value="wordpress" className="flex-grow basis-[45%] sm:basis-auto rounded-lg data-[state=active]:bg-primary data-[state=active]:text-white">
+                  WordPress
+                </TabsTrigger>
+                <TabsTrigger value="product" className="flex-grow basis-[45%] sm:basis-auto rounded-lg data-[state=active]:bg-primary data-[state=active]:text-white">
+                  Product
+                </TabsTrigger>
+                <TabsTrigger value="video" className="flex-grow basis-[45%] sm:basis-auto rounded-lg data-[state=active]:bg-primary data-[state=active]:text-white">
+                  Video
+                </TabsTrigger>
+              </TabsList>
+              
+              <TabsContent value="ui" className="mt-0">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
+                  {projectsData.filter(p => p.category === 'ui').map((project) => (
+                    <ProjectCard 
+                      key={project.id} 
+                      project={project}
+                    />
+                  ))}
                 </div>
-              </div>
-            </TabsContent>
-          </Tabs>
+              </TabsContent>
+              
+              <TabsContent value="social" className="mt-0">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
+                  {projectsData.filter(p => p.category === 'social').map((project) => (
+                    <ProjectCard 
+                      key={project.id} 
+                      project={project}
+                    />
+                  ))}
+                </div>
+              </TabsContent>
+              
+              <TabsContent value="logo" className="mt-0">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
+                  {projectsData.filter(p => p.category === 'logo').map((project) => (
+                    <ProjectCard 
+                      key={project.id} 
+                      project={project}
+                    />
+                  ))}
+                </div>
+              </TabsContent>
+              
+              <TabsContent value="wordpress" className="mt-0">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
+                  {projectsData.filter(p => p.category === 'wordpress').map((project) => (
+                    <ProjectCard 
+                      key={project.id} 
+                      project={project}
+                    />
+                  ))}
+                </div>
+              </TabsContent>
+              
+              <TabsContent value="product" className="mt-0">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
+                  {projectsData.filter(p => p.category === 'product').map((project) => (
+                    <ProjectCard 
+                      key={project.id} 
+                      project={project}
+                    />
+                  ))}
+                </div>
+              </TabsContent>
+              
+              <TabsContent value="video" className="mt-0">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
+                  <div className="col-span-full text-center p-6 md:p-8 bg-gradient-to-r from-primary/5 to-primary/10 rounded-xl border border-primary/10 shadow-lg">
+                    <h3 className="text-xl font-bold mb-3 text-gradient">Video Projects Coming Soon!</h3>
+                    <p className="text-muted-foreground mb-4">I'm currently working on adding my video portfolio. Check back soon for AI-generated videos and edited content!</p>
+                  </div>
+                </div>
+              </TabsContent>
+            </Tabs>
+          )}
           
           <div className="mt-12 md:mt-16 p-6 md:p-8 rounded-xl bg-gradient-to-br from-background via-primary/5 to-background border border-primary/10 shadow-lg max-w-3xl mx-auto">
             <h3 className="text-2xl font-bold mb-6 md:mb-8 text-gradient">Tools I Use</h3>
@@ -186,7 +269,6 @@ const Portfolio = () => {
   );
 };
 
-// ToolButton component with compact option for mobile
 const ToolButton = ({ 
   icon, 
   label, 
@@ -213,7 +295,6 @@ const ToolButton = ({
   );
 };
 
-// ProjectCard component with improved UI and mobile responsiveness
 const ProjectCard = ({ project }: { project: Project }) => {
   const isMobile = useIsMobile();
   
