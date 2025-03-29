@@ -1,5 +1,6 @@
+
 import { useState } from 'react';
-import { ExternalLink, Paintbrush, Monitor, Image as ImageIcon, Globe, Code, FileCode, Palette, Laptop, Smartphone, PenTool, Layers, PlaySquare, Film, Video, Youtube } from 'lucide-react';
+import { ExternalLink, Paintbrush, Monitor, Image as ImageIcon, Globe, Code, FileCode, Palette, Laptop, Smartphone, PenTool, Layers, PlaySquare, Film, Video, Youtube, Bird, Cloud, Leaf, Stars } from 'lucide-react';
 import { Link } from "react-router-dom";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Card, CardContent } from "@/components/ui/card";
@@ -12,8 +13,43 @@ const Portfolio = () => {
   const [activeTab, setActiveTab] = useState("ui");
   
   return (
-    <section id="portfolio" className="section-padding bg-gradient-to-b from-secondary/30 via-background to-background py-16 md:py-20">
-      <div className="container mx-auto px-4">
+    <section id="portfolio" className="section-padding relative bg-gradient-to-b from-secondary/30 via-background to-background py-16 md:py-20 overflow-hidden">
+      {/* Ghibli-inspired decorative background elements */}
+      <div className="absolute inset-0 pointer-events-none">
+        {/* Decorative blobs */}
+        <div className="blob h-64 w-64 bg-[#fef7cd]/30 top-20 -left-20 animate-float rounded-[60%_40%_70%_30%/40%_50%_60%_50%]" style={{animationDelay: "0.7s"}}></div>
+        <div className="blob h-80 w-80 bg-[#ffdee2]/30 bottom-40 -right-20 animate-float rounded-[50%_50%_30%_70%/40%_60%_60%_40%]" style={{animationDelay: "1.3s"}}></div>
+        
+        {/* Floating Ghibli elements */}
+        <div className="absolute top-32 right-[15%] w-14 h-14 text-[#6eada8]/60 animate-float" style={{animationDelay: "0.5s"}}>
+          <Cloud className="w-full h-full" />
+        </div>
+        <div className="absolute bottom-40 left-[20%] w-12 h-12 text-[#86bb6b]/60 animate-sway" style={{animationDelay: "1.8s"}}>
+          <Leaf className="w-full h-full" />
+        </div>
+        <div className="absolute top-1/2 right-[10%] w-10 h-10 text-[#c9a95b]/70 animate-twinkle" style={{animationDelay: "1.2s"}}>
+          <Stars className="w-full h-full" />
+        </div>
+        <div className="absolute bottom-1/4 left-[15%] w-12 h-12 text-[#e17f95]/60 animate-bird-flight" style={{animationDelay: "2.3s"}}>
+          <Bird className="w-full h-full" />
+        </div>
+        
+        {/* Ghibli-style flowing water at bottom */}
+        <div className="absolute bottom-0 left-0 right-0 h-12 opacity-40">
+          <svg className="w-full h-full" viewBox="0 0 1200 60" preserveAspectRatio="none">
+            <path d="M0,30 C200,10 400,50 600,30 C800,10 1000,40 1200,20 L1200,60 L0,60 Z" className="fill-current text-nature-water/40"></path>
+          </svg>
+        </div>
+        
+        {/* Ghibli-style rice field pattern */}
+        <div className="absolute inset-0 opacity-10" 
+          style={{
+            backgroundImage: `repeating-linear-gradient(90deg, transparent, transparent 40px, rgba(161, 216, 207, 0.3) 40px, rgba(161, 216, 207, 0.3) 41px)`
+          }}>
+        </div>
+      </div>
+    
+      <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-12">
           <h2 className="font-montserrat text-3xl md:text-4xl font-bold mb-6 text-gradient">My Portfolio</h2>
           
@@ -300,15 +336,48 @@ const ProjectCard = ({ project }: { project: Project }) => {
   
   return (
     <Card 
-      className="group overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border border-primary/10 bg-gradient-to-b from-background/90 to-background/70 backdrop-blur-sm"
+      className="group relative overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border border-primary/10 bg-gradient-to-b from-background/90 to-background/70 backdrop-blur-sm"
     >
+      {/* Ghibli-inspired decorative corner elements */}
+      <div className="absolute top-0 left-0 w-12 h-12 opacity-50 pointer-events-none">
+        <svg viewBox="0 0 40 40" className="w-full h-full">
+          <path d="M0,0 C20,0 40,20 40,40" fill="none" stroke="rgba(166, 208, 204, 0.5)" strokeWidth="1" />
+          <path d="M0,10 C15,10 30,25 30,40" fill="none" stroke="rgba(166, 208, 204, 0.3)" strokeWidth="1" />
+          <path d="M10,0 C10,15 25,30 40,30" fill="none" stroke="rgba(166, 208, 204, 0.3)" strokeWidth="1" />
+        </svg>
+      </div>
+      
+      <div className="absolute top-0 right-0 w-12 h-12 opacity-50 pointer-events-none transform rotate-90">
+        <svg viewBox="0 0 40 40" className="w-full h-full">
+          <path d="M0,0 C20,0 40,20 40,40" fill="none" stroke="rgba(255, 222, 226, 0.5)" strokeWidth="1" />
+          <path d="M0,10 C15,10 30,25 30,40" fill="none" stroke="rgba(255, 222, 226, 0.3)" strokeWidth="1" />
+          <path d="M10,0 C10,15 25,30 40,30" fill="none" stroke="rgba(255, 222, 226, 0.3)" strokeWidth="1" />
+        </svg>
+      </div>
+      
+      <div className="absolute bottom-0 right-0 w-12 h-12 opacity-50 pointer-events-none transform rotate-180">
+        <svg viewBox="0 0 40 40" className="w-full h-full">
+          <path d="M0,0 C20,0 40,20 40,40" fill="none" stroke="rgba(254, 247, 205, 0.5)" strokeWidth="1" />
+          <path d="M0,10 C15,10 30,25 30,40" fill="none" stroke="rgba(254, 247, 205, 0.3)" strokeWidth="1" />
+          <path d="M10,0 C10,15 25,30 40,30" fill="none" stroke="rgba(254, 247, 205, 0.3)" strokeWidth="1" />
+        </svg>
+      </div>
+      
+      <div className="absolute bottom-0 left-0 w-12 h-12 opacity-50 pointer-events-none transform -rotate-90">
+        <svg viewBox="0 0 40 40" className="w-full h-full">
+          <path d="M0,0 C20,0 40,20 40,40" fill="none" stroke="rgba(242, 252, 226, 0.5)" strokeWidth="1" />
+          <path d="M0,10 C15,10 30,25 30,40" fill="none" stroke="rgba(242, 252, 226, 0.3)" strokeWidth="1" />
+          <path d="M10,0 C10,15 25,30 40,30" fill="none" stroke="rgba(242, 252, 226, 0.3)" strokeWidth="1" />
+        </svg>
+      </div>
+    
       <div className="relative aspect-[4/3] overflow-hidden">
         <img 
           src={project.image} 
           alt={project.title}
           className="object-cover w-full h-full transition-transform duration-700 group-hover:scale-110"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+        <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
           <div className="absolute bottom-0 left-0 right-0 p-4 transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
             <h3 className="text-lg md:text-xl font-bold text-white font-montserrat line-clamp-1">{project.title}</h3>
             <p className="text-white/90 text-xs md:text-sm line-clamp-2 mt-1">{project.description}</p>
@@ -335,10 +404,14 @@ const ProjectCard = ({ project }: { project: Project }) => {
             )}
           </div>
         </div>
+        
+        {/* Ghibli-style frame decoration */}
+        <div className="absolute inset-0 pointer-events-none border-2 opacity-0 group-hover:opacity-100 transition-opacity duration-500 border-white/20"></div>
       </div>
+      
       <CardContent className="p-3 md:p-4">
         <div className="flex justify-between items-center">
-          <span className="text-[10px] md:text-xs font-semibold px-2 md:px-3 py-0.5 md:py-1 bg-gradient-to-r from-primary/20 to-primary/10 text-primary rounded-full uppercase tracking-wider border border-primary/10 truncate max-w-[70%]">
+          <span className="text-[10px] md:text-xs font-semibold px-2 md:px-3 py-0.5 md:py-1 bg-gradient-to-r from-primary/30 to-primary/20 text-primary rounded-full uppercase tracking-wider border border-primary/20 truncate max-w-[70%]">
             {project.category === 'ui' ? 'UI Design' : 
              project.category === 'social' ? 'Social Media' : 
              project.category === 'product' ? 'Product Design' :
@@ -347,7 +420,7 @@ const ProjectCard = ({ project }: { project: Project }) => {
              project.category === 'video' ? 'Video' : 'Design'}
           </span>
           {project.duration && (
-            <span className="text-[10px] md:text-xs text-foreground/60 font-medium truncate">
+            <span className="text-[10px] md:text-xs text-foreground/70 font-medium truncate">
               {project.duration}
             </span>
           )}
