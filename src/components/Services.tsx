@@ -1,30 +1,86 @@
 
-import { Figma, Globe, PenTool, ShoppingCart } from 'lucide-react';
+import { Figma, Globe, PenTool, ShoppingCart, Cloud, Leaf, Sparkles, Sunset } from 'lucide-react';
 
 const services = [
   {
     title: "UI/UX Design",
     description: "Create intuitive and beautiful user interfaces that enhance user experience and drive engagement.",
     icon: <Figma className="w-8 h-8" />,
-    delay: "0s"
+    delay: "0s",
+    color: "from-[#F2FCE2]/40 to-[#FEF7CD]/60",
+    hoverColor: "from-[#F2FCE2] to-[#FEF7CD]",
+    borderRadius: "20px 10px 20px 10px"
   },
   {
     title: "Web Design",
     description: "Design modern, responsive websites that represent your brand and convert visitors into customers.",
     icon: <Globe className="w-8 h-8" />,
-    delay: "0.1s"
+    delay: "0.1s",
+    color: "from-[#fde1d3]/40 to-[#ffdee2]/60",
+    hoverColor: "from-[#fde1d3] to-[#ffdee2]",
+    borderRadius: "10px 20px 10px 20px"
   },
   {
     title: "Branding",
     description: "Develop cohesive brand identities that communicate your values and resonate with your audience.",
     icon: <PenTool className="w-8 h-8" />,
-    delay: "0.2s"
+    delay: "0.2s",
+    color: "from-[#d3e4fd]/40 to-[#E5DEFF]/60",
+    hoverColor: "from-[#d3e4fd] to-[#E5DEFF]",
+    borderRadius: "20px 10px 20px 10px"
   },
   {
     title: "eCommerce Design",
     description: "Create compelling shopping experiences that showcase products and optimize the conversion funnel.",
     icon: <ShoppingCart className="w-8 h-8" />,
+    delay: "0.3s",
+    color: "from-[#FFDEE2]/40 to-[#FEC6A1]/60",
+    hoverColor: "from-[#FFDEE2] to-[#FEC6A1]",
+    borderRadius: "10px 20px 10px 20px"
+  }
+];
+
+// Ghibli-inspired decorative elements
+const decorativeElements = [
+  { 
+    icon: <Cloud className="w-full h-full" />, 
+    position: "top-10 right-[10%]", 
+    size: "w-24 h-16", 
+    color: "text-[#ffdee2]/40",
+    animation: "animate-float",
+    delay: "0s"
+  },
+  { 
+    icon: <Cloud className="w-full h-full" />, 
+    position: "top-32 left-[15%]", 
+    size: "w-20 h-12", 
+    color: "text-[#F2FCE2]/50",
+    animation: "animate-float",
+    delay: "1.5s"
+  },
+  { 
+    icon: <Leaf className="w-full h-full" />, 
+    position: "bottom-20 right-[20%]", 
+    size: "w-12 h-12", 
+    color: "text-[#F2FCE2]/40",
+    animation: "animate-spin-slow",
+    delay: "0.7s"
+  },
+  { 
+    icon: <Sparkles className="w-full h-full" />, 
+    position: "top-60 right-[30%]", 
+    size: "w-10 h-10", 
+    color: "text-[#FEF7CD]/60",
+    animation: "animate-pulse-slow",
     delay: "0.3s"
+  },
+  { 
+    icon: <Sunset className="w-full h-full" />, 
+    position: "bottom-40 left-[25%]", 
+    size: "w-16 h-16", 
+    color: "text-[#FEC6A1]/40",
+    animation: "animate-float",
+    delay: "2s"
   }
 ];
 
@@ -36,6 +92,19 @@ const Services = () => {
         <div className="blob h-96 w-96 bg-[#fef7cd]/30 -top-48 left-20 animate-float rounded-[40%_60%_70%_30%/40%_50%_60%_50%]" style={{animationDelay: "1.5s"}}></div>
         <div className="blob h-80 w-80 bg-[#d3e4fd]/30 -bottom-40 right-10 animate-float rounded-[50%_50%_40%_60%/40%_40%_60%_50%]" style={{animationDelay: "0.5s"}}></div>
         <div className="blob h-64 w-64 bg-[#fde1d3]/30 top-1/4 -left-20 animate-float rounded-[60%_40%_30%_70%/60%_30%_70%_40%]" style={{animationDelay: "2s"}}></div>
+        <div className="blob h-72 w-72 bg-[#e5deff]/30 bottom-1/3 right-1/4 animate-float rounded-[30%_70%_60%_40%/50%_60%_40%_50%]" style={{animationDelay: "1s"}}></div>
+        <div className="blob h-56 w-56 bg-[#ffdee2]/30 top-1/2 right-1/5 animate-float rounded-[50%_30%_40%_60%/40%_50%_60%_40%]" style={{animationDelay: "3s"}}></div>
+        
+        {/* Decorative Ghibli-inspired elements */}
+        {decorativeElements.map((element, index) => (
+          <div
+            key={index}
+            className={`absolute ${element.position} ${element.size} ${element.color} ${element.animation} opacity-70`}
+            style={{ animationDelay: element.delay }}
+          >
+            {element.icon}
+          </div>
+        ))}
         
         {/* Subtle grid pattern background */}
         <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxkZWZzPjxwYXR0ZXJuIGlkPSJncmlkIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiPjxwYXRoIGQ9Ik0gNDAgMCBMIDAgMCAwIDQwIiBmaWxsPSJub25lIiBzdHJva2U9ImhzbCgyNzAgNTAlIDYwJSAvIDAuMDIpIiBzdHJva2Utd2lkdGg9IjEiPjwvcGF0aD48L3BhdHRlcm4+PC9kZWZzPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JpZCkiPjwvcmVjdD48L3N2Zz4=')]" style={{ opacity: "0.2" }}></div>
@@ -44,9 +113,9 @@ const Services = () => {
       <div className="container mx-auto relative z-10">
         <div className="text-center mb-16">
           <span className="inline-block mb-3 py-1 px-4 rounded-full text-xs font-medium bg-[#ffdee2]/30 text-[#E5667B] border border-[#ffdee2]/50">SERVICES</span>
-          <h2 className="font-montserrat text-3xl md:text-4xl font-bold mb-4">My Services</h2>
+          <h2 className="font-montserrat text-3xl md:text-4xl font-bold mb-4">My Magical Services</h2>
           <p className="text-foreground/70 max-w-2xl mx-auto">
-            Specialized design services tailored to help your business succeed in the digital landscape.
+            Let me bring your ideas to life with a touch of magic and wonder.
           </p>
           <div className="w-24 h-1 bg-gradient-to-r from-[#FEC6A1] to-[#FFDEE2] mx-auto mt-6 rounded-full"></div>
         </div>
@@ -62,9 +131,9 @@ const Services = () => {
               }}
             >
               <div className="flex justify-center mb-6">
-                <div className="w-20 h-20 flex items-center justify-center rounded-2xl bg-gradient-to-br from-[#F2FCE2]/40 to-[#FEF7CD]/60 text-[#89918F] group-hover:from-[#F2FCE2] group-hover:to-[#FEF7CD] group-hover:text-[#5A645E] transition-all duration-500 shadow-sm group-hover:shadow-[#FEF7CD]/30"
+                <div className={`w-20 h-20 flex items-center justify-center rounded-2xl bg-gradient-to-br ${service.color} text-[#89918F] group-hover:${service.hoverColor} group-hover:text-[#5A645E] transition-all duration-500 shadow-sm group-hover:shadow-md`}
                   style={{ 
-                    borderRadius: "20px 10px 20px 10px" 
+                    borderRadius: service.borderRadius 
                   }}
                 >
                   {service.icon}
@@ -72,8 +141,31 @@ const Services = () => {
               </div>
               <h3 className="text-xl font-bold text-center mb-4 font-montserrat group-hover:text-[#5A645E] transition-colors">{service.title}</h3>
               <p className="text-center text-foreground/70">{service.description}</p>
+              
+              {/* Ghibli-inspired decorative element at the bottom of each card */}
+              <div className="w-full flex justify-center mt-6">
+                <div className="w-16 h-1 bg-gradient-to-r from-transparent via-primary/40 to-transparent rounded-full group-hover:w-24 transition-all duration-300"></div>
+              </div>
             </div>
           ))}
+        </div>
+        
+        {/* Nature-inspired footer illustration */}
+        <div className="mt-16 w-full flex justify-center">
+          <div className="relative">
+            <svg className="w-64 h-24 text-[#F2FCE2]/50" viewBox="0 0 100 40" xmlns="http://www.w3.org/2000/svg">
+              <path d="M0,20 Q10,5 20,20 T40,20 T60,20 T80,20 T100,20" stroke="currentColor" strokeWidth="0.5" fill="none"/>
+              <path d="M0,20 Q10,35 20,20 T40,20 T60,20 T80,20 T100,20" stroke="currentColor" strokeWidth="0.5" fill="none"/>
+              <g className="animate-float" style={{animationDelay: "1s"}}>
+                <circle cx="30" cy="18" r="2" fill="currentColor" opacity="0.6"/>
+                <circle cx="70" cy="18" r="1.5" fill="currentColor" opacity="0.4"/>
+              </g>
+              <g className="animate-float" style={{animationDelay: "2s"}}>
+                <circle cx="50" cy="16" r="2.5" fill="currentColor" opacity="0.7"/>
+                <circle cx="85" cy="19" r="1" fill="currentColor" opacity="0.5"/>
+              </g>
+            </svg>
+          </div>
         </div>
       </div>
     </section>

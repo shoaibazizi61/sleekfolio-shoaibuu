@@ -84,11 +84,42 @@
     font-feature-settings: "rlig" 1, "calt" 1;
     background-image: linear-gradient(to bottom, rgba(255,255,255,0.6), rgba(255,255,255,0.6)),
                       url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23a6d0cc' fill-opacity='0.15'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    /* Add Ghibli-inspired dust particles animation */
+    position: relative;
+  }
+  
+  /* Dust particles animation */
+  body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    background-image: 
+      radial-gradient(circle at 20% 30%, rgba(255, 255, 255, 0.3) 0.1%, transparent 0.5%),
+      radial-gradient(circle at 50% 60%, rgba(255, 255, 255, 0.3) 0.1%, transparent 0.3%),
+      radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.3) 0.1%, transparent 0.4%),
+      radial-gradient(circle at 10% 80%, rgba(255, 255, 255, 0.3) 0.1%, transparent 0.2%),
+      radial-gradient(circle at 70% 40%, rgba(255, 255, 255, 0.3) 0.1%, transparent 0.3%);
+    background-size: 100% 100%;
+    animation: dust-float 60s linear infinite;
   }
   
   .dark body {
     background-image: linear-gradient(to bottom, rgba(0,0,0,0.8), rgba(0,0,0,0.8)),
                       url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23a6d0cc' fill-opacity='0.15'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  }
+  
+  /* Dark mode dust particles */
+  .dark body::before {
+    background-image: 
+      radial-gradient(circle at 20% 30%, rgba(161, 216, 207, 0.2) 0.1%, transparent 0.5%),
+      radial-gradient(circle at 50% 60%, rgba(161, 216, 207, 0.2) 0.1%, transparent 0.3%),
+      radial-gradient(circle at 80% 20%, rgba(161, 216, 207, 0.2) 0.1%, transparent 0.4%),
+      radial-gradient(circle at 10% 80%, rgba(161, 216, 207, 0.2) 0.1%, transparent 0.2%),
+      radial-gradient(circle at 70% 40%, rgba(161, 216, 207, 0.2) 0.1%, transparent 0.3%);
   }
   
   select {
@@ -175,9 +206,62 @@
       transform: translateY(-15px) rotate(2deg);
     }
   }
+  
+  /* New Ghibli-inspired animations */
+  .animate-spin-slow {
+    animation: spin-slow 12s linear infinite;
+  }
+  
+  @keyframes spin-slow {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  
+  @keyframes dust-float {
+    0% {
+      background-position: 0% 0%;
+    }
+    100% {
+      background-position: 100% 100%;
+    }
+  }
+  
+  .animate-sway {
+    animation: sway 8s ease-in-out infinite;
+  }
+  
+  @keyframes sway {
+    0%, 100% {
+      transform: rotate(-3deg);
+    }
+    50% {
+      transform: rotate(3deg);
+    }
+  }
 
   .blob {
     filter: blur(20px);
     @apply absolute opacity-70 transition-all duration-700 ease-in-out;
+  }
+  
+  /* Ghibli-style waves */
+  .ghibli-wave {
+    @apply absolute left-0 w-full overflow-hidden leading-none;
+  }
+  
+  .ghibli-wave-top svg {
+    @apply relative block w-[calc(100%+1.3px)] h-[46px];
+  }
+  
+  .ghibli-wave-bottom svg {
+    @apply relative block w-[calc(100%+1.3px)] h-[46px] rotate-180;
+  }
+  
+  .ghibli-wave .shape-fill {
+    @apply fill-[#FEF7CD]/50;
   }
 }
