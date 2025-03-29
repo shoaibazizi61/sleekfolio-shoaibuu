@@ -1,6 +1,6 @@
 
 import { useEffect, useRef } from 'react';
-import { ChevronDown, ExternalLink } from 'lucide-react';
+import { ChevronDown, ExternalLink, Cloud, Bird, Feather, Leaf, Stars, Flower2, Mountains } from 'lucide-react';
 import { Button } from './ui/button';
 
 const Hero = () => {
@@ -45,10 +45,73 @@ const Hero = () => {
       }}
     >
       <div className="absolute inset-0 pointer-events-none">
+        {/* Enhanced floating blobs */}
         <div className="blob h-64 w-64 bg-primary/20 top-20 -left-32 animate-float"></div>
         <div className="blob h-80 w-80 bg-blue-500/20 bottom-20 -right-20 animate-float" style={{animationDelay: "2s"}}></div>
         <div className="blob h-48 w-48 bg-purple-500/20 top-1/3 right-20 animate-float" style={{animationDelay: "1s"}}></div>
+        <div className="blob h-56 w-56 bg-[#ffdee2]/20 bottom-40 left-40 animate-float" style={{animationDelay: "3s"}}></div>
+        <div className="blob h-40 w-40 bg-[#f2fce2]/20 top-1/4 left-1/4 animate-float" style={{animationDelay: "1.5s"}}></div>
+        <div className="blob h-72 w-72 bg-[#fef7cd]/20 bottom-1/4 right-1/4 animate-float" style={{animationDelay: "2.7s"}}></div>
         
+        {/* Totoro-inspired forest silhouette */}
+        <div className="absolute bottom-0 left-0 right-0 h-32 md:h-40 opacity-10">
+          <svg className="w-full h-full" viewBox="0 0 1200 120" preserveAspectRatio="none">
+            <path d="M0,100 L50,95 L60,100 L80,90 L100,100 L120,95 L140,100 L160,95 L180,100 L200,95 L220,100 L240,95 L260,100 L280,95 L300,100 L320,95 L340,100 L360,95 L380,100 L400,95 L420,100 L440,95 L460,100 L480,95 L500,100 L520,95 L540,100 L560,95 L580,100 L600,95 L620,100 L640,95 L660,100 L680,95 L700,100 L720,95 L740,100 L760,95 L780,100 L800,95 L820,100 L840,95 L860,100 L880,95 L900,100 L920,95 L940,100 L960,95 L980,100 L1000,95 L1020,100 L1040,95 L1060,100 L1080,95 L1100,100 L1120,95 L1140,100 L1160,95 L1180,100 L1200,95 L1200,120 L0,120 Z" fill="currentColor" className="text-foreground"></path>
+          </svg>
+        </div>
+        
+        {/* Ghibli-inspired floating elements */}
+        <div className="absolute top-20 left-1/4 w-16 h-16 text-[#a6d0cc]/40 animate-float" style={{animationDelay: "0.5s"}}>
+          <Cloud className="w-full h-full" />
+        </div>
+        <div className="absolute top-40 right-1/3 w-12 h-12 text-[#fef7cd]/40 animate-float" style={{animationDelay: "1.2s"}}>
+          <Cloud className="w-full h-full" />
+        </div>
+        <div className="absolute bottom-40 right-1/4 w-10 h-10 text-[#ffdee2]/40 animate-float" style={{animationDelay: "2.3s"}}>
+          <Bird className="w-full h-full" />
+        </div>
+        <div className="absolute top-1/2 left-1/5 w-8 h-8 text-[#f2fce2]/40 animate-spin-slow" style={{animationDelay: "1.8s"}}>
+          <Leaf className="w-full h-full" />
+        </div>
+        <div className="absolute bottom-1/3 left-1/3 w-9 h-9 text-[#ffdee2]/40 animate-float" style={{animationDelay: "3.1s"}}>
+          <Feather className="w-full h-full" />
+        </div>
+        <div className="absolute top-32 right-1/5 w-7 h-7 text-[#fef7cd]/50 animate-twinkle" style={{animationDelay: "1.4s"}}>
+          <Stars className="w-full h-full" />
+        </div>
+        <div className="absolute bottom-24 left-1/4 w-10 h-10 text-[#f2fce2]/40 animate-sway" style={{animationDelay: "2.6s"}}>
+          <Flower2 className="w-full h-full" />
+        </div>
+        <div className="absolute -bottom-5 right-0 w-64 h-32 text-foreground/5 animate-rise" style={{animationDelay: "0.8s"}}>
+          <Mountains className="w-full h-full" />
+        </div>
+        
+        {/* Ghibli-style fluffy clouds */}
+        <div className="absolute top-10 right-10 opacity-30">
+          <svg className="w-40 h-24 text-white fill-current" viewBox="0 0 200 100">
+            <circle cx="65" cy="30" r="20" />
+            <circle cx="45" cy="40" r="15" />
+            <circle cx="85" cy="40" r="15" />
+            <circle cx="65" cy="50" r="15" />
+            <circle cx="35" cy="60" r="10" />
+            <circle cx="95" cy="60" r="10" />
+          </svg>
+        </div>
+        
+        <div className="absolute bottom-40 left-10 opacity-20">
+          <svg className="w-36 h-20 text-white fill-current" viewBox="0 0 200 100">
+            <circle cx="65" cy="30" r="20" />
+            <circle cx="45" cy="40" r="15" />
+            <circle cx="85" cy="40" r="15" />
+            <circle cx="65" cy="50" r="15" />
+            <circle cx="35" cy="60" r="10" />
+            <circle cx="95" cy="60" r="10" />
+          </svg>
+        </div>
+        
+        {/* Dust particles animation enhanced in index.css */}
+        
+        {/* Ghibli-inspired grid pattern */}
         <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxkZWZzPjxwYXR0ZXJuIGlkPSJncmlkIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiPjxwYXRoIGQ9Ik0gNDAgMCBMIDAgMCAwIDQwIiBmaWxsPSJub25lIiBzdHJva2U9ImhzbCgyNzAgNTAlIDYwJSAvIDAuMDMpIiBzdHJva2Utd2lkdGg9IjEiPjwvcGF0aD48L3BhdHRlcm4+PC9kZWZzPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JpZCkiPjwvcmVjdD48L3N2Zz4=')]" style={{ opacity: "0.4" }}></div>
       </div>
       
@@ -65,6 +128,17 @@ const Hero = () => {
             <span className="absolute -bottom-2 left-0 right-0 h-[3px] bg-gradient-to-r from-primary/40 via-primary to-blue-500/40"></span>
           </span>
         </h1>
+        
+        {/* Ghibli-inspired decorative divider */}
+        <div className="w-40 h-5 mx-auto my-4 opacity-60 animate-fade-in" style={{animationDelay: "0.5s"}}>
+          <svg viewBox="0 0 100 20" className="w-full h-full">
+            <path d="M0,10 Q25,0 50,10 T100,10" fill="none" stroke="hsl(var(--primary))" strokeWidth="1" />
+            <path d="M0,10 Q25,20 50,10 T100,10" fill="none" stroke="hsl(var(--primary))" strokeWidth="1" />
+            <circle cx="25" cy="10" r="2" fill="hsl(var(--primary))" />
+            <circle cx="75" cy="10" r="2" fill="hsl(var(--primary))" />
+          </svg>
+        </div>
+        
         <p className="max-w-2xl mx-auto text-lg md:text-xl text-foreground/80 mb-10 animate-fade-in opacity-0" style={{animationDelay: "0.6s"}}>
           I create beautiful, functional designs that help businesses connect with their audience and achieve their goals.
         </p>
@@ -84,6 +158,15 @@ const Hero = () => {
             <a href="#contact">Get In Touch</a>
           </Button>
         </div>
+        
+        {/* Ghibli-inspired magical sparkles */}
+        <div className="relative h-10 mt-8">
+          <div className="absolute left-1/4 w-4 h-4 bg-[#fef7cd]/30 rounded-full animate-twinkle" style={{animationDelay: "0.5s"}}></div>
+          <div className="absolute left-1/3 w-3 h-3 bg-[#ffdee2]/30 rounded-full animate-twinkle" style={{animationDelay: "1.2s"}}></div>
+          <div className="absolute left-1/2 w-5 h-5 bg-[#a6d0cc]/30 rounded-full animate-twinkle" style={{animationDelay: "0.8s"}}></div>
+          <div className="absolute left-2/3 w-3 h-3 bg-[#fef7cd]/30 rounded-full animate-twinkle" style={{animationDelay: "1.5s"}}></div>
+          <div className="absolute left-3/4 w-4 h-4 bg-[#ffdee2]/30 rounded-full animate-twinkle" style={{animationDelay: "0.3s"}}></div>
+        </div>
       </div>
       
       <button 
@@ -93,6 +176,13 @@ const Hero = () => {
       >
         <ChevronDown className="w-5 h-5 animate-bounce group-hover:text-primary" />
       </button>
+      
+      {/* Ghibli-style waves at the bottom */}
+      <div className="absolute bottom-0 left-0 right-0 h-12 opacity-50">
+        <svg className="w-full h-full" viewBox="0 0 1200 120" preserveAspectRatio="none">
+          <path d="M0,0 C150,60 350,0 500,60 C650,120 850,60 1000,30 C1050,15 1150,0 1200,0 V120 H0 Z" className="fill-current text-background/30"></path>
+        </svg>
+      </div>
     </section>
   );
 };
