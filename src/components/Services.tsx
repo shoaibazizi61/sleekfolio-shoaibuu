@@ -1,5 +1,4 @@
-
-import { Figma, Globe, PenTool, ShoppingCart, Cloud, Leaf, Sparkles, Sunset, Wind, Feather, Droplets, Bird, Fish, Flower2, Rabbit, Mountains, Stars } from 'lucide-react';
+import { Figma, Globe, PenTool, ShoppingCart, Cloud, Leaf, Sparkles, Sunset, Wind, Feather, Droplets, Bird, Fish, Flower2, Rabbit, Mountain, Stars } from 'lucide-react';
 
 const services = [
   {
@@ -40,7 +39,6 @@ const services = [
   }
 ];
 
-// Expanded Ghibli-inspired decorative elements
 const decorativeElements = [
   { 
     icon: <Cloud className="w-full h-full" />, 
@@ -82,7 +80,6 @@ const decorativeElements = [
     animation: "animate-float",
     delay: "2s"
   },
-  // New decorative elements
   { 
     icon: <Wind className="w-full h-full" />, 
     position: "top-14 left-[40%]", 
@@ -140,7 +137,7 @@ const decorativeElements = [
     delay: "3.2s"
   },
   { 
-    icon: <Mountains className="w-full h-full" />, 
+    icon: <Mountain className="w-full h-full" />, 
     position: "bottom-5 right-0", 
     size: "w-32 h-20", 
     color: "text-[#F2FCE2]/30",
@@ -161,19 +158,16 @@ const Services = () => {
   return (
     <section id="services" className="section-padding relative overflow-hidden py-20">
       <div className="absolute inset-0 pointer-events-none">
-        {/* Ghibli-inspired soft background elements - expanded */}
         <div className="blob h-96 w-96 bg-[#fef7cd]/30 -top-48 left-20 animate-float rounded-[40%_60%_70%_30%/40%_50%_60%_50%]" style={{animationDelay: "1.5s"}}></div>
         <div className="blob h-80 w-80 bg-[#d3e4fd]/30 -bottom-40 right-10 animate-float rounded-[50%_50%_40%_60%/40%_40%_60%_50%]" style={{animationDelay: "0.5s"}}></div>
         <div className="blob h-64 w-64 bg-[#fde1d3]/30 top-1/4 -left-20 animate-float rounded-[60%_40%_30%_70%/60%_30%_70%_40%]" style={{animationDelay: "2s"}}></div>
         <div className="blob h-72 w-72 bg-[#e5deff]/30 bottom-1/3 right-1/4 animate-float rounded-[30%_70%_60%_40%/50%_60%_40%_50%]" style={{animationDelay: "1s"}}></div>
         <div className="blob h-56 w-56 bg-[#ffdee2]/30 top-1/2 right-1/5 animate-float rounded-[50%_30%_40%_60%/40%_50%_60%_40%]" style={{animationDelay: "3s"}}></div>
         
-        {/* New additional Ghibli-inspired background blobs */}
         <div className="blob h-44 w-44 bg-[#a6d0cc]/20 top-1/3 left-1/3 animate-float-slow rounded-[45%_55%_65%_35%/55%_45%_35%_45%]" style={{animationDelay: "2.3s"}}></div>
         <div className="blob h-60 w-60 bg-[#f9f9c5]/20 bottom-1/4 left-1/5 animate-float-slow rounded-[35%_65%_50%_50%/60%_40%_60%_40%]" style={{animationDelay: "1.7s"}}></div>
         <div className="blob h-52 w-52 bg-[#ffcaa7]/20 top-3/4 right-1/3 animate-float-slow rounded-[55%_45%_40%_60%/35%_65%_35%_65%]" style={{animationDelay: "2.9s"}}></div>
         
-        {/* Decorative Ghibli-inspired elements - expanded */}
         {decorativeElements.map((element, index) => (
           <div
             key={index}
@@ -184,10 +178,8 @@ const Services = () => {
           </div>
         ))}
         
-        {/* Subtle grid pattern background */}
         <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxkZWZzPjxwYXR0ZXJuIGlkPSJncmlkIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiPjxwYXRoIGQ9Ik0gNDAgMCBMIDAgMCAwIDQwIiBmaWxsPSJub25lIiBzdHJva2U9ImhzbCgyNzAgNTAlIDYwJSAvIDAuMDIpIiBzdHJva2Utd2lkdGg9IjEiPjwvcGF0aD48L3BhdHRlcm4+PC9kZWZzPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JpZCkiPjwvcmVjdD48L3N2Zz4=')]" style={{ opacity: "0.2" }}></div>
       
-        {/* New! Ghibli-style clouds */}
         <div className="absolute top-5 left-1/4 w-64 h-24 opacity-60">
           <svg viewBox="0 0 200 100" className="w-full h-full text-white/70 fill-current">
             <path d="M30,40 Q40,20 50,40 T70,40 T90,40 T110,40 T130,40 T150,40 T170,40" fill="currentColor" />
@@ -235,7 +227,6 @@ const Services = () => {
               <h3 className="text-xl font-bold text-center mb-4 font-montserrat group-hover:text-[#5A645E] transition-colors">{service.title}</h3>
               <p className="text-center text-foreground/70">{service.description}</p>
               
-              {/* Ghibli-inspired decorative element at the bottom of each card */}
               <div className="w-full flex justify-center mt-6">
                 <div className="w-16 h-1 bg-gradient-to-r from-transparent via-primary/40 to-transparent rounded-full group-hover:w-24 transition-all duration-300"></div>
               </div>
@@ -243,7 +234,6 @@ const Services = () => {
           ))}
         </div>
         
-        {/* Enhanced Nature-inspired footer illustration */}
         <div className="mt-16 w-full flex justify-center">
           <div className="relative">
             <svg className="w-64 h-24 text-[#F2FCE2]/50" viewBox="0 0 100 40" xmlns="http://www.w3.org/2000/svg">
@@ -260,7 +250,6 @@ const Services = () => {
               <path d="M20,30 Q30,25 40,28 T60,28 T80,30" stroke="currentColor" strokeWidth="0.5" fill="none" opacity="0.5"/>
               <path d="M10,32 Q25,29 40,31 T60,31 T90,33" stroke="currentColor" strokeWidth="0.5" fill="none" opacity="0.3"/>
               
-              {/* Small Ghibli-style creatures */}
               <g className="animate-float" style={{animationDelay: "1.5s"}}>
                 <circle cx="15" cy="22" r="1" fill="currentColor"/>
                 <circle cx="17" cy="21" r="0.7" fill="currentColor"/>
@@ -275,7 +264,6 @@ const Services = () => {
           </div>
         </div>
         
-        {/* Ghibli-style wave divider */}
         <div className="relative w-full h-16 mt-10">
           <svg className="w-full h-full text-[#a6d0cc]/20 fill-current" viewBox="0 0 1200 120" preserveAspectRatio="none">
             <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"></path>

@@ -1,6 +1,5 @@
-
 import { useEffect, useRef } from 'react';
-import { ChevronDown, ExternalLink, Cloud, Bird, Feather, Leaf, Stars, Flower2, Mountains } from 'lucide-react';
+import { ChevronDown, ExternalLink, Cloud, Bird, Feather, Leaf, Stars, Flower2, Mountain } from 'lucide-react';
 import { Button } from './ui/button';
 
 const Hero = () => {
@@ -83,7 +82,7 @@ const Hero = () => {
           <Flower2 className="w-full h-full" />
         </div>
         <div className="absolute -bottom-5 right-0 w-64 h-32 text-foreground/5 animate-rise" style={{animationDelay: "0.8s"}}>
-          <Mountains className="w-full h-full" />
+          <Mountain className="w-full h-full" />
         </div>
         
         {/* Ghibli-style fluffy clouds */}
