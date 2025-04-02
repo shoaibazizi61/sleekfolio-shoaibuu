@@ -1,15 +1,16 @@
-
-import { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { ArrowLeft, ExternalLink, Calendar, User, Wrench } from 'lucide-react';
-import { projectsData, Project } from '../data/projectsData';
-import { Dialog, DialogContent, DialogClose } from "@/components/ui/dialog";
+import { ArrowLeft, ExternalLink, Heart, Share2, Eye, Calendar, Tag, MessageCircle, Download, User, Clock, Trees, Rabbit, Bird, Leaf, Stars, Cloud, Mountain, Flower2, Feather } from 'lucide-react';
+import { projectsData } from '../data/projectsData';
+import { Button } from '@/components/ui/button';
+import { useState, useEffect } from 'react';
+import { useIsMobile } from '@/hooks/use-mobile';
 
 const ProjectDetail = () => {
   const { id } = useParams<{ id: string }>();
   const [project, setProject] = useState<Project | null>(null);
   const [loading, setLoading] = useState(true);
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
+  const isMobile = useIsMobile();
 
   useEffect(() => {
     if (id) {
@@ -17,7 +18,6 @@ const ProjectDetail = () => {
       setProject(foundProject || null);
       setLoading(false);
       
-      // Update document title
       if (foundProject) {
         document.title = `${foundProject.title} | Shoaibuu Portfolio`;
       }
