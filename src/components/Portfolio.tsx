@@ -47,18 +47,45 @@ const Portfolio = () => {
             backgroundImage: `repeating-linear-gradient(90deg, transparent, transparent 40px, rgba(161, 216, 207, 0.3) 40px, rgba(161, 216, 207, 0.3) 41px)`
           }}>
         </div>
+        
+        {/* New: Ghibli-style dust particles */}
+        <div className="absolute inset-0 opacity-30">
+          {[...Array(20)].map((_, i) => (
+            <div 
+              key={i}
+              className="absolute w-2 h-2 rounded-full bg-primary/40 animate-float-slow"
+              style={{
+                top: `${Math.random() * 100}%`,
+                left: `${Math.random() * 100}%`,
+                animationDelay: `${Math.random() * 10}s`,
+                animationDuration: `${8 + Math.random() * 10}s`
+              }}
+            />
+          ))}
+        </div>
       </div>
     
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-12">
-          <h2 className="font-montserrat text-3xl md:text-4xl font-bold mb-6 text-gradient">My Portfolio</h2>
+          <h2 className="font-montserrat text-3xl md:text-4xl font-bold mb-6 text-gradient relative inline-block">
+            My Portfolio
+            <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-gradient-to-r from-primary/30 via-primary to-primary/30"></span>
+          </h2>
+          
+          {/* Ghibli-style description */}
+          <p className="text-muted-foreground max-w-2xl mx-auto mb-8 relative">
+            Explore my creative works across different design categories
+            <span className="absolute -right-6 -top-4 text-primary/60 animate-sway" style={{animationDelay: "0.7s"}}>
+              <Leaf className="w-4 h-4" />
+            </span>
+          </p>
           
           {isMobile ? (
             <div className="w-full max-w-4xl mx-auto">
               <select 
                 value={activeTab}
                 onChange={(e) => setActiveTab(e.target.value)}
-                className="w-full p-3 mb-5 bg-background/50 backdrop-blur-sm rounded-xl border border-primary/10 shadow-md text-foreground"
+                className="w-full p-3 mb-5 bg-gradient-to-r from-background/80 via-secondary/20 to-background/80 backdrop-blur-sm rounded-xl border border-primary/20 shadow-md text-foreground"
               >
                 <option value="ui">UI Design</option>
                 <option value="social">Social Media</option>
@@ -136,26 +163,36 @@ const Portfolio = () => {
             </div>
           ) : (
             <Tabs defaultValue="ui" className="w-full max-w-4xl mx-auto">
-              <TabsList className="flex flex-wrap justify-center gap-2 w-full mb-5 bg-background/50 backdrop-blur-sm p-2 rounded-xl border border-primary/10 shadow-md">
-                <TabsTrigger value="ui" className="flex-grow basis-[45%] sm:basis-auto rounded-lg data-[state=active]:bg-primary data-[state=active]:text-white">
-                  UI Design
-                </TabsTrigger>
-                <TabsTrigger value="social" className="flex-grow basis-[45%] sm:basis-auto rounded-lg data-[state=active]:bg-primary data-[state=active]:text-white">
-                  Social Media
-                </TabsTrigger>
-                <TabsTrigger value="logo" className="flex-grow basis-[45%] sm:basis-auto rounded-lg data-[state=active]:bg-primary data-[state=active]:text-white">
-                  Logo
-                </TabsTrigger>
-                <TabsTrigger value="wordpress" className="flex-grow basis-[45%] sm:basis-auto rounded-lg data-[state=active]:bg-primary data-[state=active]:text-white">
-                  WordPress
-                </TabsTrigger>
-                <TabsTrigger value="product" className="flex-grow basis-[45%] sm:basis-auto rounded-lg data-[state=active]:bg-primary data-[state=active]:text-white">
-                  Product
-                </TabsTrigger>
-                <TabsTrigger value="video" className="flex-grow basis-[45%] sm:basis-auto rounded-lg data-[state=active]:bg-primary data-[state=active]:text-white">
-                  Video
-                </TabsTrigger>
-              </TabsList>
+              <div className="relative">
+                {/* Decorative elements around tabs */}
+                <div className="absolute -left-8 top-1/2 -translate-y-1/2 text-primary/60 animate-sway hidden md:block" style={{animationDelay: "1.5s"}}>
+                  <Leaf className="w-6 h-6" />
+                </div>
+                <div className="absolute -right-8 top-1/2 -translate-y-1/2 text-primary/60 animate-float-slow hidden md:block" style={{animationDelay: "0.8s"}}>
+                  <Cloud className="w-6 h-6" />
+                </div>
+                
+                <TabsList className="flex flex-wrap justify-center gap-2 w-full mb-5 px-4 py-3">
+                  <TabsTrigger value="ui" className="flex-grow basis-[45%] sm:basis-auto">
+                    UI Design
+                  </TabsTrigger>
+                  <TabsTrigger value="social" className="flex-grow basis-[45%] sm:basis-auto">
+                    Social Media
+                  </TabsTrigger>
+                  <TabsTrigger value="logo" className="flex-grow basis-[45%] sm:basis-auto">
+                    Logo
+                  </TabsTrigger>
+                  <TabsTrigger value="wordpress" className="flex-grow basis-[45%] sm:basis-auto">
+                    WordPress
+                  </TabsTrigger>
+                  <TabsTrigger value="product" className="flex-grow basis-[45%] sm:basis-auto">
+                    Product
+                  </TabsTrigger>
+                  <TabsTrigger value="video" className="flex-grow basis-[45%] sm:basis-auto">
+                    Video
+                  </TabsTrigger>
+                </TabsList>
+              </div>
               
               <TabsContent value="ui" className="mt-0">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
@@ -217,6 +254,15 @@ const Portfolio = () => {
                   <div className="col-span-full text-center p-6 md:p-8 bg-gradient-to-r from-primary/5 to-primary/10 rounded-xl border border-primary/10 shadow-lg">
                     <h3 className="text-xl font-bold mb-3 text-gradient">Video Projects Coming Soon!</h3>
                     <p className="text-muted-foreground mb-4">I'm currently working on adding my video portfolio. Check back soon for AI-generated videos and edited content!</p>
+                    {/* New: Ghibli-style "coming soon" illustration */}
+                    <div className="flex justify-center mt-2">
+                      <div className="relative">
+                        <Film className="w-10 h-10 text-primary/70 animate-pulse-slow" />
+                        <div className="absolute -top-3 -right-3">
+                          <Stars className="w-5 h-5 text-secondary animate-twinkle" style={{animationDelay: "1s"}} />
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </TabsContent>
