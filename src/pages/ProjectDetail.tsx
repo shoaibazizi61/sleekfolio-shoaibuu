@@ -1,9 +1,11 @@
+
 import { useParams, Link } from 'react-router-dom';
-import { ArrowLeft, ExternalLink, Heart, Share2, Eye, Calendar, Tag, MessageCircle, Download, User, Clock, Trees, Rabbit, Bird, Leaf, Stars, Cloud, Mountain, Flower2, Feather } from 'lucide-react';
-import { projectsData } from '../data/projectsData';
+import { ArrowLeft, ExternalLink, Heart, Share2, Eye, Calendar, Tag, MessageCircle, Download, User, Clock, Trees, Rabbit, Bird, Leaf, Stars, Cloud, Mountain, Flower2, Feather, Wrench } from 'lucide-react';
+import { projectsData, Project } from '../data/projectsData';
 import { Button } from '@/components/ui/button';
 import { useState, useEffect } from 'react';
 import { useIsMobile } from '@/hooks/use-mobile';
+import { Dialog, DialogContent, DialogClose } from "@/components/ui/dialog";
 
 const ProjectDetail = () => {
   const { id } = useParams<{ id: string }>();
