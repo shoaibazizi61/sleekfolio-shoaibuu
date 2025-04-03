@@ -20,7 +20,7 @@ const Portfolio = () => {
         <div className="blob h-64 w-64 bg-[#fef7cd]/30 top-20 -left-20 animate-float rounded-[60%_40%_70%_30%/40%_50%_60%_50%]" style={{animationDelay: "0.7s"}}></div>
         <div className="blob h-80 w-80 bg-[#ffdee2]/30 bottom-40 -right-20 animate-float rounded-[50%_50%_30%_70%/40%_60%_60%_40%]" style={{animationDelay: "1.3s"}}></div>
         
-        {/* Floating Ghibli elements */}
+        {/* Enhanced Ghibli floating elements */}
         <div className="absolute top-32 right-[15%] w-14 h-14 text-[#6eada8]/60 animate-float" style={{animationDelay: "0.5s"}}>
           <Cloud className="w-full h-full" />
         </div>
@@ -34,26 +34,12 @@ const Portfolio = () => {
           <Bird className="w-full h-full" />
         </div>
         
-        {/* Ghibli-style flowing water at bottom */}
-        <div className="absolute bottom-0 left-0 right-0 h-12 opacity-40">
-          <svg className="w-full h-full" viewBox="0 0 1200 60" preserveAspectRatio="none">
-            <path d="M0,30 C200,10 400,50 600,30 C800,10 1000,40 1200,20 L1200,60 L0,60 Z" className="fill-current text-nature-water/40"></path>
-          </svg>
-        </div>
-        
-        {/* Ghibli-style rice field pattern */}
-        <div className="absolute inset-0 opacity-10" 
-          style={{
-            backgroundImage: `repeating-linear-gradient(90deg, transparent, transparent 40px, rgba(161, 216, 207, 0.3) 40px, rgba(161, 216, 207, 0.3) 41px)`
-          }}>
-        </div>
-        
         {/* New: Ghibli-style dust particles */}
-        <div className="absolute inset-0 opacity-30">
-          {[...Array(20)].map((_, i) => (
+        <div className="absolute inset-0 opacity-40">
+          {[...Array(30)].map((_, i) => (
             <div 
               key={i}
-              className="absolute w-2 h-2 rounded-full bg-primary/40 animate-float-slow"
+              className="absolute w-1.5 h-1.5 rounded-full bg-primary/30 animate-float-slow"
               style={{
                 top: `${Math.random() * 100}%`,
                 left: `${Math.random() * 100}%`,
@@ -62,6 +48,22 @@ const Portfolio = () => {
               }}
             />
           ))}
+        </div>
+        
+        {/* New: Ghibli-style rice field pattern */}
+        <div className="absolute inset-0 opacity-10" 
+          style={{
+            backgroundImage: `repeating-linear-gradient(90deg, transparent, transparent 40px, rgba(161, 216, 207, 0.3) 40px, rgba(161, 216, 207, 0.3) 41px), 
+                             repeating-linear-gradient(0deg, transparent, transparent 40px, rgba(254, 247, 205, 0.2) 40px, rgba(254, 247, 205, 0.2) 41px)`
+          }}>
+        </div>
+        
+        {/* Ghibli-style flowing water at bottom */}
+        <div className="absolute bottom-0 left-0 right-0 h-16 opacity-40">
+          <svg className="w-full h-full" viewBox="0 0 1200 60" preserveAspectRatio="none">
+            <path d="M0,30 C200,10 400,50 600,30 C800,10 1000,40 1200,20 L1200,60 L0,60 Z" className="fill-current text-nature-water/40"></path>
+            <path d="M0,40 C150,20 350,60 550,40 C750,20 950,50 1200,30 L1200,60 L0,60 Z" className="fill-current text-nature-water/30"></path>
+          </svg>
         </div>
       </div>
     
@@ -72,11 +74,14 @@ const Portfolio = () => {
             <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-gradient-to-r from-primary/30 via-primary to-primary/30"></span>
           </h2>
           
-          {/* Ghibli-style description */}
+          {/* Enhanced Ghibli-style description */}
           <p className="text-muted-foreground max-w-2xl mx-auto mb-8 relative">
             Explore my creative works across different design categories
             <span className="absolute -right-6 -top-4 text-primary/60 animate-sway" style={{animationDelay: "0.7s"}}>
               <Leaf className="w-4 h-4" />
+            </span>
+            <span className="absolute -left-6 bottom-0 text-[#ffdee2]/60 animate-float-slow" style={{animationDelay: "1.2s"}}>
+              <Cloud className="w-4 h-4" />
             </span>
           </p>
           
@@ -94,9 +99,9 @@ const Portfolio = () => {
                 <select 
                   value={activeTab}
                   onChange={(e) => setActiveTab(e.target.value)}
-                  className="w-full p-3 mb-5 bg-gradient-to-r from-secondary/40 via-primary/10 to-secondary/40 backdrop-blur-sm rounded-xl border border-primary/30 shadow-md text-foreground font-medium relative z-10"
+                  className="w-full p-3 mb-5 bg-gradient-to-r from-[#fef7cd]/40 via-[#a6d0cc]/20 to-[#fef7cd]/40 backdrop-blur-sm rounded-xl border border-primary/30 shadow-md text-foreground font-medium relative z-10"
                   style={{
-                    backgroundImage: `linear-gradient(to right, rgba(254, 247, 205, 0.4), rgba(166, 208, 204, 0.1), rgba(254, 247, 205, 0.4)), url("data:image/svg+xml,%3Csvg width='20' height='20' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='10' cy='10' r='10' fill='%23a6d0cc' fill-opacity='0.05'/%3E%3C/svg%3E")`,
+                    backgroundImage: `linear-gradient(to right, rgba(254, 247, 205, 0.4), rgba(166, 208, 204, 0.2), rgba(254, 247, 205, 0.4)), url("data:image/svg+xml,%3Csvg width='20' height='20' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='10' cy='10' r='10' fill='%23a6d0cc' fill-opacity='0.05'/%3E%3C/svg%3E")`,
                     backgroundSize: "cover, 20px 20px",
                     backgroundRepeat: "no-repeat, repeat",
                   }}
@@ -168,9 +173,17 @@ const Portfolio = () => {
                 
                 {activeTab === "video" && (
                   <div className="grid grid-cols-1 gap-4">
-                    <div className="col-span-full text-center p-6 bg-gradient-to-r from-primary/5 to-primary/10 rounded-xl border border-primary/10 shadow-lg">
+                    <div className="col-span-full text-center p-6 bg-gradient-to-r from-[#fef7cd]/30 to-[#ffdee2]/30 rounded-xl border border-primary/10 shadow-lg">
                       <h3 className="text-xl font-bold mb-3 text-gradient">Video Projects Coming Soon!</h3>
-                      <p className="text-muted-foreground mb-4">I'm currently working on adding my video portfolio. Check back soon for AI-generated videos and edited content!</p>
+                      <p className="text-foreground/80 mb-4">I'm currently working on adding my video portfolio. Check back soon for AI-generated videos and edited content!</p>
+                      <div className="flex justify-center mt-2">
+                        <div className="relative">
+                          <Film className="w-10 h-10 text-primary/70 animate-pulse-slow" />
+                          <div className="absolute -top-3 -right-3">
+                            <Stars className="w-5 h-5 text-[#fef7cd] animate-twinkle" style={{animationDelay: "1s"}} />
+                          </div>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 )}
@@ -179,31 +192,31 @@ const Portfolio = () => {
           ) : (
             <Tabs defaultValue="ui" className="w-full max-w-4xl mx-auto">
               <div className="relative">
-                {/* Decorative elements around tabs */}
+                {/* Enhanced decorative elements around tabs */}
                 <div className="absolute -left-8 top-1/2 -translate-y-1/2 text-primary/60 animate-sway hidden md:block" style={{animationDelay: "1.5s"}}>
                   <Leaf className="w-6 h-6" />
                 </div>
-                <div className="absolute -right-8 top-1/2 -translate-y-1/2 text-primary/60 animate-float-slow hidden md:block" style={{animationDelay: "0.8s"}}>
+                <div className="absolute -right-8 top-1/2 -translate-y-1/2 text-[#ffdee2]/60 animate-float-slow hidden md:block" style={{animationDelay: "0.8s"}}>
                   <Cloud className="w-6 h-6" />
                 </div>
                 
-                <TabsList className="flex flex-wrap justify-center gap-2 w-full mb-5 px-4 py-3">
-                  <TabsTrigger value="ui" className="flex-grow basis-[45%] sm:basis-auto">
+                <TabsList className="flex flex-wrap justify-center gap-2 w-full mb-5 px-4 py-3 bg-gradient-to-r from-[#fef7cd]/20 via-[#a6d0cc]/10 to-[#fef7cd]/20 border border-primary/10">
+                  <TabsTrigger value="ui" className="flex-grow basis-[45%] sm:basis-auto data-[state=active]:bg-gradient-to-r data-[state=active]:from-primary/20 data-[state=active]:to-primary/10 data-[state=active]:text-primary">
                     UI Design
                   </TabsTrigger>
-                  <TabsTrigger value="social" className="flex-grow basis-[45%] sm:basis-auto">
+                  <TabsTrigger value="social" className="flex-grow basis-[45%] sm:basis-auto data-[state=active]:bg-gradient-to-r data-[state=active]:from-primary/20 data-[state=active]:to-primary/10 data-[state=active]:text-primary">
                     Social Media
                   </TabsTrigger>
-                  <TabsTrigger value="logo" className="flex-grow basis-[45%] sm:basis-auto">
+                  <TabsTrigger value="logo" className="flex-grow basis-[45%] sm:basis-auto data-[state=active]:bg-gradient-to-r data-[state=active]:from-primary/20 data-[state=active]:to-primary/10 data-[state=active]:text-primary">
                     Logo
                   </TabsTrigger>
-                  <TabsTrigger value="wordpress" className="flex-grow basis-[45%] sm:basis-auto">
+                  <TabsTrigger value="wordpress" className="flex-grow basis-[45%] sm:basis-auto data-[state=active]:bg-gradient-to-r data-[state=active]:from-primary/20 data-[state=active]:to-primary/10 data-[state=active]:text-primary">
                     WordPress
                   </TabsTrigger>
-                  <TabsTrigger value="product" className="flex-grow basis-[45%] sm:basis-auto">
+                  <TabsTrigger value="product" className="flex-grow basis-[45%] sm:basis-auto data-[state=active]:bg-gradient-to-r data-[state=active]:from-primary/20 data-[state=active]:to-primary/10 data-[state=active]:text-primary">
                     Product
                   </TabsTrigger>
-                  <TabsTrigger value="video" className="flex-grow basis-[45%] sm:basis-auto">
+                  <TabsTrigger value="video" className="flex-grow basis-[45%] sm:basis-auto data-[state=active]:bg-gradient-to-r data-[state=active]:from-primary/20 data-[state=active]:to-primary/10 data-[state=active]:text-primary">
                     Video
                   </TabsTrigger>
                 </TabsList>
@@ -266,15 +279,18 @@ const Portfolio = () => {
               
               <TabsContent value="video" className="mt-0">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
-                  <div className="col-span-full text-center p-6 md:p-8 bg-gradient-to-r from-primary/5 to-primary/10 rounded-xl border border-primary/10 shadow-lg">
+                  <div className="col-span-full text-center p-6 md:p-8 bg-gradient-to-r from-[#fef7cd]/30 to-[#ffdee2]/30 rounded-xl border border-primary/10 shadow-lg">
                     <h3 className="text-xl font-bold mb-3 text-gradient">Video Projects Coming Soon!</h3>
-                    <p className="text-muted-foreground mb-4">I'm currently working on adding my video portfolio. Check back soon for AI-generated videos and edited content!</p>
-                    {/* New: Ghibli-style "coming soon" illustration */}
+                    <p className="text-foreground/80 mb-4">I'm currently working on adding my video portfolio. Check back soon for AI-generated videos and edited content!</p>
+                    {/* Enhanced Ghibli-style "coming soon" illustration */}
                     <div className="flex justify-center mt-2">
                       <div className="relative">
                         <Film className="w-10 h-10 text-primary/70 animate-pulse-slow" />
                         <div className="absolute -top-3 -right-3">
-                          <Stars className="w-5 h-5 text-secondary animate-twinkle" style={{animationDelay: "1s"}} />
+                          <Stars className="w-5 h-5 text-[#fef7cd] animate-twinkle" style={{animationDelay: "1s"}} />
+                        </div>
+                        <div className="absolute -bottom-2 -left-3">
+                          <Leaf className="w-4 h-4 text-[#86bb6b]/70 animate-sway" style={{animationDelay: "1.5s"}} />
                         </div>
                       </div>
                     </div>
@@ -284,8 +300,13 @@ const Portfolio = () => {
             </Tabs>
           )}
           
-          <div className="mt-12 md:mt-16 p-6 md:p-8 rounded-xl bg-gradient-to-br from-background via-primary/5 to-background border border-primary/10 shadow-lg max-w-3xl mx-auto">
-            <h3 className="text-2xl font-bold mb-6 md:mb-8 text-gradient">Tools I Use</h3>
+          <div className="mt-12 md:mt-16 p-6 md:p-8 rounded-xl bg-gradient-to-br from-background via-[#fef7cd]/10 to-background border border-primary/10 shadow-lg max-w-3xl mx-auto">
+            <h3 className="text-2xl font-bold mb-6 md:mb-8 text-gradient relative inline-block">
+              Tools I Use
+              <span className="absolute -right-6 -top-4">
+                <Stars className="w-5 h-5 text-[#fef7cd]/70 animate-twinkle" style={{animationDelay: "0.7s"}} />
+              </span>
+            </h3>
             
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 md:gap-4 mb-6">
               <h4 className="col-span-full text-left text-lg font-semibold mb-2 text-foreground/80">Design Tools</h4>
@@ -378,8 +399,8 @@ const ToolButton = ({
   compact?: boolean 
 }) => {
   return (
-    <span className={`relative group ${isNew ? 'bg-gradient-to-r from-primary/20 to-primary/30' : 'bg-gradient-to-r from-primary/10 to-primary/20'} 
-      text-primary ${compact ? 'px-2 py-1.5 text-xs' : 'px-4 py-2'} rounded-full inline-flex items-center 
+    <span className={`relative group ${isNew ? 'bg-gradient-to-r from-[#fef7cd]/40 to-[#ffdee2]/40' : 'bg-gradient-to-r from-[#fef7cd]/20 to-[#ffdee2]/20'} 
+      text-foreground ${compact ? 'px-2 py-1.5 text-xs' : 'px-4 py-2'} rounded-full inline-flex items-center 
       hover:from-primary hover:to-primary/80 hover:text-white transition-all duration-300 
       shadow-sm hover:shadow-md border border-primary/10 w-full justify-center`}>
       {icon} {compact ? <span className="ml-1 truncate">{label}</span> : label}
@@ -399,36 +420,36 @@ const ProjectCard = ({ project }: { project: Project }) => {
     <Card 
       className="group relative overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border border-primary/10 bg-gradient-to-b from-background/90 to-background/70 backdrop-blur-sm"
     >
-      {/* Ghibli-inspired decorative corner elements */}
-      <div className="absolute top-0 left-0 w-12 h-12 opacity-50 pointer-events-none">
+      {/* Enhanced Ghibli-inspired decorative corner elements */}
+      <div className="absolute top-0 left-0 w-12 h-12 opacity-60 pointer-events-none">
         <svg viewBox="0 0 40 40" className="w-full h-full">
-          <path d="M0,0 C20,0 40,20 40,40" fill="none" stroke="rgba(166, 208, 204, 0.5)" strokeWidth="1" />
-          <path d="M0,10 C15,10 30,25 30,40" fill="none" stroke="rgba(166, 208, 204, 0.3)" strokeWidth="1" />
-          <path d="M10,0 C10,15 25,30 40,30" fill="none" stroke="rgba(166, 208, 204, 0.3)" strokeWidth="1" />
+          <path d="M0,0 C20,0 40,20 40,40" fill="none" stroke="rgba(166, 208, 204, 0.7)" strokeWidth="1" />
+          <path d="M0,10 C15,10 30,25 30,40" fill="none" stroke="rgba(166, 208, 204, 0.5)" strokeWidth="1" />
+          <path d="M10,0 C10,15 25,30 40,30" fill="none" stroke="rgba(166, 208, 204, 0.5)" strokeWidth="1" />
         </svg>
       </div>
       
-      <div className="absolute top-0 right-0 w-12 h-12 opacity-50 pointer-events-none transform rotate-90">
+      <div className="absolute top-0 right-0 w-12 h-12 opacity-60 pointer-events-none transform rotate-90">
         <svg viewBox="0 0 40 40" className="w-full h-full">
-          <path d="M0,0 C20,0 40,20 40,40" fill="none" stroke="rgba(255, 222, 226, 0.5)" strokeWidth="1" />
-          <path d="M0,10 C15,10 30,25 30,40" fill="none" stroke="rgba(255, 222, 226, 0.3)" strokeWidth="1" />
-          <path d="M10,0 C10,15 25,30 40,30" fill="none" stroke="rgba(255, 222, 226, 0.3)" strokeWidth="1" />
+          <path d="M0,0 C20,0 40,20 40,40" fill="none" stroke="rgba(255, 222, 226, 0.7)" strokeWidth="1" />
+          <path d="M0,10 C15,10 30,25 30,40" fill="none" stroke="rgba(255, 222, 226, 0.5)" strokeWidth="1" />
+          <path d="M10,0 C10,15 25,30 40,30" fill="none" stroke="rgba(255, 222, 226, 0.5)" strokeWidth="1" />
         </svg>
       </div>
       
-      <div className="absolute bottom-0 right-0 w-12 h-12 opacity-50 pointer-events-none transform rotate-180">
+      <div className="absolute bottom-0 right-0 w-12 h-12 opacity-60 pointer-events-none transform rotate-180">
         <svg viewBox="0 0 40 40" className="w-full h-full">
-          <path d="M0,0 C20,0 40,20 40,40" fill="none" stroke="rgba(254, 247, 205, 0.5)" strokeWidth="1" />
-          <path d="M0,10 C15,10 30,25 30,40" fill="none" stroke="rgba(254, 247, 205, 0.3)" strokeWidth="1" />
-          <path d="M10,0 C10,15 25,30 40,30" fill="none" stroke="rgba(254, 247, 205, 0.3)" strokeWidth="1" />
+          <path d="M0,0 C20,0 40,20 40,40" fill="none" stroke="rgba(254, 247, 205, 0.7)" strokeWidth="1" />
+          <path d="M0,10 C15,10 30,25 30,40" fill="none" stroke="rgba(254, 247, 205, 0.5)" strokeWidth="1" />
+          <path d="M10,0 C10,15 25,30 40,30" fill="none" stroke="rgba(254, 247, 205, 0.5)" strokeWidth="1" />
         </svg>
       </div>
       
-      <div className="absolute bottom-0 left-0 w-12 h-12 opacity-50 pointer-events-none transform -rotate-90">
+      <div className="absolute bottom-0 left-0 w-12 h-12 opacity-60 pointer-events-none transform -rotate-90">
         <svg viewBox="0 0 40 40" className="w-full h-full">
-          <path d="M0,0 C20,0 40,20 40,40" fill="none" stroke="rgba(242, 252, 226, 0.5)" strokeWidth="1" />
-          <path d="M0,10 C15,10 30,25 30,40" fill="none" stroke="rgba(242, 252, 226, 0.3)" strokeWidth="1" />
-          <path d="M10,0 C10,15 25,30 40,30" fill="none" stroke="rgba(242, 252, 226, 0.3)" strokeWidth="1" />
+          <path d="M0,0 C20,0 40,20 40,40" fill="none" stroke="rgba(242, 252, 226, 0.7)" strokeWidth="1" />
+          <path d="M0,10 C15,10 30,25 30,40" fill="none" stroke="rgba(242, 252, 226, 0.5)" strokeWidth="1" />
+          <path d="M10,0 C10,15 25,30 40,30" fill="none" stroke="rgba(242, 252, 226, 0.5)" strokeWidth="1" />
         </svg>
       </div>
     
@@ -466,13 +487,13 @@ const ProjectCard = ({ project }: { project: Project }) => {
           </div>
         </div>
         
-        {/* Ghibli-style frame decoration */}
-        <div className="absolute inset-0 pointer-events-none border-2 opacity-0 group-hover:opacity-100 transition-opacity duration-500 border-white/20"></div>
+        {/* Enhanced Ghibli-style frame decoration */}
+        <div className="absolute inset-0 pointer-events-none border-2 opacity-0 group-hover:opacity-100 transition-opacity duration-500 border-white/30"></div>
       </div>
       
       <CardContent className="p-3 md:p-4">
         <div className="flex justify-between items-center">
-          <span className="text-[10px] md:text-xs font-semibold px-2 md:px-3 py-0.5 md:py-1 bg-gradient-to-r from-primary/30 to-primary/20 text-primary rounded-full uppercase tracking-wider border border-primary/20 truncate max-w-[70%]">
+          <span className="text-[10px] md:text-xs font-semibold px-2 md:px-3 py-0.5 md:py-1 bg-gradient-to-r from-[#fef7cd]/40 to-[#ffdee2]/30 text-primary rounded-full uppercase tracking-wider border border-primary/20 truncate max-w-[70%]">
             {project.category === 'ui' ? 'UI Design' : 
              project.category === 'social' ? 'Social Media' : 
              project.category === 'product' ? 'Product Design' :
