@@ -198,7 +198,7 @@ const Services = () => {
     
       <div className="container mx-auto relative z-10">
         <div className="text-center mb-16">
-          <span className="inline-block mb-3 py-1 px-4 rounded-full text-xs font-medium bg-[#ffdee2]/40 text-foreground border border-[#ffdee2]/60">SERVICES</span>
+          <span className="inline-block mb-3 py-1 px-4 rounded-full text-xs font-medium bg-[#ffdee2]/40 text-[#d34757] border border-[#ffdee2]/60">SERVICES</span>
           <h2 className="font-montserrat text-3xl md:text-4xl font-bold mb-4">My Magical Services</h2>
           <p className="text-foreground/80 max-w-2xl mx-auto">
             Let me bring your ideas to life with a touch of magic and wonder.
