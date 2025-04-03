@@ -460,8 +460,8 @@ const ProjectCard = ({ project }: { project: Project }) => {
           className="object-cover w-full h-full transition-transform duration-700 group-hover:scale-110"
         />
         
-        {/* Fixed overlay to ensure buttons are visible */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center p-4">
+        {/* Fixed overlay to ensure buttons are always visible on desktop */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent flex items-end justify-center p-4 group-hover:opacity-100 md:opacity-0 transition-opacity duration-300">
           <div className="w-full text-center">
             <h3 className="text-lg md:text-xl font-bold text-white font-montserrat line-clamp-1 mb-1">{project.title}</h3>
             <p className="text-white/90 text-xs md:text-sm line-clamp-2 mb-2">{project.description}</p>

@@ -81,9 +81,9 @@ const Index = () => {
           <Stars className="w-4 h-4 text-[#fef7cd]/25" />
         </div>
         
-        {/* Ghibli-style dust particles */}
+        {/* Ghibli-style dust particles with more particles for enhanced effect */}
         <div className="absolute inset-0">
-          {[...Array(40)].map((_, i) => (
+          {[...Array(60)].map((_, i) => (
             <div 
               key={i}
               className="absolute w-1.5 h-1.5 rounded-full bg-[#fef7cd]/30 animate-float-slow"
