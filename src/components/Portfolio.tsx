@@ -1,6 +1,6 @@
 
 import { useState } from 'react';
-import { ExternalLink, Paintbrush, Monitor, Image as ImageIcon, Globe, Code, FileCode, Palette, Laptop, Smartphone, PenTool, Layers, PlaySquare, Film, Video, Youtube, Bird, Cloud, Leaf, Stars } from 'lucide-react';
+import { ExternalLink, Paintbrush, Monitor, Image as ImageIcon, Globe, Code, FileCode, Palette, Laptop, Smartphone, PenTool, Layers, PlaySquare, Film, Video, Youtube, Bird, Cloud, Leaf, Stars, Fish } from 'lucide-react';
 import { Link } from "react-router-dom";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Card, CardContent } from "@/components/ui/card";
@@ -459,29 +459,30 @@ const ProjectCard = ({ project }: { project: Project }) => {
           alt={project.title}
           className="object-cover w-full h-full transition-transform duration-700 group-hover:scale-110"
         />
-        {/* Fix: Modify the hover overlay to ensure links are visible and clickable */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center p-6">
-          <div className="w-full transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
+        
+        {/* Fixed overlay to ensure buttons are visible */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center p-4">
+          <div className="w-full text-center">
             <h3 className="text-lg md:text-xl font-bold text-white font-montserrat line-clamp-1 mb-1">{project.title}</h3>
-            <p className="text-white/90 text-xs md:text-sm line-clamp-2 mb-3">{project.description}</p>
+            <p className="text-white/90 text-xs md:text-sm line-clamp-2 mb-2">{project.description}</p>
             
-            <div className="flex gap-2 md:gap-3 mt-2">
+            <div className="flex justify-center gap-2 md:gap-3 mt-2">
               <Link
                 to={`/project/${project.id}`}
-                className="bg-white/90 text-primary hover:text-white hover:bg-primary py-1 px-3 rounded-full transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300 shadow-md hover:shadow-lg flex items-center gap-1 text-sm"
-                aria-label="View project details"
+                className="bg-white/90 text-primary hover:text-white hover:bg-primary py-1.5 px-3 rounded-full shadow-md hover:shadow-lg flex items-center gap-1 text-sm z-10"
+                aria-label={`View details for ${project.title}`}
               >
                 <svg xmlns="http://www.w3.org/2000/svg" width={isMobile ? "14" : "16"} height={isMobile ? "14" : "16"} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-eye"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
                 <span>View More</span>
               </Link>
+              
               {project.link && (
                 <a
                   href={project.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="bg-white/90 text-primary hover:text-white hover:bg-primary py-1 px-3 rounded-full transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300 shadow-md hover:shadow-lg flex items-center gap-1 text-sm"
-                  style={{ transitionDelay: '0.1s' }}
-                  aria-label="Open link"
+                  className="bg-white/90 text-primary hover:text-white hover:bg-primary py-1.5 px-3 rounded-full shadow-md hover:shadow-lg flex items-center gap-1 text-sm z-10"
+                  aria-label={`Visit external link for ${project.title}`}
                 >
                   <ExternalLink className={isMobile ? "w-3 h-3" : "w-4 h-4"} />
                   <span>Full Access</span>
@@ -503,10 +504,15 @@ const ProjectCard = ({ project }: { project: Project }) => {
           <div className="absolute bottom-1/3 left-1/4 animate-float-slow" style={{animationDuration: "7s", animationDelay: "1s"}}>
             <Stars className="w-4 h-4 text-white/40" />
           </div>
+          
+          {/* Add more Ghibli-style elements */}
+          <div className="absolute bottom-1/4 right-1/4 animate-float-slow" style={{animationDuration: "8s", animationDelay: "2s"}}>
+            <Fish className="w-5 h-5 text-white/40" />
+          </div>
         </div>
         
         {/* Enhanced Ghibli-style frame decoration */}
-        <div className="absolute inset-0 pointer-events-none border-2 opacity-0 group-hover:opacity-100 transition-opacity duration-500 border-white/30"></div>
+        <div className="absolute inset-0 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-500 border-2 border-white/30"></div>
       </div>
       
       <CardContent className="p-3 md:p-4">
