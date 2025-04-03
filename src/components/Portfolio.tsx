@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { ExternalLink, Paintbrush, Monitor, Image as ImageIcon, Globe, Code, FileCode, Palette, Laptop, Smartphone, PenTool, Layers, PlaySquare, Film, Video, Youtube, Bird, Cloud, Leaf, Stars, Fish } from 'lucide-react';
 import { Link } from "react-router-dom";
@@ -14,13 +13,10 @@ const Portfolio = () => {
   
   return (
     <section id="portfolio" className="section-padding relative bg-gradient-to-b from-secondary/30 via-background to-background py-16 md:py-20 overflow-hidden">
-      {/* Ghibli-inspired decorative background elements */}
       <div className="absolute inset-0 pointer-events-none">
-        {/* Decorative blobs */}
         <div className="blob h-64 w-64 bg-[#fef7cd]/30 top-20 -left-20 animate-float rounded-[60%_40%_70%_30%/40%_50%_60%_50%]" style={{animationDelay: "0.7s"}}></div>
         <div className="blob h-80 w-80 bg-[#ffdee2]/30 bottom-40 -right-20 animate-float rounded-[50%_50%_30%_70%/40%_60%_60%_40%]" style={{animationDelay: "1.3s"}}></div>
         
-        {/* Enhanced Ghibli floating elements */}
         <div className="absolute top-32 right-[15%] w-14 h-14 text-[#6eada8]/60 animate-float" style={{animationDelay: "0.5s"}}>
           <Cloud className="w-full h-full" />
         </div>
@@ -34,7 +30,6 @@ const Portfolio = () => {
           <Bird className="w-full h-full" />
         </div>
         
-        {/* New: Ghibli-style dust particles */}
         <div className="absolute inset-0 opacity-40">
           {[...Array(30)].map((_, i) => (
             <div 
@@ -50,7 +45,6 @@ const Portfolio = () => {
           ))}
         </div>
         
-        {/* New: Ghibli-style rice field pattern */}
         <div className="absolute inset-0 opacity-10" 
           style={{
             backgroundImage: `repeating-linear-gradient(90deg, transparent, transparent 40px, rgba(161, 216, 207, 0.3) 40px, rgba(161, 216, 207, 0.3) 41px), 
@@ -58,7 +52,6 @@ const Portfolio = () => {
           }}>
         </div>
         
-        {/* Ghibli-style flowing water at bottom */}
         <div className="absolute bottom-0 left-0 right-0 h-16 opacity-40">
           <svg className="w-full h-full" viewBox="0 0 1200 60" preserveAspectRatio="none">
             <path d="M0,30 C200,10 400,50 600,30 C800,10 1000,40 1200,20 L1200,60 L0,60 Z" className="fill-current text-nature-water/40"></path>
@@ -74,7 +67,6 @@ const Portfolio = () => {
             <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-gradient-to-r from-primary/30 via-primary to-primary/30"></span>
           </h2>
           
-          {/* Enhanced Ghibli-style description */}
           <p className="text-muted-foreground max-w-2xl mx-auto mb-8 relative">
             Explore my creative works across different design categories
             <span className="absolute -right-6 -top-4 text-primary/60 animate-sway" style={{animationDelay: "0.7s"}}>
@@ -88,7 +80,6 @@ const Portfolio = () => {
           {isMobile ? (
             <div className="w-full max-w-4xl mx-auto">
               <div className="relative">
-                {/* Ghibli-style decorative elements around select */}
                 <div className="absolute -left-2 top-1/2 -translate-y-1/2 text-primary/70 animate-float-slow" style={{animationDelay: "0.5s"}}>
                   <Leaf className="w-4 h-4" />
                 </div>
@@ -192,7 +183,6 @@ const Portfolio = () => {
           ) : (
             <Tabs defaultValue="ui" className="w-full max-w-4xl mx-auto">
               <div className="relative">
-                {/* Enhanced decorative elements around tabs */}
                 <div className="absolute -left-8 top-1/2 -translate-y-1/2 text-primary/60 animate-sway hidden md:block" style={{animationDelay: "1.5s"}}>
                   <Leaf className="w-6 h-6" />
                 </div>
@@ -282,7 +272,6 @@ const Portfolio = () => {
                   <div className="col-span-full text-center p-6 md:p-8 bg-gradient-to-r from-[#fef7cd]/30 to-[#ffdee2]/30 rounded-xl border border-primary/10 shadow-lg">
                     <h3 className="text-xl font-bold mb-3 text-gradient">Video Projects Coming Soon!</h3>
                     <p className="text-foreground/80 mb-4">I'm currently working on adding my video portfolio. Check back soon for AI-generated videos and edited content!</p>
-                    {/* Enhanced Ghibli-style "coming soon" illustration */}
                     <div className="flex justify-center mt-2">
                       <div className="relative">
                         <Film className="w-10 h-10 text-primary/70 animate-pulse-slow" />
@@ -420,7 +409,6 @@ const ProjectCard = ({ project }: { project: Project }) => {
     <Card 
       className="group relative overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border border-primary/10 bg-gradient-to-b from-background/90 to-background/70 backdrop-blur-sm"
     >
-      {/* Enhanced Ghibli-inspired decorative corner elements */}
       <div className="absolute top-0 left-0 w-12 h-12 opacity-60 pointer-events-none">
         <svg viewBox="0 0 40 40" className="w-full h-full">
           <path d="M0,0 C20,0 40,20 40,40" fill="none" stroke="rgba(166, 208, 204, 0.7)" strokeWidth="1" />
@@ -460,8 +448,7 @@ const ProjectCard = ({ project }: { project: Project }) => {
           className="object-cover w-full h-full transition-transform duration-700 group-hover:scale-110"
         />
         
-        {/* Fixed overlay to ensure buttons are always visible on desktop */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent flex items-end justify-center p-4 group-hover:opacity-100 md:opacity-0 transition-opacity duration-300">
+        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent flex items-end justify-center p-4 md:opacity-0 opacity-100 group-hover:opacity-100 transition-opacity duration-300">
           <div className="w-full text-center">
             <h3 className="text-lg md:text-xl font-bold text-white font-montserrat line-clamp-1 mb-1">{project.title}</h3>
             <p className="text-white/90 text-xs md:text-sm line-clamp-2 mb-2">{project.description}</p>
@@ -469,7 +456,7 @@ const ProjectCard = ({ project }: { project: Project }) => {
             <div className="flex justify-center gap-2 md:gap-3 mt-2">
               <Link
                 to={`/project/${project.id}`}
-                className="bg-white/90 text-primary hover:text-white hover:bg-primary py-1.5 px-3 rounded-full shadow-md hover:shadow-lg flex items-center gap-1 text-sm z-10"
+                className="bg-white/90 text-primary hover:text-white hover:bg-primary py-1.5 px-3 rounded-full shadow-md hover:shadow-lg flex items-center gap-1 text-sm z-20 relative"
                 aria-label={`View details for ${project.title}`}
               >
                 <svg xmlns="http://www.w3.org/2000/svg" width={isMobile ? "14" : "16"} height={isMobile ? "14" : "16"} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-eye"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
@@ -481,7 +468,7 @@ const ProjectCard = ({ project }: { project: Project }) => {
                   href={project.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="bg-white/90 text-primary hover:text-white hover:bg-primary py-1.5 px-3 rounded-full shadow-md hover:shadow-lg flex items-center gap-1 text-sm z-10"
+                  className="bg-white/90 text-primary hover:text-white hover:bg-primary py-1.5 px-3 rounded-full shadow-md hover:shadow-lg flex items-center gap-1 text-sm z-20 relative"
                   aria-label={`Visit external link for ${project.title}`}
                 >
                   <ExternalLink className={isMobile ? "w-3 h-3" : "w-4 h-4"} />
@@ -492,7 +479,6 @@ const ProjectCard = ({ project }: { project: Project }) => {
           </div>
         </div>
         
-        {/* Ghibli-style spirits floating across the card on hover */}
         <div className="absolute inset-0 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-500">
           <div className="absolute top-1/4 right-0 animate-float-slow" style={{animationDuration: "6s", animationDelay: "0.5s"}}>
             <svg width="20" height="20" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -505,13 +491,11 @@ const ProjectCard = ({ project }: { project: Project }) => {
             <Stars className="w-4 h-4 text-white/40" />
           </div>
           
-          {/* Add more Ghibli-style elements */}
           <div className="absolute bottom-1/4 right-1/4 animate-float-slow" style={{animationDuration: "8s", animationDelay: "2s"}}>
             <Fish className="w-5 h-5 text-white/40" />
           </div>
         </div>
         
-        {/* Enhanced Ghibli-style frame decoration */}
         <div className="absolute inset-0 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-500 border-2 border-white/30"></div>
       </div>
       

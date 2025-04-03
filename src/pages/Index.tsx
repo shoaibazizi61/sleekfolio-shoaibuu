@@ -83,7 +83,7 @@ const Index = () => {
         
         {/* Ghibli-style dust particles with more particles for enhanced effect */}
         <div className="absolute inset-0">
-          {[...Array(60)].map((_, i) => (
+          {[...Array(80)].map((_, i) => (
             <div 
               key={i}
               className="absolute w-1.5 h-1.5 rounded-full bg-[#fef7cd]/30 animate-float-slow"
