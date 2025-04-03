@@ -6,11 +6,15 @@
 }
 
 ::selection {
-  @apply bg-primary/20 text-primary;
+  @apply bg-primary/30 text-primary-foreground;
 }
 
 body {
   @apply antialiased;
+  /* Enhanced background texture */
+  background-image: 
+    linear-gradient(to bottom, rgba(255,255,255,0.6), rgba(255,255,255,0.6)),
+    url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23a6d0cc' fill-opacity='0.15'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
 }
 
 .focus-ring {
@@ -49,4 +53,82 @@ body {
 
 .text-balance {
   text-wrap: balance;
+}
+
+/* Ghibli-inspired button styles */
+.ghibli-button {
+  @apply relative overflow-hidden transition-all duration-300 
+         bg-gradient-to-r from-primary/80 to-primary
+         hover:from-primary/90 hover:to-primary/80
+         text-primary-foreground rounded-lg px-4 py-2
+         shadow-md hover:shadow-lg transform hover:-translate-y-1;
+}
+
+.ghibli-button::before {
+  content: '';
+  @apply absolute inset-0 bg-white/10 opacity-0 transition-opacity duration-300;
+}
+
+.ghibli-button:hover::before {
+  @apply opacity-100;
+}
+
+.ghibli-button::after {
+  content: '';
+  @apply absolute -inset-px rounded-lg border border-primary/30 opacity-0 transition-opacity duration-300;
+}
+
+.ghibli-button:hover::after {
+  @apply opacity-100;
+}
+
+/* Paper-like card effect */
+.ghibli-card {
+  @apply relative bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm
+         border border-primary/10 rounded-xl shadow-md
+         hover:shadow-lg transition-all duration-300
+         overflow-hidden;
+}
+
+.ghibli-card::before {
+  content: '';
+  @apply absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-60;
+}
+
+/* Totoro-inspired section dividers */
+.totoro-divider {
+  @apply relative h-12 overflow-hidden my-8;
+}
+
+.totoro-divider::before {
+  content: '';
+  @apply absolute top-1/2 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent;
+}
+
+.totoro-divider::after {
+  content: '';
+  @apply absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-6 h-6
+         bg-contain bg-center bg-no-repeat
+         bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMTIiIGN5PSIxMiIgcj0iMTAiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzc3QjFBOSIgc3Ryb2tlLXdpZHRoPSIyIi8+PC9zdmc+')];
+}
+
+/* Miyazaki inspired animation for links */
+.miyazaki-link {
+  @apply relative inline-block text-primary hover:text-primary/80 transition-colors duration-300;
+}
+
+.miyazaki-link::after {
+  content: '';
+  @apply absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300;
+}
+
+.miyazaki-link:hover::after {
+  @apply w-full;
+}
+
+/* Magic dust follow animation */
+.magic-dust {
+  @apply fixed pointer-events-none w-3 h-3 rounded-full bg-primary/30 
+         animate-pulse-slow transition-all duration-200 z-50;
+  box-shadow: 0 0 10px 2px rgba(119, 177, 169, 0.3);
 }
