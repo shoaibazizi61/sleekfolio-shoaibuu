@@ -459,31 +459,49 @@ const ProjectCard = ({ project }: { project: Project }) => {
           alt={project.title}
           className="object-cover w-full h-full transition-transform duration-700 group-hover:scale-110"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-          <div className="absolute bottom-0 left-0 right-0 p-4 transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
-            <h3 className="text-lg md:text-xl font-bold text-white font-montserrat line-clamp-1">{project.title}</h3>
-            <p className="text-white/90 text-xs md:text-sm line-clamp-2 mt-1">{project.description}</p>
-          </div>
-          <div className="flex gap-2 md:gap-3">
-            <Link
-              to={`/project/${project.id}`}
-              className="bg-white/90 text-primary hover:text-white hover:bg-primary p-2 md:p-3 rounded-full transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300 shadow-md hover:shadow-lg"
-              aria-label="View project details"
-            >
-              <svg xmlns="http://www.w3.org/2000/svg" width={isMobile ? "16" : "20"} height={isMobile ? "16" : "20"} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-eye"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
-            </Link>
-            {project.link && (
-              <a
-                href={project.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="bg-white/90 text-primary hover:text-white hover:bg-primary p-2 md:p-3 rounded-full transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300 shadow-md hover:shadow-lg"
-                style={{ transitionDelay: '0.1s' }}
-                aria-label="Open link"
+        {/* Fix: Modify the hover overlay to ensure links are visible and clickable */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center p-6">
+          <div className="w-full transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
+            <h3 className="text-lg md:text-xl font-bold text-white font-montserrat line-clamp-1 mb-1">{project.title}</h3>
+            <p className="text-white/90 text-xs md:text-sm line-clamp-2 mb-3">{project.description}</p>
+            
+            <div className="flex gap-2 md:gap-3 mt-2">
+              <Link
+                to={`/project/${project.id}`}
+                className="bg-white/90 text-primary hover:text-white hover:bg-primary py-1 px-3 rounded-full transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300 shadow-md hover:shadow-lg flex items-center gap-1 text-sm"
+                aria-label="View project details"
               >
-                <ExternalLink className={isMobile ? "w-4 h-4" : "w-5 h-5"} />
-              </a>
-            )}
+                <svg xmlns="http://www.w3.org/2000/svg" width={isMobile ? "14" : "16"} height={isMobile ? "14" : "16"} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-eye"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
+                <span>View More</span>
+              </Link>
+              {project.link && (
+                <a
+                  href={project.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-white/90 text-primary hover:text-white hover:bg-primary py-1 px-3 rounded-full transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300 shadow-md hover:shadow-lg flex items-center gap-1 text-sm"
+                  style={{ transitionDelay: '0.1s' }}
+                  aria-label="Open link"
+                >
+                  <ExternalLink className={isMobile ? "w-3 h-3" : "w-4 h-4"} />
+                  <span>Full Access</span>
+                </a>
+              )}
+            </div>
+          </div>
+        </div>
+        
+        {/* Ghibli-style spirits floating across the card on hover */}
+        <div className="absolute inset-0 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+          <div className="absolute top-1/4 right-0 animate-float-slow" style={{animationDuration: "6s", animationDelay: "0.5s"}}>
+            <svg width="20" height="20" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="50" cy="50" r="40" fill="rgba(255,255,255,0.3)" />
+              <circle cx="50" cy="50" r="30" fill="rgba(255,255,255,0.2)" />
+              <circle cx="50" cy="50" r="20" fill="rgba(255,255,255,0.1)" />
+            </svg>
+          </div>
+          <div className="absolute bottom-1/3 left-1/4 animate-float-slow" style={{animationDuration: "7s", animationDelay: "1s"}}>
+            <Stars className="w-4 h-4 text-white/40" />
           </div>
         </div>
         
