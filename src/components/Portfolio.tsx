@@ -82,18 +82,33 @@ const Portfolio = () => {
           
           {isMobile ? (
             <div className="w-full max-w-4xl mx-auto">
-              <select 
-                value={activeTab}
-                onChange={(e) => setActiveTab(e.target.value)}
-                className="w-full p-3 mb-5 bg-gradient-to-r from-background/80 via-secondary/20 to-background/80 backdrop-blur-sm rounded-xl border border-primary/20 shadow-md text-foreground"
-              >
-                <option value="ui">UI Design</option>
-                <option value="social">Social Media</option>
-                <option value="logo">Logo</option>
-                <option value="wordpress">WordPress</option>
-                <option value="product">Product</option>
-                <option value="video">Video</option>
-              </select>
+              <div className="relative">
+                {/* Ghibli-style decorative elements around select */}
+                <div className="absolute -left-2 top-1/2 -translate-y-1/2 text-primary/70 animate-float-slow" style={{animationDelay: "0.5s"}}>
+                  <Leaf className="w-4 h-4" />
+                </div>
+                <div className="absolute -right-2 top-1/2 -translate-y-1/2 text-nature-water/70 animate-sway" style={{animationDelay: "1.2s"}}>
+                  <Cloud className="w-4 h-4" />
+                </div>
+                
+                <select 
+                  value={activeTab}
+                  onChange={(e) => setActiveTab(e.target.value)}
+                  className="w-full p-3 mb-5 bg-gradient-to-r from-secondary/40 via-primary/10 to-secondary/40 backdrop-blur-sm rounded-xl border border-primary/30 shadow-md text-foreground font-medium relative z-10"
+                  style={{
+                    backgroundImage: `linear-gradient(to right, rgba(254, 247, 205, 0.4), rgba(166, 208, 204, 0.1), rgba(254, 247, 205, 0.4)), url("data:image/svg+xml,%3Csvg width='20' height='20' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='10' cy='10' r='10' fill='%23a6d0cc' fill-opacity='0.05'/%3E%3C/svg%3E")`,
+                    backgroundSize: "cover, 20px 20px",
+                    backgroundRepeat: "no-repeat, repeat",
+                  }}
+                >
+                  <option value="ui" className="text-foreground font-medium bg-background">UI Design</option>
+                  <option value="social" className="text-foreground font-medium bg-background">Social Media</option>
+                  <option value="logo" className="text-foreground font-medium bg-background">Logo</option>
+                  <option value="wordpress" className="text-foreground font-medium bg-background">WordPress</option>
+                  <option value="product" className="text-foreground font-medium bg-background">Product</option>
+                  <option value="video" className="text-foreground font-medium bg-background">Video</option>
+                </select>
+              </div>
 
               <div className="mt-4">
                 {activeTab === "ui" && (
