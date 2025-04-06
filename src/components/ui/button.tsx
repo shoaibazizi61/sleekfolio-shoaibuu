@@ -10,17 +10,17 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
-        default: "bg-primary text-primary-foreground hover:bg-primary/90 shadow-md hover:shadow-lg hover:shadow-primary/20 hover:-translate-y-0.5 active:translate-y-0 transition-all duration-300",
+        default: "bg-primary text-primary-foreground hover:bg-primary/90 shadow-md hover:shadow-lg hover:shadow-primary/20 hover:-translate-y-0.5 active:translate-y-0 transition-all duration-300 before:content-[''] before:absolute before:inset-0 before:bg-white/10 before:opacity-0 hover:before:opacity-100 before:transition-opacity before:duration-300",
         destructive:
-          "bg-destructive text-destructive-foreground hover:bg-destructive/90 shadow-md hover:shadow-lg hover:shadow-destructive/20",
+          "bg-destructive text-destructive-foreground hover:bg-destructive/90 shadow-md hover:shadow-lg hover:shadow-destructive/20 before:content-[''] before:absolute before:inset-0 before:bg-white/10 before:opacity-0 hover:before:opacity-100 before:transition-opacity before:duration-300",
         outline:
-          "border border-input bg-background hover:bg-accent hover:text-accent-foreground shadow-sm hover:shadow-md transition-all",
+          "border border-input bg-background hover:bg-accent hover:text-accent-foreground shadow-sm hover:shadow-md transition-all before:content-[''] before:absolute before:inset-0 before:bg-primary/5 before:opacity-0 hover:before:opacity-100 before:transition-opacity before:duration-300",
         secondary:
-          "bg-secondary text-secondary-foreground hover:bg-secondary/80 shadow-sm hover:shadow-md hover:shadow-secondary/20 hover:-translate-y-0.5 active:translate-y-0 transition-all duration-300",
-        ghost: "hover:bg-accent hover:text-accent-foreground transition-colors",
-        link: "text-primary underline-offset-4 hover:underline",
-        // New Ghibli-style button
-        ghibli: "bg-gradient-to-r from-primary/90 to-primary text-primary-foreground shadow-md hover:shadow-lg hover:shadow-primary/30 hover:-translate-y-1 active:translate-y-0 transition-all duration-300 border border-primary/20",
+          "bg-secondary text-secondary-foreground hover:bg-secondary/80 shadow-sm hover:shadow-md hover:shadow-secondary/20 hover:-translate-y-0.5 active:translate-y-0 transition-all duration-300 before:content-[''] before:absolute before:inset-0 before:bg-white/10 before:opacity-0 hover:before:opacity-100 before:transition-opacity before:duration-300",
+        ghost: "hover:bg-accent hover:text-accent-foreground transition-colors before:content-[''] before:absolute before:inset-0 before:bg-primary/5 before:opacity-0 hover:before:opacity-100 before:transition-opacity before:duration-300",
+        link: "text-primary underline-offset-4 hover:underline after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-[2px] after:bg-primary after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300 after:origin-left",
+        // Enhanced Ghibli-style button
+        ghibli: "bg-gradient-to-r from-primary/90 to-primary text-primary-foreground shadow-md hover:shadow-lg hover:shadow-primary/30 hover:-translate-y-1 active:translate-y-0 transition-all duration-300 border border-primary/20 after:content-[''] after:absolute after:inset-0 after:border after:border-white/30 after:rounded-md after:opacity-0 hover:after:opacity-100 after:transition-opacity after:duration-300 before:content-[''] before:absolute before:-z-10 before:inset-0 before:bg-primary/20 before:blur-xl before:scale-90 before:opacity-0 hover:before:opacity-100 hover:before:scale-110 before:transition before:duration-500",
       },
       size: {
         default: "h-10 px-4 py-2",

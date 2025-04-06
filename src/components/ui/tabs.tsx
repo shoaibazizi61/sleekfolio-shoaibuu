@@ -14,8 +14,10 @@ const TabsList = React.forwardRef<
     ref={ref}
     className={cn(
       "inline-flex h-auto items-center justify-center rounded-xl bg-gradient-to-r from-background/80 via-secondary/20 to-background/80 p-2 text-muted-foreground shadow-inner border border-primary/10 backdrop-blur-sm relative overflow-hidden",
-      // Ghibli-inspired accent glow
+      // Enhanced Ghibli-inspired accent glow
       "before:absolute before:inset-0 before:bg-gradient-to-r before:from-primary/5 before:via-primary/10 before:to-primary/5 before:opacity-60 before:blur-md",
+      // Add subtle water ripple pattern
+      "after:absolute after:inset-0 after:bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTAwIiBoZWlnaHQ9IjUwIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxwYXRoIGQ9Ik0wLDI1IEMxMDAsMCwyMDAsNTAsMzAwLDI1IEM0MDAsMCw1MDAsNTAsNjAwLDI1IEw2MDAsNTAgTDAsNTAgWiIgZmlsbD0ibm9uZSIgc3Ryb2tlPSJyZ2JhKDExOSwxNzcsMTY5LDAuMSkiIHN0cm9rZS13aWR0aD0iMSIvPjwvc3ZnPg==')] after:bg-repeat-x after:opacity-40 after:pointer-events-none",
       className
     )}
     {...props}
@@ -31,10 +33,12 @@ const TabsTrigger = React.forwardRef<
     ref={ref}
     className={cn(
       "inline-flex items-center justify-center whitespace-nowrap rounded-lg px-4 py-2 text-sm font-medium ring-offset-background transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 relative overflow-hidden group",
-      "data-[state=active]:bg-primary data-[state=active]:text-primary-foreground data-[state=active]:shadow-md",
+      "data-[state=active]:bg-gradient-to-r data-[state=active]:from-primary data-[state=active]:to-primary/90 data-[state=active]:text-primary-foreground data-[state=active]:shadow-md",
+      // Enhanced Ghibli-inspired patterns
       "before:absolute before:inset-0 before:bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGcgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIj48Y2lyY2xlIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLW9wYWNpdHk9Ii4yIiBjeD0iMTAiIGN5PSIxMCIgcj0iOS41Ii8+PC9nPjwvc3ZnPg==')] before:bg-repeat before:opacity-0 before:transition-opacity data-[state=active]:before:opacity-20",
-      "after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-primary after:transition-all after:duration-300 hover:after:w-full data-[state=active]:after:h-[3px] data-[state=active]:after:w-full",
-      // Ghibli-inspired glow effect
+      // Enhanced bottom line animation
+      "after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-primary/60 after:transition-all after:duration-300 hover:after:w-full data-[state=active]:after:h-[3px] data-[state=active]:after:w-full data-[state=active]:after:bg-white/80",
+      // Enhanced Ghibli-inspired glow effect
       "hover:shadow-[0_0_8px_rgba(119,177,169,0.4)] data-[state=active]:shadow-[0_0_12px_rgba(119,177,169,0.5)]",
       className
     )}
@@ -51,9 +55,10 @@ const TabsContent = React.forwardRef<
     ref={ref}
     className={cn(
       "mt-3 ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 relative",
-      "before:absolute before:-top-2 before:left-1/2 before:-translate-x-1/2 before:w-6 before:h-6 before:bg-contain before:bg-no-repeat before:bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTEyIDIxYzUuNTIzIDAgMTAtNC40NzcgMTAtMTBTMTcuNTIzIDEgMTIgMSAyIDUuNDc3IDIgMTJzNC40NzcgMTAgMTAgMTB6IiBzdHJva2U9IiM3N0IxQTkiIHN0cm9rZS13aWR0aD0iMiIgZmlsbD0ibm9uZSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+PC9zdmc+')] before:opacity-0 data-[state=active]:before:opacity-80 before:transition-opacity before:duration-300",
-      // Add a subtle entrance animation
-      "animate-[fade-in_0.3s_ease-out] opacity-0 data-[state=active]:opacity-100",
+      // Enhanced Ghibli-inspired top decoration
+      "before:absolute before:-top-2 before:left-1/2 before:-translate-x-1/2 before:w-6 before:h-6 before:bg-contain before:bg-no-repeat before:bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTEyIDIxYzUuNTIzIDAgMTAtNC40NzcgMTAtMTBTMTcuNTIzIDEgMTIgMSAyIDUuNDc3IDIgMTJzNC40NzcgMTAgMTAgMTB6IiBzdHJva2U9IiM3N0IxQTkiIHN0cm9rZS13aWR0aD0iMiIgZmlsbD0ibm9uZSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+PC9zdmc+')] before:opacity-0 data-[state=active]:before:opacity-80 before:transition-opacity before:duration-300 before:animate-float-slow",
+      // Enhanced entrance animation
+      "animate-[fade-in_0.4s_ease-out] opacity-0 data-[state=active]:opacity-100",
       className
     )}
     {...props}

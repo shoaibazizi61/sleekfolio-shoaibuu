@@ -11,10 +11,23 @@
 
 body {
   @apply antialiased;
-  /* Enhanced background texture */
+  /* Enhanced background texture with layered effects */
   background-image: 
     linear-gradient(to bottom, rgba(255,255,255,0.6), rgba(255,255,255,0.6)),
     url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23a6d0cc' fill-opacity='0.15'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+
+/* Add subtle Ghibli-inspired grain texture */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.05'/%3E%3C/svg%3E");
+  z-index: -1;
 }
 
 .focus-ring {
@@ -55,7 +68,7 @@ body {
   text-wrap: balance;
 }
 
-/* Ghibli-inspired button styles */
+/* Enhanced Ghibli-inspired button styles */
 .ghibli-button {
   @apply relative overflow-hidden transition-all duration-300 
          bg-gradient-to-r from-primary/80 to-primary
@@ -82,7 +95,7 @@ body {
   @apply opacity-100;
 }
 
-/* Paper-like card effect */
+/* Enhanced paper-like card effect */
 .ghibli-card {
   @apply relative bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm
          border border-primary/10 rounded-xl shadow-md
@@ -95,7 +108,7 @@ body {
   @apply absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-60;
 }
 
-/* Totoro-inspired section dividers */
+/* Enhanced Totoro-inspired section dividers */
 .totoro-divider {
   @apply relative h-12 overflow-hidden my-8;
 }
@@ -112,7 +125,7 @@ body {
          bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMTIiIGN5PSIxMiIgcj0iMTAiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzc3QjFBOSIgc3Ryb2tlLXdpZHRoPSIyIi8+PC9zdmc+')];
 }
 
-/* Miyazaki inspired animation for links */
+/* Enhanced Miyazaki inspired animation for links */
 .miyazaki-link {
   @apply relative inline-block text-primary hover:text-primary/80 transition-colors duration-300;
 }
@@ -126,9 +139,90 @@ body {
   @apply w-full;
 }
 
-/* Magic dust follow animation */
+/* Enhanced magic dust follow animation */
 .magic-dust {
   @apply fixed pointer-events-none w-3 h-3 rounded-full bg-primary/30 
          animate-pulse-slow transition-all duration-200 z-50;
   box-shadow: 0 0 10px 2px rgba(119, 177, 169, 0.3);
+}
+
+/* Enhanced text gradient */
+.text-gradient {
+  @apply bg-gradient-to-r from-foreground via-foreground/95 to-foreground/80 bg-clip-text text-transparent;
+}
+
+/* New: Ghibli-inspired link hover effect */
+.ghibli-link {
+  @apply relative inline-flex items-center gap-2 text-primary transition-all duration-300 hover:text-primary/80;
+}
+
+.ghibli-link::after {
+  content: '';
+  @apply absolute -bottom-0.5 left-0 w-full h-0.5 bg-primary/40 transform scale-x-0 transition-transform duration-300 origin-right;
+}
+
+.ghibli-link:hover::after {
+  @apply scale-x-100 origin-left;
+}
+
+/* New: Ghibli-inspired tooltip */
+.ghibli-tooltip {
+  @apply absolute z-50 px-3 py-1.5 text-xs font-medium bg-gradient-to-r from-primary/90 to-primary text-primary-foreground rounded-md shadow-md opacity-0 invisible transition-all duration-300 transform -translate-y-2;
+}
+
+.ghibli-tooltip-trigger:hover .ghibli-tooltip {
+  @apply opacity-100 visible translate-y-0;
+}
+
+/* New: Ghibli-inspired sparkles */
+.ghibli-sparkle {
+  @apply absolute w-1 h-1 rounded-full bg-primary/60 animate-twinkle;
+}
+
+/* Enhanced blob animation */
+.blob {
+  @apply absolute rounded-full filter blur-xl opacity-30;
+  animation: blobFloat 10s ease-in-out infinite;
+}
+
+@keyframes blobFloat {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+  }
+  33% {
+    transform: translate(10px, -20px) scale(1.05);
+  }
+  66% {
+    transform: translate(-10px, 10px) scale(0.95);
+  }
+}
+
+/* Add more dust particles to enhance the magical feel */
+.ghibli-dust-particles {
+  @apply fixed inset-0 pointer-events-none z-0;
+}
+
+.ghibli-dust-particle {
+  @apply absolute rounded-full bg-primary/30;
+  width: 3px;
+  height: 3px;
+  filter: blur(1px);
+  animation: float-dust 15s infinite linear;
+}
+
+@keyframes float-dust {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.8;
+  }
+  90% {
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(-100px) rotate(360deg);
+    opacity: 0;
+  }
 }
