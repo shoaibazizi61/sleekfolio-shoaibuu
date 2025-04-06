@@ -1,7 +1,6 @@
 
-import { ArrowUp, Heart, Github, Linkedin, Mail } from 'lucide-react';
+import { ArrowUp, Heart } from 'lucide-react';
 import { Button } from './ui/button';
-import { HoverCard, HoverCardContent, HoverCardTrigger } from './ui/hover-card';
 
 const Footer = () => {
   const scrollToTop = () => {
@@ -41,51 +40,6 @@ const Footer = () => {
             <a href="#home" className="flex items-center">
               <span className="font-montserrat font-bold text-2xl text-gradient">Shoaibuu.</span>
             </a>
-            <p className="text-foreground/60 mt-2 text-sm max-w-xs text-center md:text-left">
-              Crafting beautiful digital experiences with Ghibli-inspired magic and attention to detail
-            </p>
-            
-            {/* Social links */}
-            <div className="flex gap-4 mt-4">
-              <HoverCard>
-                <HoverCardTrigger asChild>
-                  <a href="https://github.com" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-                    <Button variant="outline" size="icon" rounded="full" className="w-9 h-9">
-                      <Github className="h-4 w-4" />
-                    </Button>
-                  </a>
-                </HoverCardTrigger>
-                <HoverCardContent className="w-auto">
-                  <p className="text-sm">Visit my GitHub</p>
-                </HoverCardContent>
-              </HoverCard>
-
-              <HoverCard>
-                <HoverCardTrigger asChild>
-                  <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-                    <Button variant="outline" size="icon" rounded="full" className="w-9 h-9">
-                      <Linkedin className="h-4 w-4" />
-                    </Button>
-                  </a>
-                </HoverCardTrigger>
-                <HoverCardContent className="w-auto">
-                  <p className="text-sm">Connect on LinkedIn</p>
-                </HoverCardContent>
-              </HoverCard>
-
-              <HoverCard>
-                <HoverCardTrigger asChild>
-                  <a href="mailto:contact@example.com" aria-label="Email">
-                    <Button variant="outline" size="icon" rounded="full" className="w-9 h-9">
-                      <Mail className="h-4 w-4" />
-                    </Button>
-                  </a>
-                </HoverCardTrigger>
-                <HoverCardContent className="w-auto">
-                  <p className="text-sm">Email me</p>
-                </HoverCardContent>
-              </HoverCard>
-            </div>
           </div>
           
           <div className="flex flex-col items-center md:items-end gap-4">
