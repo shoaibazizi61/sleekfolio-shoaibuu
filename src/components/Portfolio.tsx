@@ -1,6 +1,6 @@
 
 import { useState } from 'react';
-import { ExternalLink, Paintbrush, Monitor, Image as ImageIcon, Globe, Code, FileCode, Palette, Laptop, Smartphone, PenTool, Layers, PlaySquare, Film, Video, Youtube, Bird, Cloud, Leaf, Stars } from 'lucide-react';
+import { ExternalLink, Paintbrush, Monitor, Image as ImageIcon, Globe, Code, FileCode, Palette, Laptop, Smartphone, PenTool, Layers, PlaySquare, Film, Video, Youtube, Bird, Cloud, Leaf, Stars, Sparkles, MessageSquare, Bot } from 'lucide-react';
 import { Link } from "react-router-dom";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Card, CardContent } from "@/components/ui/card";
@@ -92,6 +92,7 @@ const Portfolio = () => {
                 <option value="logo">Logo</option>
                 <option value="wordpress">WordPress</option>
                 <option value="product">Product</option>
+                <option value="ai">AI Prompt</option>
                 <option value="video">Video</option>
               </select>
 
@@ -151,6 +152,30 @@ const Portfolio = () => {
                   </div>
                 )}
                 
+                {activeTab === "ai" && (
+                  <div className="grid grid-cols-1 gap-4">
+                    <div className="col-span-full mb-6 text-center p-6 bg-gradient-to-r from-primary/10 to-primary/5 rounded-xl border border-primary/20 shadow-lg">
+                      <div className="inline-flex items-center justify-center mb-3 bg-primary/20 p-2 rounded-full">
+                        <Sparkles className="w-6 h-6 text-primary" />
+                      </div>
+                      <h3 className="text-xl font-bold mb-2 text-gradient">AI Prompt Engineering Expert</h3>
+                      <p className="text-muted-foreground mb-3">Specializing in crafting detailed prompts for Sora AI to generate stunning, high-quality images with precise artistic direction.</p>
+                      <div className="flex flex-wrap gap-2 justify-center">
+                        <span className="px-3 py-1 bg-primary/20 text-primary text-xs rounded-full">Sora AI</span>
+                        <span className="px-3 py-1 bg-primary/20 text-primary text-xs rounded-full">Prompt Engineering</span>
+                        <span className="px-3 py-1 bg-primary/20 text-primary text-xs rounded-full">Visual Storytelling</span>
+                        <span className="px-3 py-1 bg-primary/20 text-primary text-xs rounded-full">Composition</span>
+                      </div>
+                    </div>
+                    {projectsData.filter(p => p.category === 'ai').map((project) => (
+                      <ProjectCard 
+                        key={project.id} 
+                        project={project}
+                      />
+                    ))}
+                  </div>
+                )}
+                
                 {activeTab === "video" && (
                   <div className="grid grid-cols-1 gap-4">
                     <div className="col-span-full text-center p-6 bg-gradient-to-r from-primary/5 to-primary/10 rounded-xl border border-primary/10 shadow-lg">
@@ -187,6 +212,12 @@ const Portfolio = () => {
                   </TabsTrigger>
                   <TabsTrigger value="product" className="flex-grow basis-[45%] sm:basis-auto">
                     Product
+                  </TabsTrigger>
+                  <TabsTrigger value="ai" className="flex-grow basis-[45%] sm:basis-auto relative group">
+                    AI Prompt
+                    <span className="absolute -top-2 -right-2 bg-primary text-white text-[10px] px-1.5 py-0 rounded-full animate-pulse-slow">
+                      NEW
+                    </span>
                   </TabsTrigger>
                   <TabsTrigger value="video" className="flex-grow basis-[45%] sm:basis-auto">
                     Video
@@ -249,6 +280,72 @@ const Portfolio = () => {
                 </div>
               </TabsContent>
               
+              <TabsContent value="ai" className="mt-0">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
+                  <div className="col-span-full mb-8 md:p-8 p-6 bg-gradient-to-r from-primary/10 to-primary/5 rounded-xl border border-primary/20 shadow-lg relative overflow-hidden">
+                    {/* Decorative particles */}
+                    <div className="absolute inset-0 pointer-events-none">
+                      {[...Array(6)].map((_, i) => (
+                        <div 
+                          key={i}
+                          className="absolute w-1.5 h-1.5 rounded-full bg-primary/60 animate-twinkle"
+                          style={{
+                            top: `${Math.random() * 100}%`,
+                            left: `${Math.random() * 100}%`,
+                            animationDelay: `${Math.random() * 5}s`,
+                            animationDuration: `${3 + Math.random() * 4}s`,
+                          }}
+                        />
+                      ))}
+                    </div>
+                    
+                    <div className="flex flex-col md:flex-row gap-6 items-center">
+                      <div className="relative flex-shrink-0">
+                        <div className="w-16 h-16 md:w-20 md:h-20 bg-gradient-to-br from-primary/30 to-primary/10 rounded-full flex items-center justify-center shadow-lg relative overflow-hidden">
+                          <Sparkles className="w-8 h-8 md:w-10 md:h-10 text-primary animate-pulse-slow" />
+                          <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGcgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIj48Y2lyY2xlIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLW9wYWNpdHk9Ii4xIiBjeD0iMTAiIGN5PSIxMCIgcj0iOS41Ii8+PC9nPjwvc3ZnPg==')] bg-repeat opacity-20"></div>
+                        </div>
+                        <div className="absolute -top-1 -right-1">
+                          <MessageSquare className="w-6 h-6 text-primary/60 animate-float-slow" style={{animationDelay: "1s"}} />
+                        </div>
+                      </div>
+                      
+                      <div className="text-center md:text-left flex-1">
+                        <h3 className="text-xl md:text-2xl font-bold mb-3 text-gradient relative inline-block">
+                          AI Prompt Engineering Expert
+                          <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-gradient-to-r from-primary/30 via-primary to-primary/30"></span>
+                        </h3>
+                        <p className="text-muted-foreground mb-4">
+                          Specializing in crafting detailed prompts for Sora AI to generate stunning, high-quality images with precise artistic direction. My expertise lies in developing prompts that yield consistent, high-fidelity results with specific lighting, composition, and atmospheric elements.
+                        </p>
+                        
+                        <div className="flex flex-wrap gap-2 justify-center md:justify-start">
+                          <span className="px-3 py-1 bg-primary/20 text-primary text-xs rounded-full inline-flex items-center gap-1">
+                            <Bot className="w-3 h-3" /> Sora AI
+                          </span>
+                          <span className="px-3 py-1 bg-primary/20 text-primary text-xs rounded-full inline-flex items-center gap-1">
+                            <MessageSquare className="w-3 h-3" /> Prompt Engineering
+                          </span>
+                          <span className="px-3 py-1 bg-primary/20 text-primary text-xs rounded-full inline-flex items-center gap-1">
+                            <Film className="w-3 h-3" /> Visual Storytelling
+                          </span>
+                          <span className="px-3 py-1 bg-primary/20 text-primary text-xs rounded-full inline-flex items-center gap-1">
+                            <PenTool className="w-3 h-3" /> Composition
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  {projectsData.filter(p => p.category === 'ai').map((project) => (
+                    <ProjectCard 
+                      key={project.id} 
+                      project={project}
+                    />
+                  ))}
+                </div>
+              </TabsContent>
+              
               <TabsContent value="video" className="mt-0">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
                   <div className="col-span-full text-center p-6 md:p-8 bg-gradient-to-r from-primary/5 to-primary/10 rounded-xl border border-primary/10 shadow-lg">
@@ -298,6 +395,27 @@ const Portfolio = () => {
             </div>
             
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 md:gap-4 mb-6">
+              <h4 className="col-span-full text-left text-lg font-semibold mb-2 text-foreground/80">AI Tools</h4>
+              <div className="col-span-full grid grid-cols-2 sm:grid-cols-3 gap-3">
+                {isMobile ? (
+                  <>
+                    <ToolButton icon={<Sparkles className="w-4 h-4 mr-1" />} label="Sora AI" isNew={true} compact />
+                    <ToolButton icon={<MessageSquare className="w-4 h-4 mr-1" />} label="ChatGPT" isNew={true} compact />
+                    <ToolButton icon={<ImageIcon className="w-4 h-4 mr-1" />} label="Midjourney" isNew={true} compact />
+                    <ToolButton icon={<Video className="w-4 h-4 mr-1" />} label="RunwayML" isNew={true} compact />
+                  </>
+                ) : (
+                  <>
+                    <ToolButton icon={<Sparkles className="w-4 h-4 mr-2" />} label="Sora AI" isNew={true} />
+                    <ToolButton icon={<MessageSquare className="w-4 h-4 mr-2" />} label="ChatGPT" isNew={true} />
+                    <ToolButton icon={<ImageIcon className="w-4 h-4 mr-2" />} label="Midjourney" isNew={true} />
+                    <ToolButton icon={<Video className="w-4 h-4 mr-2" />} label="RunwayML" isNew={true} />
+                  </>
+                )}
+              </div>
+            </div>
+            
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 md:gap-4 mb-6">
               <h4 className="col-span-full text-left text-lg font-semibold mb-2 text-foreground/80">Video Tools</h4>
               <div className="col-span-full grid grid-cols-2 sm:grid-cols-3 gap-3">
                 {isMobile ? (
@@ -306,8 +424,6 @@ const Portfolio = () => {
                     <ToolButton icon={<Film className="w-4 h-4 mr-1" />} label="Premiere Pro" isNew={true} compact />
                     <ToolButton icon={<Video className="w-4 h-4 mr-1" />} label="DaVinci" isNew={true} compact />
                     <ToolButton icon={<Youtube className="w-4 h-4 mr-1" />} label="After Effects" isNew={true} compact />
-                    <ToolButton icon={<Film className="w-4 h-4 mr-1" />} label="Midjourney" isNew={true} compact />
-                    <ToolButton icon={<Video className="w-4 h-4 mr-1" />} label="RunwayML" isNew={true} compact />
                   </>
                 ) : (
                   <>
@@ -315,8 +431,6 @@ const Portfolio = () => {
                     <ToolButton icon={<Film className="w-4 h-4 mr-2" />} label="Premiere Pro" isNew={true} />
                     <ToolButton icon={<Video className="w-4 h-4 mr-2" />} label="DaVinci Resolve" isNew={true} />
                     <ToolButton icon={<Youtube className="w-4 h-4 mr-2" />} label="After Effects" isNew={true} />
-                    <ToolButton icon={<Film className="w-4 h-4 mr-2" />} label="Midjourney" isNew={true} />
-                    <ToolButton icon={<Video className="w-4 h-4 mr-2" />} label="RunwayML" isNew={true} />
                   </>
                 )}
               </div>
@@ -463,6 +577,7 @@ const ProjectCard = ({ project }: { project: Project }) => {
              project.category === 'product' ? 'Product Design' :
              project.category === 'logo' ? 'Logo Design' : 
              project.category === 'wordpress' ? 'WordPress' :
+             project.category === 'ai' ? 'AI Prompt' :
              project.category === 'video' ? 'Video' : 'Design'}
           </span>
           {project.duration && (

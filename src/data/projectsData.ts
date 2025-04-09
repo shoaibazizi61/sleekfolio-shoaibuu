@@ -1,8 +1,7 @@
-
 export type Project = {
   id: number;
   title: string;
-  category: 'ui' | 'social' | 'logo' | 'wordpress' | 'product';
+  category: 'ui' | 'social' | 'logo' | 'wordpress' | 'product' | 'ai';
   image: string;
   description: string;
   link?: string;
@@ -359,5 +358,175 @@ export const projectsData: Project[] = [
     tools: ["WordPress", "WooCommerce", "Astra"],
     duration: "2.5 months",
     client: "GBOrganics.pk"
+  },
+  
+  // AI Prompt Projects
+  {
+    id: 21,
+    title: "Urban Fantasy Scene",
+    category: "ai",
+    image: "http://res.cloudinary.com/doabonfpj/image/upload/v1744229501/PORRT/pasitkrzsidepuws6doo.webp",
+    description: "Cinematic urban fantasy scene with mystical elements created using Sora AI.",
+    detailedDescription: "This stunning urban fantasy scene was generated using carefully crafted prompts in Sora AI. The image features a perfect blend of realistic urban elements with fantastical touches, demonstrating advanced prompt engineering to achieve the right lighting, composition, and atmosphere.",
+    gallery: [
+      "http://res.cloudinary.com/doabonfpj/image/upload/v1744229501/PORRT/pasitkrzsidepuws6doo.webp"
+    ],
+    tools: ["Sora AI", "Prompt Engineering"],
+    duration: "2023",
+    client: "Personal Project"
+  },
+  {
+    id: 22,
+    title: "Ethereal Forest Portrait",
+    category: "ai",
+    image: "http://res.cloudinary.com/doabonfpj/image/upload/v1744229501/PORRT/k7e8i7qyqcj4qzwx6phe.webp",
+    description: "Ethereal portrait set in a magical forest with glowing elements created with Sora AI.",
+    detailedDescription: "This enchanting portrait set in a magical forest showcases my ability to craft detailed prompts that generate cohesive scenes with specific moods and lighting effects. The image demonstrates perfect harmony between the subject and the environment, with ethereal glowing elements that bring a touch of magic.",
+    gallery: [
+      "http://res.cloudinary.com/doabonfpj/image/upload/v1744229501/PORRT/k7e8i7qyqcj4qzwx6phe.webp"
+    ],
+    tools: ["Sora AI", "Prompt Engineering"],
+    duration: "2023",
+    client: "Personal Portfolio"
+  },
+  {
+    id: 23,
+    title: "Futuristic Cityscape",
+    category: "ai",
+    image: "http://res.cloudinary.com/doabonfpj/image/upload/v1744229501/PORRT/ozfmy64s3zjdwvjtkrcw.webp",
+    description: "Detailed futuristic cityscape with advanced architectural elements generated using Sora AI.",
+    detailedDescription: "This intricate futuristic cityscape was created through precise prompt engineering in Sora AI. The image features complex architectural structures, futuristic transportation, and atmospheric lighting that creates a believable sci-fi environment. The prompt was carefully crafted to balance technological elements with human scale.",
+    gallery: [
+      "http://res.cloudinary.com/doabonfpj/image/upload/v1744229501/PORRT/ozfmy64s3zjdwvjtkrcw.webp"
+    ],
+    tools: ["Sora AI", "Prompt Engineering"],
+    duration: "2023",
+    client: "Personal Project"
+  },
+  {
+    id: 24,
+    title: "Nature-Inspired Fantasy",
+    category: "ai",
+    image: "http://res.cloudinary.com/doabonfpj/image/upload/v1744229501/PORRT/mtcxnednc31rm2zsaqfh.webp",
+    description: "Nature-inspired fantasy landscape with surreal elements crafted with Sora AI prompt expertise.",
+    detailedDescription: "This breathtaking nature-inspired fantasy landscape demonstrates my skill in creating complex, layered prompts that generate cohesive yet imaginative scenes. The image blends realistic natural elements with fantastical features, showcasing my ability to direct AI to create specific moods and visual themes.",
+    gallery: [
+      "http://res.cloudinary.com/doabonfpj/image/upload/v1744229501/PORRT/mtcxnednc31rm2zsaqfh.webp"
+    ],
+    tools: ["Sora AI", "Prompt Engineering"],
+    duration: "2023",
+    client: "Personal Portfolio"
+  },
+  {
+    id: 25,
+    title: "Mystical Character Design",
+    category: "ai",
+    image: "http://res.cloudinary.com/doabonfpj/image/upload/v1744229501/PORRT/ccsgulwxfnoce1k8ozdh.webp",
+    description: "Character concept with mystical elements and detailed costume design generated with Sora AI.",
+    detailedDescription: "This mystical character design showcases my ability to craft prompts that generate detailed character concepts with consistent visual styling. The image features intricate costume design, appropriate lighting, and atmospheric elements that enhance the character's presence and story.",
+    gallery: [
+      "http://res.cloudinary.com/doabonfpj/image/upload/v1744229501/PORRT/ccsgulwxfnoce1k8ozdh.webp"
+    ],
+    tools: ["Sora AI", "Prompt Engineering"],
+    duration: "2023",
+    client: "Personal Portfolio"
+  },
+  {
+    id: 26,
+    title: "Dreamlike Landscape",
+    category: "ai",
+    image: "http://res.cloudinary.com/doabonfpj/image/upload/v1744229501/PORRT/mamtllmmr1iehs9udkki.webp",
+    description: "Surreal dreamlike landscape with ethereal lighting effects created using Sora AI.",
+    detailedDescription: "This surreal dreamlike landscape demonstrates advanced prompt engineering to achieve specific lighting effects and atmospheric conditions. The image features a perfect balance between realism and fantasy, with precise color palette control and emotional resonance achieved through carefully structured prompts.",
+    gallery: [
+      "http://res.cloudinary.com/doabonfpj/image/upload/v1744229501/PORRT/mamtllmmr1iehs9udkki.webp"
+    ],
+    tools: ["Sora AI", "Prompt Engineering"],
+    duration: "2023",
+    client: "Personal Project"
+  },
+  {
+    id: 27,
+    title: "Cinematic Urban Scene",
+    category: "ai",
+    image: "http://res.cloudinary.com/doabonfpj/image/upload/v1744229500/PORRT/dj39ljqkihln7qgoemcx.webp",
+    description: "Cinematic urban scene with dramatic lighting and atmosphere generated with Sora AI.",
+    detailedDescription: "This cinematic urban scene showcases my expertise in creating prompts that generate images with film-like quality. The composition, lighting, and atmosphere were all carefully directed through prompt engineering to achieve a specific mood and visual style reminiscent of modern film cinematography.",
+    gallery: [
+      "http://res.cloudinary.com/doabonfpj/image/upload/v1744229500/PORRT/dj39ljqkihln7qgoemcx.webp"
+    ],
+    tools: ["Sora AI", "Prompt Engineering"],
+    duration: "2023",
+    client: "Personal Portfolio"
+  },
+  {
+    id: 28,
+    title: "Fantasy Architectural Concept",
+    category: "ai",
+    image: "http://res.cloudinary.com/doabonfpj/image/upload/v1744229500/PORRT/taifxtv7lys6atboymkv.webp",
+    description: "Fantasy architectural concept with intricate details and magical elements created with Sora AI.",
+    detailedDescription: "This fantasy architectural concept demonstrates my ability to direct AI through detailed prompts to generate complex structural designs with coherent stylistic elements. The image features intricate architectural details balanced with magical elements that create a believable yet fantastical environment.",
+    gallery: [
+      "http://res.cloudinary.com/doabonfpj/image/upload/v1744229500/PORRT/taifxtv7lys6atboymkv.webp"
+    ],
+    tools: ["Sora AI", "Prompt Engineering"],
+    duration: "2023",
+    client: "Personal Project"
+  },
+  {
+    id: 29,
+    title: "Epic Fantasy Landscape",
+    category: "ai",
+    image: "http://res.cloudinary.com/doabonfpj/image/upload/v1744229500/PORRT/rbkbstta1yyqyy24x5mv.webp",
+    description: "Epic fantasy landscape with dramatic scale and lighting created using Sora AI prompts.",
+    detailedDescription: "This epic fantasy landscape showcases my skill in crafting prompts that generate images with dramatic scale and atmosphere. The image features a carefully balanced composition with attention to lighting, depth, and environmental storytelling that creates a sense of wonder and adventure.",
+    gallery: [
+      "http://res.cloudinary.com/doabonfpj/image/upload/v1744229500/PORRT/rbkbstta1yyqyy24x5mv.webp"
+    ],
+    tools: ["Sora AI", "Prompt Engineering"],
+    duration: "2023",
+    client: "Personal Portfolio"
+  },
+  {
+    id: 30,
+    title: "Atmospheric Scene",
+    category: "ai",
+    image: "http://res.cloudinary.com/doabonfpj/image/upload/v1744229500/PORRT/ekfmultvxuehqtd3urm0.webp",
+    description: "Atmospheric scene with mood-driven lighting and composition created with Sora AI.",
+    detailedDescription: "This atmospheric scene demonstrates my expertise in creating prompts that generate images with specific emotional tones through lighting and composition. The image features a carefully crafted ambiance that evokes particular feelings, showcasing how precise prompt engineering can direct AI to create targeted emotional responses.",
+    gallery: [
+      "http://res.cloudinary.com/doabonfpj/image/upload/v1744229500/PORRT/ekfmultvxuehqtd3urm0.webp"
+    ],
+    tools: ["Sora AI", "Prompt Engineering"],
+    duration: "2023",
+    client: "Personal Project"
+  },
+  {
+    id: 31,
+    title: "Mystical Scene Composition",
+    category: "ai",
+    image: "http://res.cloudinary.com/doabonfpj/image/upload/v1744229500/PORRT/gxcxzd4fexhgffulaj2g.webp",
+    description: "Mystical scene with balanced composition and cohesive storytelling elements created using Sora AI.",
+    detailedDescription: "This mystical scene composition showcases my ability to craft prompts that generate images with narrative coherence and visual harmony. The image features carefully balanced elements that work together to tell a story, with attention to detail in lighting, character poses, and environmental interaction.",
+    gallery: [
+      "http://res.cloudinary.com/doabonfpj/image/upload/v1744229500/PORRT/gxcxzd4fexhgffulaj2g.webp"
+    ],
+    tools: ["Sora AI", "Prompt Engineering"],
+    duration: "2023",
+    client: "Personal Portfolio"
+  },
+  {
+    id: 32,
+    title: "Enchanted Environment",
+    category: "ai",
+    image: "http://res.cloudinary.com/doabonfpj/image/upload/v1744229500/PORRT/j2nkt301v0jtwgiykzsu.webp",
+    description: "Enchanted environment with magical elements and atmospheric effects generated with Sora AI.",
+    detailedDescription: "This enchanted environment demonstrates my expertise in creating detailed prompts that generate cohesive fantasy scenes with consistent stylistic elements. The image features a careful balance of realistic textures with magical effects, showcasing how well-crafted prompts can direct AI to blend different visual elements seamlessly.",
+    gallery: [
+      "http://res.cloudinary.com/doabonfpj/image/upload/v1744229500/PORRT/j2nkt301v0jtwgiykzsu.webp"
+    ],
+    tools: ["Sora AI", "Prompt Engineering"],
+    duration: "2023",
+    client: "Personal Project"
   }
 ];
