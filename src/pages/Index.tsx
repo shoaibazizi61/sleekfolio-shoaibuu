@@ -42,37 +42,26 @@ const Index = () => {
       observer.observe(el);
     });
 
-    // Handle scroll for parallax effects
+    // Handle scroll for parallax effects - significantly reduced effect
     const handleScroll = () => {
       setScrollY(window.scrollY);
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
     
-    // Add mouse move handler for dynamic magic dust
+    // Completely disabled magic dust particles
     const handleMouseMove = (e: MouseEvent) => {
       setMousePosition({ x: e.clientX, y: e.clientY });
-      
-      // Create magic dust particles
-      if (Math.random() > 0.9) { // Only create particles occasionally
-        const newParticle = {
-          id: Date.now(),
-          x: e.clientX,
-          y: e.clientY,
-          size: 2 + Math.random() * 3,
-          opacity: 0.3 + Math.random() * 0.4
-        };
-        
-        setMagicDustParticles(prev => [...prev.slice(-15), newParticle]); // Keep last 15 particles
-      }
+      // Dust particle creation removed
     };
     
     window.addEventListener('mousemove', handleMouseMove);
     
-    // Create dust particles
+    // Significantly reduced dust particles
     if (dustParticlesRef.current) {
       const container = dustParticlesRef.current;
-      for (let i = 0; i < 30; i++) {
+      // Reduced from 30 to 5 particles
+      for (let i = 0; i < 5; i++) {
         createDustParticle(container);
       }
     }
@@ -89,10 +78,10 @@ const Index = () => {
     };
   }, []);
   
-  // Create a dust particle
+  // Create a dust particle with reduced movement
   const createDustParticle = (container: HTMLDivElement) => {
     const particle = document.createElement('div');
-    particle.className = 'ghibli-dust-particle';
+    particle.className = 'ghibli-dust-particle-static'; // Changed to static version
     
     // Random position
     const leftPos = Math.random() * window.innerWidth;
@@ -102,45 +91,33 @@ const Index = () => {
     particle.style.top = `${topPos}px`;
     
     // Random size
-    const size = 1 + Math.random() * 3;
+    const size = 1 + Math.random() * 2;
     particle.style.width = `${size}px`;
     particle.style.height = `${size}px`;
     
-    // Random opacity
-    particle.style.opacity = (0.2 + Math.random() * 0.5).toString();
-    
-    // Random animation duration
-    const duration = 10 + Math.random() * 20;
-    particle.style.animationDuration = `${duration}s`;
-    
-    // Random animation delay
-    particle.style.animationDelay = `${Math.random() * 10}s`;
+    // Reduced opacity
+    particle.style.opacity = (0.1 + Math.random() * 0.2).toString();
     
     container.appendChild(particle);
     
-    // Remove after animation completes
+    // Remove after a longer time
     setTimeout(() => {
       container.removeChild(particle);
       createDustParticle(container);
-    }, duration * 1000);
+    }, 20000); // Much longer duration to reduce frequent updates
   };
 
-  // Create floating elements for Ghibli-style magic
+  // Reduced floating elements for Ghibli-style magic - fewer elements
   const floatingElements = [
-    { icon: Cloud, color: "text-[#77B1A9]/60", size: 24, top: "5%", left: "3%", delay: 0 },
-    { icon: Leaf, color: "text-[#A6D0CC]/60", size: 16, top: "15%", right: "8%", delay: 1.2 },
-    { icon: Feather, color: "text-[#FFDEE2]/60", size: 20, top: "50%", left: "5%", delay: 2.3 },
-    { icon: Stars, color: "text-[#FEF7CD]/60", size: 18, bottom: "25%", right: "7%", delay: 0.7 },
-    { icon: Cloud, color: "text-[#A6D0CC]/60", size: 14, bottom: "10%", left: "12%", delay: 1.8 },
-    { icon: Leaf, color: "text-[#86bb6b]/60", size: 22, top: "35%", right: "15%", delay: 3.1 },
-    { icon: Feather, color: "text-[#e17f95]/60", size: 18, bottom: "40%", left: "15%", delay: 2.5 },
-    { icon: Stars, color: "text-[#c9a95b]/60", size: 15, top: "65%", right: "5%", delay: 1.3 },
+    { icon: Cloud, color: "text-[#77B1A9]/30", size: 24, top: "5%", left: "3%", delay: 0 },
+    { icon: Leaf, color: "text-[#A6D0CC]/30", size: 16, top: "15%", right: "8%", delay: 1.2 },
+    { icon: Stars, color: "text-[#FEF7CD]/30", size: 18, bottom: "25%", right: "7%", delay: 0.7 },
   ];
 
   return (
     <div className="flex flex-col min-h-screen relative overflow-hidden">
-      {/* Enhanced floating Ghibli-inspired elements that stay fixed while scrolling */}
-      <div className="fixed inset-0 pointer-events-none z-0 opacity-70">
+      {/* Significantly reduced movement of floating elements */}
+      <div className="fixed inset-0 pointer-events-none z-0 opacity-40">
         {floatingElements.map((element, index) => {
           const Icon = element.icon;
           const style: React.CSSProperties = {
@@ -149,13 +126,14 @@ const Index = () => {
             right: element.right,
             bottom: element.bottom,
             animationDelay: `${element.delay}s`,
-            transform: `translateY(${scrollY * 0.1 * (index % 2 === 0 ? 1 : -1)}px)`,
+            // Parallax effect reduced by 90%
+            transform: `translateY(${scrollY * 0.01 * (index % 2 === 0 ? 1 : -1)}px)`,
           };
           
           return (
             <div 
               key={index}
-              className={`absolute ${element.color} animate-float-slow`}
+              className={`absolute ${element.color} animate-float-very-slow`}
               style={style}
             >
               <Icon size={element.size} />
@@ -163,41 +141,27 @@ const Index = () => {
           );
         })}
         
-        {/* Enhanced dust particles with parallax effect */}
+        {/* Significantly reduced dust particles */}
         <div className="absolute inset-0">
-          {[...Array(25)].map((_, i) => (
+          {[...Array(10)].map((_, i) => ( // Reduced from 25 to 10
             <div 
               key={i}
-              className="absolute w-2 h-2 rounded-full bg-primary/30 animate-twinkle"
+              className="absolute w-2 h-2 rounded-full bg-primary/20 animate-twinkle-slow"
               style={{
                 top: `${Math.random() * 100}%`,
                 left: `${Math.random() * 100}%`,
                 animationDelay: `${Math.random() * 5}s`,
-                transform: `translateY(${scrollY * 0.05 * (i % 2 === 0 ? 1 : -1)}px)`,
+                // Removed parallax effect entirely
               }}
             />
           ))}
         </div>
       </div>
       
-      {/* Magic dust particles that follow the cursor */}
-      {magicDustParticles.map(particle => (
-        <div
-          key={particle.id}
-          className="magic-dust"
-          style={{
-            left: particle.x,
-            top: particle.y,
-            width: `${particle.size}px`,
-            height: `${particle.size}px`,
-            opacity: particle.opacity,
-            transform: `translate(-50%, -50%)`,
-          }}
-        />
-      ))}
+      {/* Magic dust particles that follow cursor - completely removed */}
       
-      {/* Container for generated dust particles */}
-      <div ref={dustParticlesRef} className="ghibli-dust-particles"></div>
+      {/* Container for generated dust particles - opacity reduced */}
+      <div ref={dustParticlesRef} className="ghibli-dust-particles opacity-30"></div>
 
       <Navbar />
       <main className="flex-grow relative z-10">
