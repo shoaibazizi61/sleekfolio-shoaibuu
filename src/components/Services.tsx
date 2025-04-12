@@ -186,21 +186,20 @@ const Services = () => {
         <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxkZWZzPjxwYXR0ZXJuIGlkPSJncmlkIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiPjxwYXRoIGQ9Ik0gNDAgMCBMIDAgMCAwIDQwIiBmaWxsPSJub25lIiBzdHJva2U9ImhzbCgyNzAgNTAlIDYwJSAvIDAuMDUpIiBzdHJva2Utd2lkdGg9IjEiPjwvcGF0aD48L3BhdHRlcm4+PC9kZWZzPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JpZCkiPjwvcmVjdD48L3N2Zz4=')]" style={{ opacity: "0.5" }}></div>
       </div>
       
-        <div className="absolute top-5 left-1/4 w-64 h-24 opacity-60">
-          <svg viewBox="0 0 200 100" className="w-full h-full text-nature-forest/40 fill-current">
-            <path d="M30,40 Q40,20 50,40 T70,40 T90,40 T110,40 T130,40 T150,40 T170,40" fill="currentColor" />
-            <path d="M10,50 Q40,30 70,50 T140,50" fill="currentColor" />
-          </svg>
-        </div>
-        
-        <div className="absolute bottom-10 right-1/4 w-64 h-24 opacity-50">
-          <svg viewBox="0 0 200 100" className="w-full h-full text-nature-forest/40 fill-current">
-            <path d="M30,40 Q40,20 50,40 T70,40 T90,40 T110,40 T130,40 T150,40 T170,40" fill="currentColor" />
-            <path d="M10,50 Q40,30 70,50 T140,50" fill="currentColor" />
-          </svg>
-        </div>
+      <div className="absolute top-5 left-1/4 w-64 h-24 opacity-60">
+        <svg viewBox="0 0 200 100" className="w-full h-full text-nature-forest/40 fill-current">
+          <path d="M30,40 Q40,20 50,40 T70,40 T90,40 T110,40 T130,40 T150,40 T170,40" fill="currentColor" />
+          <path d="M10,50 Q40,30 70,50 T140,50" fill="currentColor" />
+        </svg>
       </div>
-    
+      
+      <div className="absolute bottom-10 right-1/4 w-64 h-24 opacity-50">
+        <svg viewBox="0 0 200 100" className="w-full h-full text-nature-forest/40 fill-current">
+          <path d="M30,40 Q40,20 50,40 T70,40 T90,40 T110,40 T130,40 T150,40 T170,40" fill="currentColor" />
+          <path d="M10,50 Q40,30 70,50 T140,50" fill="currentColor" />
+        </svg>
+      </div>
+      
       <div className="container mx-auto relative z-10">
         <div className="text-center mb-16">
           <span className="inline-block mb-3 py-1 px-4 rounded-full text-xs font-medium bg-[#ffdee2]/40 text-[#d34757] border border-[#ffdee2]/60">SERVICES</span>
