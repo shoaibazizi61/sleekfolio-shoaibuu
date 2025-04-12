@@ -159,27 +159,32 @@ const Services = () => {
   return (
     <section id="services" className="section-padding relative overflow-hidden py-20">
       <div className="absolute inset-0 pointer-events-none">
-        <div className="blob h-96 w-96 bg-[#fef7cd]/40 -top-48 left-20 animate-float rounded-[40%_60%_70%_30%/40%_50%_60%_50%]" style={{animationDelay: "1.5s"}}></div>
-        <div className="blob h-80 w-80 bg-[#d3e4fd]/40 -bottom-40 right-10 animate-float rounded-[50%_50%_40%_60%/40%_40%_60%_50%]" style={{animationDelay: "0.5s"}}></div>
-        <div className="blob h-64 w-64 bg-[#fde1d3]/40 top-1/4 -left-20 animate-float rounded-[60%_40%_30%_70%/60%_30%_70%_40%]" style={{animationDelay: "2s"}}></div>
-        <div className="blob h-72 w-72 bg-[#e5deff]/40 bottom-1/3 right-1/4 animate-float rounded-[30%_70%_60%_40%/50%_60%_40%_50%]" style={{animationDelay: "1s"}}></div>
-        <div className="blob h-56 w-56 bg-[#ffdee2]/40 top-1/2 right-1/5 animate-float rounded-[50%_30%_40%_60%/40%_50%_60%_40%]" style={{animationDelay: "3s"}}></div>
+        {/* Increase opacity of blobs */}
+        <div className="blob h-96 w-96 bg-[#fef7cd]/60 -top-48 left-20 animate-float rounded-[40%_60%_70%_30%/40%_50%_60%_50%]" style={{animationDelay: "1.5s"}}></div>
+        <div className="blob h-80 w-80 bg-[#d3e4fd]/60 -bottom-40 right-10 animate-float rounded-[50%_50%_40%_60%/40%_40%_60%_50%]" style={{animationDelay: "0.5s"}}></div>
+        <div className="blob h-64 w-64 bg-[#fde1d3]/60 top-1/4 -left-20 animate-float rounded-[60%_40%_30%_70%/60%_30%_70%_40%]" style={{animationDelay: "2s"}}></div>
+        <div className="blob h-72 w-72 bg-[#e5deff]/60 bottom-1/3 right-1/4 animate-float rounded-[30%_70%_60%_40%/50%_60%_40%_50%]" style={{animationDelay: "1s"}}></div>
+        <div className="blob h-56 w-56 bg-[#ffdee2]/60 top-1/2 right-1/5 animate-float rounded-[50%_30%_40%_60%/40%_50%_60%_40%]" style={{animationDelay: "3s"}}></div>
         
-        <div className="blob h-44 w-44 bg-[#a6d0cc]/30 top-1/3 left-1/3 animate-float-slow rounded-[45%_55%_65%_35%/55%_45%_35%_45%]" style={{animationDelay: "2.3s"}}></div>
-        <div className="blob h-60 w-60 bg-[#f9f9c5]/30 bottom-1/4 left-1/5 animate-float-slow rounded-[35%_65%_50%_50%/60%_40%_60%_40%]" style={{animationDelay: "1.7s"}}></div>
-        <div className="blob h-52 w-52 bg-[#ffcaa7]/30 top-3/4 right-1/3 animate-float-slow rounded-[55%_45%_40%_60%/35%_65%_35%_65%]" style={{animationDelay: "2.9s"}}></div>
+        {/* Increase static blobs opacity */}
+        <div className="blob h-44 w-44 bg-[#a6d0cc]/50 top-1/3 left-1/3 animate-float-slow rounded-[45%_55%_65%_35%/55%_45%_35%_45%]" style={{animationDelay: "2.3s"}}></div>
+        <div className="blob h-60 w-60 bg-[#f9f9c5]/50 bottom-1/4 left-1/5 animate-float-slow rounded-[35%_65%_50%_50%/60%_40%_60%_40%]" style={{animationDelay: "1.7s"}}></div>
+        <div className="blob h-52 w-52 bg-[#ffcaa7]/50 top-3/4 right-1/3 animate-float-slow rounded-[55%_45%_40%_60%/35%_65%_35%_65%]" style={{animationDelay: "2.9s"}}></div>
         
+        {/* Increase opacity of decorative elements */}
         {decorativeElements.map((element, index) => (
           <div
             key={index}
-            className={`absolute ${element.position} ${element.size} ${element.color} ${element.animation} opacity-70`}
+            className={`absolute ${element.position} ${element.size} ${element.color} ${element.animation} opacity-90`}
             style={{ animationDelay: element.delay }}
           >
             {element.icon}
           </div>
         ))}
         
-        <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxkZWZzPjxwYXR0ZXJuIGlkPSJncmlkIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiPjxwYXRoIGQ9Ik0gNDAgMCBMIDAgMCAwIDQwIiBmaWxsPSJub25lIiBzdHJva2U9ImhzbCgyNzAgNTAlIDYwJSAvIDAuMDUpIiBzdHJva2Utd2lkdGg9IjEiPjwvcGF0aD48L3BhdHRlcm4+PC9kZWZzPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JpZCkiPjwvcmVjdD48L3N2Zz4=')]" style={{ opacity: "0.3" }}></div>
+        {/* Increase grid pattern opacity */}
+        <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxkZWZzPjxwYXR0ZXJuIGlkPSJncmlkIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiPjxwYXRoIGQ9Ik0gNDAgMCBMIDAgMCAwIDQwIiBmaWxsPSJub25lIiBzdHJva2U9ImhzbCgyNzAgNTAlIDYwJSAvIDAuMDUpIiBzdHJva2Utd2lkdGg9IjEiPjwvcGF0aD48L3BhdHRlcm4+PC9kZWZzPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JpZCkiPjwvcmVjdD48L3N2Zz4=')]" style={{ opacity: "0.5" }}></div>
+      </div>
       
         <div className="absolute top-5 left-1/4 w-64 h-24 opacity-60">
           <svg viewBox="0 0 200 100" className="w-full h-full text-nature-forest/40 fill-current">

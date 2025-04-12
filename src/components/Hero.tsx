@@ -1,4 +1,3 @@
-
 import { useEffect, useRef } from 'react';
 import { ChevronDown, ExternalLink, Cloud, Bird, Feather, Leaf, Stars, Flower2, Mountain } from 'lucide-react';
 import { Button } from './ui/button';
@@ -46,19 +45,15 @@ const Hero = () => {
       }}
     >
       <div className="absolute inset-0 pointer-events-none">
-        {/* Removed floating blobs for stability */}
-        
-        {/* Static forest silhouette with reduced opacity */}
-        <div className="absolute bottom-0 left-0 right-0 h-32 md:h-40 opacity-10">
+        {/* Increase opacity of forest silhouette */}
+        <div className="absolute bottom-0 left-0 right-0 h-32 md:h-40 opacity-30">
           <svg className="w-full h-full" viewBox="0 0 1200 120" preserveAspectRatio="none">
             <path d="M0,100 L50,95 L60,100 L80,90 L100,100 L120,95 L140,100 L160,95 L180,100 L200,95 L220,100 L240,95 L260,100 L280,95 L300,100 L320,95 L340,100 L360,95 L380,100 L400,95 L420,100 L440,95 L460,100 L480,95 L500,100 L520,95 L540,100 L560,95 L580,100 L600,95 L620,100 L640,95 L660,100 L680,95 L700,100 L720,95 L740,100 L760,95 L780,100 L800,95 L820,100 L840,95 L860,100 L880,95 L900,100 L920,95 L940,100 L960,95 L980,100 L1000,95 L1020,100 L1040,95 L1060,100 L1080,95 L1100,100 L1120,95 L1140,100 L1160,95 L1180,100 L1200,95 L1200,120 L0,120 Z" fill="currentColor" className="text-foreground"></path>
           </svg>
         </div>
         
-        {/* Removed Ghibli-inspired floating elements for stability */}
-        
-        {/* Reduced cloud opacity */}
-        <div className="absolute top-10 right-10 opacity-20">
+        {/* Increase cloud opacity */}
+        <div className="absolute top-10 right-10 opacity-40">
           <svg className="w-40 h-24 text-nature-leaf fill-current" viewBox="0 0 200 100">
             <circle cx="65" cy="30" r="20" />
             <circle cx="45" cy="40" r="15" />
@@ -69,7 +64,7 @@ const Hero = () => {
           </svg>
         </div>
         
-        <div className="absolute bottom-40 left-10 opacity-20">
+        <div className="absolute bottom-40 left-10 opacity-40">
           <svg className="w-36 h-20 text-nature-soil fill-current" viewBox="0 0 200 100">
             <circle cx="65" cy="30" r="20" />
             <circle cx="45" cy="40" r="15" />
@@ -80,8 +75,8 @@ const Hero = () => {
           </svg>
         </div>
         
-        {/* Reduced grid pattern opacity */}
-        <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxkZWZzPjxwYXR0ZXJuIGlkPSJncmlkIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiPjxwYXRoIGQ9Ik0gNDAgMCBMIDAgMCAwIDQwIiBmaWxsPSJub25lIiBzdHJva2U9ImhzbCgyNzAgNTAlIDYwJSAvIDAuMDUpIiBzdHJva2Utd2lkdGg9IjEiPjwvcGF0aD48L3BhdHRlcm4+PC9kZWZzPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JpZCkiPjwvcmVjdD48L3N2Zz4=')]" style={{ opacity: "0.2" }}></div>
+        {/* Increase grid pattern opacity */}
+        <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxkZWZzPjxwYXR0ZXJuIGlkPSJncmlkIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiPjxwYXRoIGQ9Ik0gNDAgMCBMIDAgMCAwIDQwIiBmaWxsPSJub25lIiBzdHJva2U9ImhzbCgyNzAgNTAlIDYwJSAvIDAuMDUpIiBzdHJva2Utd2lkdGg9IjEiPjwvcGF0aD48L3BhdHRlcm4+PC9kZWZzPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JpZCkiPjwvcmVjdD48L3N2Zz4=')]" style={{ opacity: "0.4" }}></div>
       </div>
       
       <div className="container mx-auto text-center relative z-10">
